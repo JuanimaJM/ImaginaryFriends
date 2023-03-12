@@ -5,4 +5,5 @@
 \
 Story Board: Justine Juanima  \
 UI Designers: Val Dela Cruz, Anne Lopez \
-Developer: Kimwel Beller
+Programmer: Kimwel Lourence Beller  \
+Artist: Kakilala ni Juanima

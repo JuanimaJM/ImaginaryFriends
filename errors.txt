@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 16: expected 'image_name_component' not found.
-    scene "gui/imaginary_friends/bg_main_menu.png"
-          ^
+File "game/script.rpy", line 24: expected statement.
+    Child
+         ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Mar 11 11:24:32 2023
+Sun Mar 12 16:06:17 2023

@@ -8,6 +8,9 @@ init offset = -1
 ## Styles
 ################################################################################
 
+# imaginary friends configurations
+
+
 style default:
     properties gui.text_properties()
     language gui.language
@@ -33,7 +36,7 @@ style button_text is gui_text:
 
 
 style label_text is gui_text:
-    properties gui.text_properties("label", accent=True)
+    properties gui.text_properties("label", accent=False)
 
 style prompt_text is gui_text:
     properties gui.text_properties("prompt")
@@ -289,8 +292,12 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
+        if main_menu and renpy.get_screen("main_menu"):
+            xalign 0.5
+            yalign 0.6
+        else:
+            xpos gui.navigation_xpos
+            yalign 0.5
 
         spacing gui.navigation_spacing
 
@@ -323,11 +330,11 @@ screen navigation():
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
 
-        if renpy.variant("pc"):
+        #if renpy.variant("pc"):
 
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
+        textbutton _("Exit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -339,6 +346,7 @@ style navigation_button:
 
 style navigation_button_text:
     properties gui.button_text_properties("navigation_button")
+    xalign 0.5
 
 
 ## Main Menu screen ############################################################
@@ -364,11 +372,11 @@ screen main_menu():
 
     if gui.show_name:
 
+        text "[config.name!t]":
+                style "main_menu_title"
+        
         vbox:
             style "main_menu_vbox"
-
-            text "[config.name!t]":
-                style "main_menu_title"
 
             text "[config.version]":
                 style "main_menu_version"
@@ -377,14 +385,14 @@ screen main_menu():
 style main_menu_frame is empty
 style main_menu_vbox is vbox
 style main_menu_text is gui_text
-style main_menu_title is main_menu_text
+#style main_menu_title is main_menu_text
 style main_menu_version is main_menu_text
 
 style main_menu_frame:
     xsize 420
     yfill True
 
-    background "gui/overlay/main_menu.png"
+    #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
     xalign 1.0
@@ -398,6 +406,9 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
+    xalign 0.5
+    yalign 0.1
+    font font_title
 
 style main_menu_version:
     properties gui.text_properties("version")
@@ -487,7 +498,7 @@ style game_menu_side is gui_side
 style game_menu_scrollbar is gui_vscrollbar
 
 style game_menu_label is gui_label
-style game_menu_label_text is gui_label_text
+#style game_menu_label_text is gui_label_text
 
 style return_button is navigation_button
 style return_button_text is navigation_button_text
@@ -522,8 +533,9 @@ style game_menu_label:
 
 style game_menu_label_text:
     size gui.title_text_size
-    color gui.accent_color
+    color gui.idle_color
     yalign 0.5
+    font font_title
 
 style return_button:
     xpos gui.navigation_xpos
@@ -1441,7 +1453,7 @@ style nvl_window:
 
 style main_menu_frame:
     variant "small"
-    background "gui/phone/overlay/main_menu.png"
+    # background "gui/phone/overlay/main_menu.png"
 
 style game_menu_outer_frame:
     variant "small"

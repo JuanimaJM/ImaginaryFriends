@@ -2,7 +2,7 @@
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define Child = Character("The Child")
+define Child = Character("The Child", color=color_primary)
 
 
 # stats
@@ -15,9 +15,13 @@ default happiness = 100
 label start:
     scene kitchen
     "A"
+    Child "eyyy"
     "B"
+    Child "bhii"
     "C"
+    Child "sii"
     "D"
+    Child "....... ..."
     "E"
     "F"
     "G"

@@ -1,4 +1,4 @@
-﻿## This file contains options that can be changed to customize your game.
+﻿## This file contains options that can be changed to customize youonr game.
 ##
 ## Lines beginning with two '#' marks are comments, and you shouldn't uncomment
 ## them. Lines beginning with a single '#' mark are commented-out code, and you
@@ -14,7 +14,7 @@
 
 define config.name = _("Imaginary Friends")
 
-# configurations
+# imaginary friends configurations
 define config.rollback_enabled = False
 
 

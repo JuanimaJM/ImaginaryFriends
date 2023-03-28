@@ -10,6 +10,7 @@ init offset = -1
 
 # imaginary friends configurations
 
+################################################################################
 
 style default:
     properties gui.text_properties()

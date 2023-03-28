@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 24: expected statement.
-    Child
-         ^
+File "game/imaginary_friends_default.rpy", line 6: expected statement.
+    store.color_primary = '#864879'
+                        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Mar 12 16:06:17 2023
+Fri Mar 24 19:23:38 2023

@@ -17,11 +17,17 @@ init python:
 ## GUI Configuration Variables
 ################################################################################
 
-# imaginary friends configurations
+# imaginary friends gui
 define gui_path = "gui/imaginary_friends/"
-define color_primary = '#864879'
+define american_violet = '#5b1e99'
+define american_purple = '#3d1466'
+define sugar_plum = '#864879'
+define jacarta = '#3F3351'
+define dark_gunmetal = '#1F1D36'
+define pastel_pink = '#E9A6A6'
 define font_title = gui_path + "Griffy-Regular.ttf"
 define font_regular = gui_path + "SongMyung-Regular.ttf"
+################################################################################
 
 
 ## Colors ######################################################################
@@ -29,7 +35,7 @@ define font_regular = gui_path + "SongMyung-Regular.ttf"
 ## The colors of text in the interface.
 
 ## An accent color used throughout the interface to label and highlight text.
-define gui.accent_color = color_primary
+define gui.accent_color = sugar_plum
 
 ## The color used for a text button when it is neither selected nor hovered.
 define gui.idle_color = '#ffffff'
@@ -39,19 +45,19 @@ define gui.idle_color = '#ffffff'
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = '#864879'
+define gui.hover_color = sugar_plum
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = '#864879'
+define gui.selected_color = sugar_plum
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
 
 ## Colors used for the portions of bars that are not filled in. These are not
 ## used directly, but are used when re-generating bar image files.
-define gui.muted_color = '#3d1466'
-define gui.hover_muted_color = '#5b1e99'
+define gui.muted_color = american_purple
+define gui.hover_muted_color = american_violet
 
 ## The colors used for dialogue and menu choice text.
 define gui.text_color = '#ffffff'

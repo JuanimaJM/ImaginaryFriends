@@ -12,10 +12,6 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-# imaginary friends configurations
-define config.rollback_enabled = False
-################################################################################
-
 define config.name = _("Imaginary Friends")
 
 ## Determines if the title given above is shown on the main menu screen. Set

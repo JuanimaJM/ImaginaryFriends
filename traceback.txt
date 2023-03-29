@@ -1,72 +1,37 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/imaginary_friends_screens.rpy", line 33, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 33, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 51, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 57, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 60, in execute
-    for key, value in achievement_list:
-  File "game/imaginary_friends_screens.rpy", line 60, in execute
-    for key, value in achievement_list:
-  File "game/imaginary_friends_screens.rpy", line 60, in <module>
-    for key, value in achievement_list:
-ValueError: too many values to unpack (expected 2)
+  File "game/gui.rpy", line 53, in script
+    define gui.accent_color = blue
+  File "game/gui.rpy", line 53, in script
+    define gui.accent_color = blue
+  File "game/gui.rpy", line 53, in <module>
+    define gui.accent_color = blue
+NameError: name 'blue' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
-    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
-    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/imaginary_friends_screens.rpy", line 33, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 33, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 51, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 57, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 60, in execute
-    for key, value in achievement_list:
-  File "game/imaginary_friends_screens.rpy", line 60, in execute
-    for key, value in achievement_list:
-  File "game/imaginary_friends_screens.rpy", line 60, in <module>
-    for key, value in achievement_list:
-ValueError: too many values to unpack (expected 2)
+  File "C:\Users\Kimwel\Desktop\Saved Downloads\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
+    renpy.main.main()
+  File "C:\Users\Kimwel\Desktop\Saved Downloads\renpy-8.0.3-sdk\renpy\main.py", line 558, in main
+    renpy.game.context().run(node)
+  File "game/gui.rpy", line 53, in script
+    define gui.accent_color = blue
+  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
+  File "game/gui.rpy", line 53, in script
+    define gui.accent_color = blue
+  File "C:\Users\Kimwel\Desktop\Saved Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 2441, in execute
+    self.set()
+  File "C:\Users\Kimwel\Desktop\Saved Downloads\renpy-8.0.3-sdk\renpy\ast.py", line 2455, in set
+    value = renpy.python.py_eval_bytecode(self.code.bytecode)
+  File "C:\Users\Kimwel\Desktop\Saved Downloads\renpy-8.0.3-sdk\renpy\python.py", line 1085, in py_eval_bytecode
+    return eval(bytecode, globals, locals)
+  File "game/gui.rpy", line 53, in <module>
+    define gui.accent_color = blue
+NameError: name 'blue' is not defined
 
-Windows-10-10.0.19044 AMD64
+Windows-10-10.0.22621 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Wed Mar 29 17:38:58 2023
+Wed Mar 29 20:21:20 2023

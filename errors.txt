@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 437: style property blur is not known.
-    blur 0
-        ^
+File "game/imaginary_friends_logic.rpy", line 31: cannot assign to function call
+        achievement_values.get(title) = True
+         ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Mar 29 18:26:53 2023
+Wed Mar 29 20:32:30 2023

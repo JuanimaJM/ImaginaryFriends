@@ -1,3 +1,4 @@
+# Utility Functions
 python early:
     def identify_bar_color(value):
         if value > 80:
@@ -22,4 +23,10 @@ python early:
             return white
         else:
             return gray
+################################################################################
 
+# Game Functions
+python early:
+    def grant_achievement(title):
+        achievement_values[title] = True
+################################################################################

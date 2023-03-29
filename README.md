@@ -1,5 +1,5 @@
 # Imaginary Friends
-**A Visual Novel Mobile Application** \
+**A Visual Novel Mobile Application Made in Renpy** \
 \
 \
 \

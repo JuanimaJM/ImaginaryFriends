@@ -25,8 +25,23 @@ define sugar_plum = '#864879'
 define jacarta = '#3F3351'
 define dark_gunmetal = '#1F1D36'
 define pastel_pink = '#E9A6A6'
+define transparent = "#ffffff00"
+define electric_green = "#00FF00"
+define mango_green = "#8EFD00"
+define lemon_glacier = "#FAFF00"
+define american_orange = "#FF8A00"
+define red = "#FF0000"
+define white = "#ffffff"
+define black = "#000000"
+define gray = "#808080"
 define font_title = gui_path + "Griffy-Regular.ttf"
 define font_regular = gui_path + "SongMyung-Regular.ttf"
+define img_badge = gui_path + "badge.png"
+define icon_memories = gui_path + "memories.png"
+define icon_achievement = gui_path + "achievement.png"
+define icon_cancel = gui_path + "cancel.png"
+define icon_back_arrow = gui_path + "back_arrow.png"
+define icon_menu = gui_path + "menu.png"
 ################################################################################
 
 
@@ -38,18 +53,18 @@ define font_regular = gui_path + "SongMyung-Regular.ttf"
 define gui.accent_color = sugar_plum
 
 ## The color used for a text button when it is neither selected nor hovered.
-define gui.idle_color = '#ffffff'
+define gui.idle_color = white
 
 ## The small color is used for small text, which needs to be brighter/darker to
 ## achieve the same effect.
 define gui.idle_small_color = '#aaaaaa'
 
 ## The color that is used for buttons and bars that are hovered.
-define gui.hover_color = sugar_plum
+define gui.hover_color = dark_gunmetal
 
 ## The color used for a text button when it is selected but not focused. A
 ## button is selected if it is the current screen or preference value.
-define gui.selected_color = sugar_plum
+define gui.selected_color = dark_gunmetal
 
 ## The color used for a text button when it cannot be selected.
 define gui.insensitive_color = '#8888887f'
@@ -60,8 +75,8 @@ define gui.muted_color = american_purple
 define gui.hover_muted_color = american_violet
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = '#ffffff'
-define gui.interface_text_color = '#ffffff'
+define gui.text_color = white
+define gui.interface_text_color = white
 
 
 ## Fonts and Font Sizes ########################################################
@@ -97,8 +112,8 @@ define gui.title_text_size = 120
 ## Main and Game Menus #########################################################
 
 ## The images used for the main and game menus.
-define gui.main_menu_background = "gui/imaginary_friends/bg_main_menu.png"
-define gui.game_menu_background = "gui/imaginary_friends/bg_game_menu.png"
+define gui.main_menu_background = gui_path + "bg_main_menu.png"
+define gui.game_menu_background = gui_path + "bg_game_menu.png"
 
 
 ## Dialogue ####################################################################

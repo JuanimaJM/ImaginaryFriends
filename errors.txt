@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_default.rpy", line 6: expected statement.
-    store.color_primary = '#864879'
-                        ^
+File "game/screens.rpy", line 437: style property blur is not known.
+    blur 0
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Mar 24 19:23:38 2023
+Wed Mar 29 18:26:53 2023

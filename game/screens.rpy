@@ -8,10 +8,6 @@ init offset = -1
 ## Styles
 ################################################################################
 
-# imaginary friends configurations
-
-################################################################################
-
 style default:
     properties gui.text_properties()
     language gui.language
@@ -289,7 +285,7 @@ style quick_button_text:
 ## to other menus, and to start the game.
 
 screen navigation():
-
+    
     vbox:
         style_prefix "navigation"
 
@@ -355,7 +351,6 @@ style navigation_button_text:
 ## Used to display the main menu when Ren'Py starts.
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
-
 screen main_menu():
 
     ## This ensures that any other menu screen is replaced.
@@ -370,6 +365,21 @@ screen main_menu():
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
     use navigation
+
+    vbox:
+        xalign 1.0
+        yalign 0.0
+        xoffset -30
+        yoffset 30
+        
+        imagebutton:
+            idle icon_memories
+            bottom_margin 10
+            action Show("memories")
+        
+        imagebutton:
+            idle icon_achievement
+            action Show("achievements")
 
     if gui.show_name:
 
@@ -392,7 +402,6 @@ style main_menu_version is main_menu_text
 style main_menu_frame:
     xsize 420
     yfill True
-
     #background "gui/overlay/main_menu.png"
 
 style main_menu_vbox:
@@ -414,7 +423,6 @@ style main_menu_title:
 style main_menu_version:
     properties gui.text_properties("version")
 
-
 ## Game Menu screen ############################################################
 ##
 ## This lays out the basic common structure of a game menu screen. It's called
@@ -428,10 +436,12 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     style_prefix "game_menu"
 
-    if main_menu:
-        add gui.main_menu_background
-    else:
-        add gui.game_menu_background
+    # if main_menu:
+    #     add gui.main_menu_background
+    # else:
+    #     add gui.game_menu_background
+
+    add gui.game_menu_background
 
     frame:
         style "game_menu_outer_frame"
@@ -507,8 +517,8 @@ style return_button_text is navigation_button_text
 style game_menu_outer_frame:
     bottom_padding 45
     top_padding 180
-
-    background "gui/overlay/game_menu.png"
+    background gui_path + "menu_overlay.png"
+    #background "gui/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     xsize 420
@@ -759,11 +769,19 @@ screen settings():
 
                     label _("Text Speed")
 
-                    bar value Preference("text speed")
+                    bar:
+                        left_bar sugar_plum
+                        right_bar sugar_plum
+                        thumb dark_gunmetal
+                        value Preference("text speed")
 
                     label _("Auto-Forward Time")
 
-                    bar value Preference("auto-forward time")
+                    bar:
+                        left_bar sugar_plum
+                        right_bar sugar_plum
+                        thumb dark_gunmetal
+                        value Preference("auto-forward time")
 
                 vbox:
 
@@ -771,14 +789,22 @@ screen settings():
                         label _("Music Volume")
 
                         hbox:
-                            bar value Preference("music volume")
+                            bar:
+                                left_bar sugar_plum
+                                right_bar sugar_plum
+                                thumb dark_gunmetal
+                                value Preference("music volume")
 
                     if config.has_sound:
 
                         label _("Sound Volume")
 
                         hbox:
-                            bar value Preference("sound volume")
+                            bar:
+                                left_bar sugar_plum
+                                right_bar sugar_plum
+                                thumb dark_gunmetal
+                                value Preference("sound volume")
 
                             if config.sample_sound:
                                 textbutton _("Test") action Play("sound", config.sample_sound)
@@ -1458,7 +1484,7 @@ style main_menu_frame:
 
 style game_menu_outer_frame:
     variant "small"
-    background "gui/phone/overlay/game_menu.png"
+    #background "gui/phone/overlay/game_menu.png"
 
 style game_menu_navigation_frame:
     variant "small"

@@ -5,6 +5,7 @@ label start:
     show screen stats
     scene kitchen
     "A"
+    $ grant_achievement("Title9")
     "[life]"
     $ life -= 10
     "[life]"

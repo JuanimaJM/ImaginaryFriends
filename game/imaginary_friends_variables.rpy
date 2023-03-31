@@ -58,7 +58,7 @@ define achievement_list = {
     "Title9": "Some Description"
 }
 
-define achievement_values = {
+default achievement_values = {
     "Title1": True,
     "Title2": True,
     "Title3": True,

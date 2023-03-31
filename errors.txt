@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 31: cannot assign to function call
-        achievement_values.get(title) = True
-         ^
-    
+File "game/script.rpy", line 8: expected statement.
+    grant_achievement("Title9")
+                               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Mar 29 20:32:30 2023
+Thu Mar 30 07:46:47 2023

@@ -29,4 +29,9 @@ python early:
 python early:
     def grant_achievement(title):
         achievement_values[title] = True
+        renpy.display_notify(f"You achieve the {title} achievement")
+    
+    def update_friends_stats(character, value):
+        friends_stats[character] += value
+        return friends_stats[character]
 ################################################################################

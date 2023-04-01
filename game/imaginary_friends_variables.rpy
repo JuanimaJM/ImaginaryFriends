@@ -36,13 +36,17 @@ define icon_menu = gui_path + "menu.png"
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 define Child = Character("The Child", color=sugar_plum)
+define Phantom = Character("Phantom", color=american_purple, font=font_title)
+define Someone = Character("Someone", color=dark_gunmetal)
 ################################################################################
 
 # Stats
 default sanity = 100
 default happiness = 100
-default character1 = 100
-default character2 = 100
+default friends_stats = {
+    Phantom : 100,
+    Someone : 100
+}
 ################################################################################
 
 # Achievement

@@ -26,6 +26,7 @@ screen memories():
         viewport:
             yinitial 0.0
             scrollbars "vertical"
+            draggable True
             text lorem
 ################################################################################
 
@@ -135,6 +136,7 @@ screen statsUI():
                 viewport:
                     yinitial 0.0
                     scrollbars "vertical"
+                    draggable True
                     vbox:
                         spacing 10
                         box_wrap True

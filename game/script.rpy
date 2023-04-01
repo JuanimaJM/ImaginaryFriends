@@ -4,13 +4,26 @@
 label start:
     show screen stats
     scene kitchen
-    "A"
+    "Im showing some sprites"
+    show phantom 920
+    Phantom "920x920"
+    hide phantom 920
+    Someone "..."
+    show phantom 980
+    Phantom "980x980"
+    hide phantom 980
+    Someone  "..."
+    show phantom 960
+    Phantom "960x960"
     $ grant_achievement("Title9")
-    "[life]"
+    "Grant Some Achievement"
+    "Life: [life]"
     $ life -= 10
-    "[life]"
+    "Get some damage"
+    "Life: [life]"
     $ damage()
-    "[life]"
+    "Get some damage"
+    "Life: [life]"
     Child "eyyy"
     "B"
     Child "bhii"

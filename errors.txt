@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 8: expected statement.
-    grant_achievement("Title9")
-                               ^
+File "game/script.rpy", line 18: expected statement.
+    timer 3 action grant_achievement("Title9")
+                                    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Thu Mar 30 07:46:47 2023
+Sat Apr  1 18:47:24 2023

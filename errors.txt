@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 18: expected statement.
-    timer 3 action grant_achievement("Title9")
-                                    ^
+File "game/imaginary_friends_logic.rpy", line 1: expected statement.
+    import datetime
+                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Apr  1 18:47:24 2023
+Sun Apr  2 19:11:33 2023

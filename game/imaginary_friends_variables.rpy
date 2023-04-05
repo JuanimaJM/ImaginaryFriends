@@ -44,8 +44,14 @@ define Someone = Character("Someone", color=dark_gunmetal)
 default sanity = 100
 default happiness = 100
 default friends_stats = {
-    Phantom : 0,
-    Someone : 0
+    Phantom.name: {
+        "stats": 0,
+        "meet": False
+    },
+    Someone.name: {
+        "stats": 0,
+        "meet": False
+    }
 }
 ################################################################################
 
@@ -103,5 +109,5 @@ define achievement_list = {
 # Memories
 default first_page = 1
 default second_page = 2
-default memories_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6",]
+default memories_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"]
 ################################################################################

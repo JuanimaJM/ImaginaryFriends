@@ -1,41 +1,49 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen memories():
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen memories():
-  File "game/imaginary_friends_screens.rpy", line 20, in execute
-    use book
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 24, in execute
-    hbox:
-  File "game/imaginary_friends_screens.rpy", line 41, in execute
+  File "game/script.rpy", line 12, in script
+    Phantom "980x980"
+  File "game/imaginary_friends_screens.rpy", line 118, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 118, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 122, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 45, in execute
-    if identify_second_page():
-  File "game/imaginary_friends_screens.rpy", line 45, in <module>
-    if identify_second_page():
-  File "game/imaginary_friends_logic.rpy", line 72, in identify_second_page
-    if first_page < memories_list.len():
-AttributeError: 'tuple' object has no attribute 'len'
+  File "game/imaginary_friends_screens.rpy", line 129, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 153, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 158, in execute
+    viewport:
+  File "game/imaginary_friends_screens.rpy", line 162, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 168, in execute
+    for key in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 170, in execute
+    bar:
+  File "game/imaginary_friends_screens.rpy", line 170, in keywords
+    bar:
+  File "game/imaginary_friends_screens.rpy", line 174, in <module>
+    left_bar identify_bar_color(value)
+  File "game/imaginary_friends_logic.rpy", line 9, in identify_bar_color
+    if value > 80:
+TypeError: '>' not supported between instances of 'str' and 'int'
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
-    renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
-    exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
+  File "game/script.rpy", line 12, in script
+    Phantom "980x980"
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
+    renpy.exports.say(who, what, *args, **kwargs)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
+    who(what, *args, **kwargs)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\character.py", line 1266, in __call__
+    self.do_display(who, what, cb_args=self.cb_args, dtt=dtt, **display_args)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\character.py", line 927, in do_display
+    display_say(who,
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\character.py", line 666, in display_say
+    rv = renpy.ui.interact(mouse='say', type=type, roll_forward=roll_forward)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
@@ -48,7 +56,6 @@ Full traceback:
     d.visit_all(callback, seen)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
     d.visit_all(callback, seen)
-  [Previous line repeated 1 more time]
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
     callback(self)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
@@ -57,29 +64,33 @@ Full traceback:
     self.update()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen memories():
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen memories():
-  File "game/imaginary_friends_screens.rpy", line 20, in execute
-    use book
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 24, in execute
-    hbox:
-  File "game/imaginary_friends_screens.rpy", line 41, in execute
+  File "game/imaginary_friends_screens.rpy", line 118, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 118, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 122, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 45, in execute
-    if identify_second_page():
-  File "game/imaginary_friends_screens.rpy", line 45, in <module>
-    if identify_second_page():
-  File "game/imaginary_friends_logic.rpy", line 72, in identify_second_page
-    if first_page < memories_list.len():
-AttributeError: 'tuple' object has no attribute 'len'
+  File "game/imaginary_friends_screens.rpy", line 129, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 153, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 158, in execute
+    viewport:
+  File "game/imaginary_friends_screens.rpy", line 162, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 168, in execute
+    for key in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 170, in execute
+    bar:
+  File "game/imaginary_friends_screens.rpy", line 170, in keywords
+    bar:
+  File "game/imaginary_friends_screens.rpy", line 174, in <module>
+    left_bar identify_bar_color(value)
+  File "game/imaginary_friends_logic.rpy", line 9, in identify_bar_color
+    if value > 80:
+TypeError: '>' not supported between instances of 'str' and 'int'
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Wed Apr  5 15:58:23 2023
+Wed Apr  5 21:57:39 2023

@@ -81,6 +81,12 @@ python early:
     def back_page():
         store.first_page -= 2
         store.second_page -= 2
+    
+    def identify_character(key):
+        if friends_stats[key]["meet"]:
+            return key
+        else:
+            return "???"
 ################################################################################
 
 # Game Functions
@@ -92,6 +98,9 @@ python early:
         return renpy.say(None, "You get some achievement")
     
     def update_friends_stats(character, value):
-        friends_stats[character] += value
-        return friends_stats[character]
+        friends_stats[character]["stats"] += value
+        return friends_stats[character]["stats"]
+    
+    def meet_friend(character):
+        friends_stats[character]["meet"] = True
 ################################################################################

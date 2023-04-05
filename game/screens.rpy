@@ -357,7 +357,9 @@ screen main_menu():
     ## This ensures that any other menu screen is replaced.
     tag menu
 
-    add gui.main_menu_background
+    # add gui.main_menu_background
+
+    add timely_bg()
 
     ## This empty frame darkens the main menu.
     frame:
@@ -392,7 +394,6 @@ screen main_menu():
 
             text "[config.version]":
                 style "main_menu_version"
-
 
 style main_menu_frame is empty
 style main_menu_vbox is vbox

@@ -165,54 +165,12 @@ screen statsUI():
                         text _("IMAGINARY FRIENDS"):
                             xalign 0.5
                             font font_title
-                        text "???1"
-                        bar:
-                            range 100
-                            value 70
-                            xysize(400, 50)
-                            left_bar identify_bar_color(70)
-                            right_bar white
-                        text "???2"
-                        bar:
-                            range 100
-                            value 30
-                            xysize(400, 50)
-                            left_bar identify_bar_color(30)
-                            right_bar white
-                        text "???3"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        text "???4"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        
-                        text "???5"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        
-                        text "???6"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        text "???7"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        text "???8"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        
-                        text "???9"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
-                        
-                        text "???10"
-                        bar:
-                            xysize(400, 50)
-                            right_bar white
+                        for key in friends_stats:
+                            text identify_character(key)
+                            bar:
+                                range 100
+                                value friends_stats[key]["stats"]
+                                xysize(400, 50)
+                                left_bar identify_bar_color(friends_stats[key]["stats"])
+                                right_bar white
 ################################################################################

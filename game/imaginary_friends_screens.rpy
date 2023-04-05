@@ -16,18 +16,44 @@ screen memories():
         xalign 0.5
         font font_title
         size gui.title_text_size
-    
-    frame:
+
+    use book
+
+screen book():
+    hbox:
         xsize 1600
         ysize 800
         xalign 0.5
         yalign 0.6
-        background sugar_plum
-        viewport:
-            yinitial 0.0
-            scrollbars "vertical"
-            draggable True
-            text _(lorem)
+        frame:
+            xsize 800
+            yfill True
+            background jacarta
+            text memories_list[first_page - 1]
+            if identify_back_page():
+                imagebutton:
+                    yalign 1.0
+                    xoffset 10
+                    yoffset -10
+                    idle icon_back_arrow
+                    action Function(back_page)
+        
+        frame:
+            xsize 800
+            yfill True
+            background dark_gunmetal
+            if identify_second_page():
+                text memories_list[second_page - 1]
+            
+            if identify_next_page():
+                imagebutton:
+                    xalign 1.0
+                    yalign 1.0
+                    xoffset -10
+                    yoffset -10
+                    idle icon_next_arrow
+                    action Function(next_page)
+
 ################################################################################
 
 # Screen for Achievements

@@ -57,16 +57,30 @@ python early:
             return Movie(play=gui_path("bg_main_menu.webm"))
     
     def identify_next_page():
-        if second_page < memories_list.len():
+        if second_page < len(memories_list):
             return True
         else:
             return False
     
     def identify_back_page():
-        if first_page > (memories_list.len() + 1):
+        if (first_page >= 3) and (len(memories_list) >= 3):
             return True
         else:
             return False
+    
+    def identify_second_page():
+        if first_page < len(memories_list):
+            return True
+        else:
+            return False
+    
+    def next_page():
+        store.first_page += 2
+        store.second_page += 2
+    
+    def back_page():
+        store.first_page -= 2
+        store.second_page -= 2
 ################################################################################
 
 # Game Functions

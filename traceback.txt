@@ -1,29 +1,27 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/imaginary_friends_screens.rpy", line 34, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 34, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 52, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 58, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 61, in execute
-    for key in achievement_list.items():
-  File "game/imaginary_friends_screens.rpy", line 62, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 64, in execute
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen memories():
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen memories():
+  File "game/imaginary_friends_screens.rpy", line 20, in execute
+    use book
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 24, in execute
     hbox:
-  File "game/imaginary_friends_screens.rpy", line 71, in execute
-    vbox:
-  File "game/imaginary_friends_screens.rpy", line 76, in execute
-    text _(get_achievement_title(key)):
-  File "game/imaginary_friends_screens.rpy", line 76, in <module>
-    text _(get_achievement_title(key)):
-  File "game/imaginary_friends_logic.rpy", line 36, in get_achievement_title
-    return achievement_list[key][1]
-KeyError: ('Achv1', ('Title1', 'Some Description'))
+  File "game/imaginary_friends_screens.rpy", line 41, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 45, in execute
+    if identify_second_page():
+  File "game/imaginary_friends_screens.rpy", line 45, in <module>
+    if identify_second_page():
+  File "game/imaginary_friends_logic.rpy", line 72, in identify_second_page
+    if first_page < memories_list.len():
+AttributeError: 'tuple' object has no attribute 'len'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -50,6 +48,7 @@ Full traceback:
     d.visit_all(callback, seen)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
     d.visit_all(callback, seen)
+  [Previous line repeated 1 more time]
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
     callback(self)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
@@ -58,31 +57,29 @@ Full traceback:
     self.update()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/imaginary_friends_screens.rpy", line 34, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 34, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 52, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 58, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 61, in execute
-    for key in achievement_list.items():
-  File "game/imaginary_friends_screens.rpy", line 62, in execute
-    frame:
-  File "game/imaginary_friends_screens.rpy", line 64, in execute
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen memories():
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen memories():
+  File "game/imaginary_friends_screens.rpy", line 20, in execute
+    use book
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 24, in execute
     hbox:
-  File "game/imaginary_friends_screens.rpy", line 71, in execute
-    vbox:
-  File "game/imaginary_friends_screens.rpy", line 76, in execute
-    text _(get_achievement_title(key)):
-  File "game/imaginary_friends_screens.rpy", line 76, in <module>
-    text _(get_achievement_title(key)):
-  File "game/imaginary_friends_logic.rpy", line 36, in get_achievement_title
-    return achievement_list[key][1]
-KeyError: ('Achv1', ('Title1', 'Some Description'))
+  File "game/imaginary_friends_screens.rpy", line 41, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 45, in execute
+    if identify_second_page():
+  File "game/imaginary_friends_screens.rpy", line 45, in <module>
+    if identify_second_page():
+  File "game/imaginary_friends_logic.rpy", line 72, in identify_second_page
+    if first_page < memories_list.len():
+AttributeError: 'tuple' object has no attribute 'len'
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Wed Apr  5 10:42:01 2023
+Wed Apr  5 15:58:23 2023

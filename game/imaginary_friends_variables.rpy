@@ -28,6 +28,7 @@ define img_badge = gui_path("badge.png")
 define icon_memories = gui_path("memories.png")
 define icon_achievement = gui_path("achievement.png")
 define icon_back_arrow = gui_path("back_arrow.png")
+define icon_next_arrow = gui_path("next_arrow.png")
 define icon_cancel = gui_path("stats_selected_idle.png")
 define icon_menu = gui_path("stats_idle.png")
 ################################################################################
@@ -68,7 +69,7 @@ define achievement_list = {
     "Achv4": {
         "title": "Moonlight Lovers",
         "description": "Unite the couple.",
-        "granted": True
+        "granted": False
     },
     "Achv5": {
         "title": "Bad ending 1",
@@ -78,7 +79,7 @@ define achievement_list = {
     "Achv6": {
         "title": "The Cat Idol",
         "description": "Meet the Cat Idol.",
-        "granted": False
+        "granted": True
     },
     "Achv7": {
         "title": "The Dog Idol",
@@ -102,5 +103,5 @@ define achievement_list = {
 # Memories
 default first_page = 1
 default second_page = 2
-default memories_list = ("Page 1")
+default memories_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6",]
 ################################################################################

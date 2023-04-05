@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 76: f-string: unmatched '['
-        renpy.display_notify(f"You achieve the {achievement_list[key]["title"]} achievement")
-                                                                        ^
-    
+File "game/imaginary_friends_screens.rpy", line 46: 'config' is not a keyword argument or valid child for the frame statement.
+    config.overlay_functions.append("next_button")
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Apr  5 11:04:57 2023
+Wed Apr  5 15:50:06 2023

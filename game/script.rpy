@@ -2,7 +2,6 @@
 
 # The game starts here.
 label start:
-    show screen stats
     scene kitchen
     "Im showing some sprites"
     show phantom 920
@@ -15,8 +14,7 @@ label start:
     Someone  "..."
     show phantom 960
     Phantom "960x960"
-    $ grant_achievement("Title9")
-    "Grant Some Achievement"
+    $ grant_achievement("Achv9")
     "Life: [life]"
     $ life -= 10
     "Get some damage"
@@ -24,6 +22,7 @@ label start:
     $ damage()
     "Get some damage"
     "Life: [life]"
+    "A{size=+5}A{/size}{size=+10}A{/size}{size=+15}A{/size}{size=+25}A{/size}"
     Child "eyyy"
     "B"
     Child "bhii"

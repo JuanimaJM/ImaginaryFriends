@@ -262,6 +262,7 @@ screen quick_menu():
 ## the player has not explicitly hidden the interface.
 init python:
     config.overlay_screens.append("quick_menu")
+    config.overlay_screens.append("stats")
 
 default quick_menu = True
 
@@ -384,7 +385,7 @@ screen main_menu():
     if gui.show_name:
 
         text "[config.name!t]":
-                style "main_menu_title"
+            style "main_menu_title"
         
         vbox:
             style "main_menu_vbox"

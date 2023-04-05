@@ -27,9 +27,9 @@ define font_regular = gui_path("SongMyung-Regular.ttf")
 define img_badge = gui_path("badge.png")
 define icon_memories = gui_path("memories.png")
 define icon_achievement = gui_path("achievement.png")
-define icon_cancel = gui_path("cancel.png")
 define icon_back_arrow = gui_path("back_arrow.png")
-define icon_menu = gui_path("menu.png")
+define icon_cancel = gui_path("stats_selected_idle.png")
+define icon_menu = gui_path("stats_idle.png")
 ################################################################################
 
 # Declare characters used by this game. The color argument colorizes the
@@ -43,37 +43,39 @@ define Someone = Character("Someone", color=dark_gunmetal)
 default sanity = 100
 default happiness = 100
 default friends_stats = {
-    Phantom : 100,
-    Someone : 100
+    Phantom : 0,
+    Someone : 0
 }
 ################################################################################
 
-# Achievement
+# Achvievement
 define achievement_list = {
-    "Title1": "Some Description",
-    "Title2": "Some Description",
-    "Title3": "Some Description",
-    "Title4": "Some Description",
-    "Title5": "Some Description",
-    "Title6": "Some Description",
-    "Title7": "Some Description",
-    "Title8": "Some Description",
-    "Title9": "Some Description"
+    "Achv1": ("Title1", "Some Description"),
+    "Achv2": ("Title2", "Some Description"),
+    "Achv3": ("Title3", "Some Description"),
+    "Achv4": ("Title4", "Some Description"),
+    "Achv5": ("Title5", "Some Description"),
+    "Achv6": ("Title6", "Some Description"),
+    "Achv7": ("Title7", "Some Description"),
+    "Achv8": ("Title8", "Some Description"),
+    "Achv9": ("Title9", "Some Description")
 }
 
 default achievement_values = {
-    "Title1": True,
-    "Title2": True,
-    "Title3": True,
-    "Title4": True,
-    "Title5": True,
-    "Title6": True,
-    "Title7": True,
-    "Title8": False,
-    "Title9": False,
+    "Achv1": True,
+    "Achv2": True,
+    "Achv3": False,
+    "Achv4": True,
+    "Achv5": False,
+    "Achv6": True,
+    "Achv7": True,
+    "Achv8": False,
+    "Achv9": False,
 }
 ################################################################################
 
 # Memories
-
+default first_page = 1
+default second_page = 2
+default memories_list = ("Page 1")
 ################################################################################

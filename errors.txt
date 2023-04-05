@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 1: expected statement.
-    import datetime
-                   ^
+File "game/screens.rpy", line 389: text expects a non-empty block.
+    text "[config.name!t]":
+                           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Apr  2 19:11:33 2023
+Tue Apr  4 21:01:58 2023

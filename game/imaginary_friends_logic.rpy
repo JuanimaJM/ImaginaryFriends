@@ -18,7 +18,7 @@ python early:
         if achievement_values.get(key):
             return img_badge
         else:
-            return im.MatrixColor(img_badge, im.matrix.desaturate())
+            return im.MatrixColor(img_badge, im.matrix.opacity(0))
     
     def identify_text_color(key):
         if achievement_values.get(key):
@@ -26,6 +26,12 @@ python early:
         else:
             return gray
     
+    def identify_achievement_description(key):
+        if achievement_values.get(key):
+            return achievement_list[key][1]
+        else:
+            return "???"
+
     def gui_path(file):
         return "gui/imaginary_friends/" + file
     
@@ -54,7 +60,19 @@ python early:
         elif sunset_start <= now <= sunset_end:
             return gui_path("bg_main_menu_sunset.jpg")
         else:
-            return gui_path("bg_main_menu_night.jpg")
+            return Movie(play=gui_path("bg_main_menu.webm"))
+    
+    def identify_next_page():
+        if second_page < memories_list.len():
+            return True
+        else:
+            return False
+    
+    def identify_back_page():
+        if first_page > (memories_list.len() + 1):
+            return True
+        else:
+            return False
 ################################################################################
 
 # Game Functions
@@ -62,6 +80,7 @@ python early:
     def grant_achievement(title):
         achievement_values[title] = True
         renpy.display_notify(f"You achieve the {title} achievement")
+        return renpy.say(None, "You achieved some achievement")
     
     def update_friends_stats(character, value):
         friends_stats[character] += value

@@ -27,7 +27,7 @@ screen memories():
             yinitial 0.0
             scrollbars "vertical"
             draggable True
-            text lorem
+            text _(lorem)
 ################################################################################
 
 # Screen for Achievements
@@ -58,9 +58,9 @@ screen achievements():
         grid 3 3:
             xfill True
             yfill True
-            for key, value in achievement_list.items():
+            for key in achievement_list.keys():
                 frame:
-                    background transparent
+                    background None
                     hbox:
                         xfill True
                         yfill True
@@ -73,54 +73,50 @@ screen achievements():
                             spacing 10
                             xalign 0.3
                             yalign 0.5
-                            text key:
-                                color identify_text_color(key)
+                            text _(achievement_list[key][0]):
                                 size gui.label_text_size
-                            text value:
-                                color identify_text_color(key)
+                            text _(identify_achievement_description(key)):
                                 size gui.notify_text_size
 ################################################################################
 
 # Screen for Stats
 screen stats():
-    imagebutton:
+    zorder 110
+    imagebutton auto ("gui/imaginary_friends/stats_%s.png"):
         xalign 1.0
         yalign 0.0
         xoffset -30
         yoffset 30
-        idle icon_menu
-        action Show("statsUI")
+        action ToggleScreen("statsUI")
 
 screen statsUI():
+    zorder 100
+    tag menu
+    modal True
     frame:
         xsize 500
         ysize 1080
         xalign 1.0
         padding(20, 20)
         background dark_gunmetal
-
-        imagebutton:
-            xalign 1.0
-            idle icon_cancel
-            action Hide("statsUI")
         
         vbox:
             xsize 500
             yoffset 50
             vbox:
                 spacing 10
-                text "STATS":
+                text _("STATS"):
                     xalign 0.5
                     font font_title
                 text "Name: Player"
-                text "Sanity:"
+                text _("Sanity:")
                 bar:
                     range 100
                     value 90
                     xysize(400, 50)
                     left_bar identify_bar_color(90)
                     right_bar white
-                text "Happiness:"
+                text _("Happiness:")
                 bar:
                     range 100
                     value 20
@@ -132,7 +128,7 @@ screen statsUI():
                 top_padding 30
                 right_padding 30
                 bottom_padding 50
-                background transparent
+                background None
                 viewport:
                     yinitial 0.0
                     scrollbars "vertical"
@@ -140,7 +136,7 @@ screen statsUI():
                     vbox:
                         spacing 10
                         box_wrap True
-                        text "IMAGINARY FRIENDS":
+                        text _("IMAGINARY FRIENDS"):
                             xalign 0.5
                             font font_title
                         text "???1"

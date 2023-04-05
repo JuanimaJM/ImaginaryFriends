@@ -1,6 +1,9 @@
 # Utility Functions
 python early:
     import datetime
+
+    def gui_path(file):
+        return "gui/imaginary_friends/" + file
     
     def identify_bar_color(value):
         if value > 80:
@@ -15,25 +18,16 @@ python early:
             return red
 
     def identify_image(key):
-        if achievement_values.get(key):
+        if achievement_list[key]["granted"]:
             return img_badge
         else:
             return im.MatrixColor(img_badge, im.matrix.opacity(0))
     
-    def identify_text_color(key):
-        if achievement_values.get(key):
-            return white
-        else:
-            return gray
-    
     def identify_achievement_description(key):
-        if achievement_values.get(key):
-            return achievement_list[key][1]
+        if achievement_list[key]["granted"]:
+            return achievement_list[key]["description"]
         else:
             return "???"
-
-    def gui_path(file):
-        return "gui/imaginary_friends/" + file
     
     def timely_bg():
         # Get the current time
@@ -77,10 +71,11 @@ python early:
 
 # Game Functions
 python early:
-    def grant_achievement(title):
-        achievement_values[title] = True
-        renpy.display_notify(f"You achieve the {title} achievement")
-        return renpy.say(None, "You achieved some achievement")
+    def grant_achievement(key):
+        achievement_list[key]["granted"] = True
+        title = achievement_list[key]["title"]
+        renpy.display_notify(f"You achieve the {title}")
+        return renpy.say(None, "You get some achievement")
     
     def update_friends_stats(character, value):
         friends_stats[character] += value

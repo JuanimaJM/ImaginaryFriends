@@ -12,7 +12,7 @@ define american_violet = '#5b1e99'
 define american_purple = '#3d1466'
 define sugar_plum = '#864879'
 define jacarta = '#3F3351'
-define dark_gunmetal = '#1F1D36'
+define dark_gunmetal = '#1f1d36ff'
 define pastel_pink = '#E9A6A6'
 define electric_green = "#00FF00"
 define mango_green = "#8EFD00"
@@ -50,28 +50,53 @@ default friends_stats = {
 
 # Achvievement
 define achievement_list = {
-    "Achv1": ("Title1", "Some Description"),
-    "Achv2": ("Title2", "Some Description"),
-    "Achv3": ("Title3", "Some Description"),
-    "Achv4": ("Title4", "Some Description"),
-    "Achv5": ("Title5", "Some Description"),
-    "Achv6": ("Title6", "Some Description"),
-    "Achv7": ("Title7", "Some Description"),
-    "Achv8": ("Title8", "Some Description"),
-    "Achv9": ("Title9", "Some Description")
+    "Achv1": {
+        "title": "Normal Ending",
+        "description": "Get a normal ending.",
+        "granted": True
+    },
+    "Achv2": {
+        "title": "Best Ending",
+        "description": "Help all of your friends.",
+        "granted": True
+    },
+    "Achv3": {
+        "title": "I'm the Menu",
+        "description": "Get eaten.",
+        "granted": False
+    },
+    "Achv4": {
+        "title": "Moonlight Lovers",
+        "description": "Unite the couple.",
+        "granted": True
+    },
+    "Achv5": {
+        "title": "Bad ending 1",
+        "description": "Get the first bad ending.",
+        "granted": False
+    },
+    "Achv6": {
+        "title": "The Cat Idol",
+        "description": "Meet the Cat Idol.",
+        "granted": False
+    },
+    "Achv7": {
+        "title": "The Dog Idol",
+        "description": "Meet the Dog Idol.",
+        "granted": True
+    },
+    "Achv8": {
+        "title": "The Blue Alien",
+        "description": "Meet the Blue Alien.",
+        "granted": False
+    },
+    "Achv9": {
+        "title": "Secret Ending",
+        "description": "Get the secret ending.",
+        "granted": False
+    }
 }
 
-default achievement_values = {
-    "Achv1": True,
-    "Achv2": True,
-    "Achv3": False,
-    "Achv4": True,
-    "Achv5": False,
-    "Achv6": True,
-    "Achv7": True,
-    "Achv8": False,
-    "Achv9": False,
-}
 ################################################################################
 
 # Memories

@@ -58,7 +58,7 @@ screen achievements():
         grid 3 3:
             xfill True
             yfill True
-            for key in achievement_list.keys():
+            for key in achievement_list:
                 frame:
                     background None
                     hbox:
@@ -73,7 +73,7 @@ screen achievements():
                             spacing 10
                             xalign 0.3
                             yalign 0.5
-                            text _(achievement_list[key][0]):
+                            text _(achievement_list[key]["title"]):
                                 size gui.label_text_size
                             text _(identify_achievement_description(key)):
                                 size gui.notify_text_size

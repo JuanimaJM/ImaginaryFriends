@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 389: text expects a non-empty block.
-    text "[config.name!t]":
-                           ^
+File "game/imaginary_friends_logic.rpy", line 76: f-string: unmatched '['
+        renpy.display_notify(f"You achieve the {achievement_list[key]["title"]} achievement")
+                                                                        ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr  4 21:01:58 2023
+Wed Apr  5 11:04:57 2023

@@ -14,7 +14,7 @@ label start:
     Someone  "..."
     show phantom 960
     Phantom "960x960"
-    $ grant_achievement("Achv9")
+    $ grant_achievement("Achv3")
     "Life: [life]"
     $ life -= 10
     "Get some damage"

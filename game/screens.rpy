@@ -376,9 +376,9 @@ screen main_menu():
         yoffset 30
         
         imagebutton:
-            idle icon_memories
+            idle icon_diary
             bottom_margin 10
-            action Show("memories")
+            action Show("diary")
         
         imagebutton:
             idle icon_achievement

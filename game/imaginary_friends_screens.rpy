@@ -1,5 +1,5 @@
-# Screen for Memories
-screen memories():
+# Screen for Diary
+screen diary():
     tag menu
     add gui.game_menu_background
 
@@ -11,7 +11,7 @@ screen memories():
         idle icon_back_arrow
         action Return()
     
-    text _("Memories"):
+    text _("Diary"):
         yalign 0.0
         xalign 0.5
         font font_title
@@ -29,7 +29,7 @@ screen book():
             xsize 800
             yfill True
             background jacarta
-            text memories_list[first_page - 1]
+            text diary_list[first_page - 1]
             if identify_back_page():
                 imagebutton:
                     yalign 1.0
@@ -43,7 +43,7 @@ screen book():
             yfill True
             background dark_gunmetal
             if identify_second_page():
-                text memories_list[second_page - 1]
+                text diary_list[second_page - 1]
             
             if identify_next_page():
                 imagebutton:

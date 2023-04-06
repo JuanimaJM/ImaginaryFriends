@@ -25,7 +25,7 @@ define gray = "#808080"
 define font_title = gui_path("Griffy-Regular.ttf")
 define font_regular = gui_path("SongMyung-Regular.ttf")
 define img_badge = gui_path("badge.png")
-define icon_memories = gui_path("memories.png")
+define icon_diary = gui_path("diary.png")
 define icon_achievement = gui_path("achievement.png")
 define icon_back_arrow = gui_path("back_arrow.png")
 define icon_next_arrow = gui_path("next_arrow.png")
@@ -106,8 +106,8 @@ define achievement_list = {
 
 ################################################################################
 
-# Memories
+# Diary
 default first_page = 1
 default second_page = 2
-default memories_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"]
+default diary_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"]
 ################################################################################

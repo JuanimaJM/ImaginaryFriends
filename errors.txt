@@ -2,15 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_variables.rpy", line 51: invalid syntax
-    {\
-        Phantom: {\
-       ^
-            "stats": 0,\
-            "meet": True\
-        }\
-        Someone: {\
+File "game/imaginary_friends_logic.rpy", line 109: invalid syntax
+        for key, value in diary_content.items() if value.get("found", False):
+                                                                             ^
     
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Wed Apr  5 21:54:52 2023
+Fri Apr  7 21:21:59 2023

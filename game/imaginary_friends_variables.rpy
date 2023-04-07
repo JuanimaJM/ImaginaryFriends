@@ -27,10 +27,13 @@ define font_regular = gui_path("SongMyung-Regular.ttf")
 define img_badge = gui_path("badge.png")
 define icon_diary = gui_path("diary.png")
 define icon_achievement = gui_path("achievement.png")
-define icon_back_arrow = gui_path("back_arrow.png")
-define icon_next_arrow = gui_path("next_arrow.png")
+define button_back_arrow = gui_path("back_arrow_button.png")
+define button_back_page = gui_path("back_page_button.png")
+define button_next_page = gui_path("next_page_button.png")
 define icon_cancel = gui_path("stats_selected_idle.png")
 define icon_menu = gui_path("stats_idle.png")
+define bg_left_page = gui_path("left_page.png")
+define bg_right_page = gui_path("right_page.png")
 ################################################################################
 
 # Declare characters used by this game. The color argument colorizes the
@@ -109,5 +112,31 @@ define achievement_list = {
 # Diary
 default first_page = 1
 default second_page = 2
-default diary_list = ["Page 1", "Page 2", "Page 3", "Page 4", "Page 5", "Page 6", "Page 7"]
+define diary_content = {
+    "Apple": {
+        "content": "images/apple_diary.png",
+        "found": False
+    },
+    "Cat": {
+        "content": "images/cat_diary.png",
+        "found": False
+    },
+    "Teddy": {
+        "content": "images/teddy_diary.png",
+        "found": False
+    },
+    "Ghost": {
+        "content": "images/ghost_diary.png",
+        "found": False
+    },
+    "Tree": {
+        "content": "images/tree_diary.png",
+        "found": False
+    },
+    "Family": {
+        "content": "images/family_diary.png",
+        "found": False
+    }
+}
+default diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]
 ################################################################################

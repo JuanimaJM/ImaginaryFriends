@@ -57,19 +57,19 @@ python early:
             return Movie(play=gui_path("bg_main_menu.webm"))
     
     def identify_next_page():
-        if second_page < len(diary_list):
+        if second_page < len(diary_pages):
             return True
         else:
             return False
     
     def identify_back_page():
-        if (first_page >= 3) and (len(diary_list) >= 3):
+        if (first_page >= 3) and (len(diary_pages) >= 3):
             return True
         else:
             return False
     
     def identify_second_page():
-        if first_page < len(diary_list):
+        if first_page < len(diary_pages):
             return True
         else:
             return False
@@ -81,6 +81,11 @@ python early:
     def back_page():
         store.first_page -= 2
         store.second_page -= 2
+    
+    def diary_pages():
+        for key, value in diary_content.items():
+            if value.get("found", False):
+                diary_pages.append(value)
     
     def identify_character(key):
         if friends_stats[key]["meet"]:
@@ -103,4 +108,7 @@ python early:
     
     def meet_friend(character):
         friends_stats[character]["meet"] = True
+    
+    def write_diary(key):
+        diary_content[key]["found"] = True
 ################################################################################

@@ -6,6 +6,7 @@ label start:
     "Im showing some sprites"
     "Meet Phantom"
     $ meet_friend(Phantom.name)
+    $ write_diary("Ghost")
     show phantom 920
     Phantom "920x920"
     $ update_friends_stats(Phantom.name, 10)
@@ -31,6 +32,7 @@ label start:
     "Life: [life]"
     "A{size=+5}A{/size}{size=+10}A{/size}{size=+15}A{/size}{size=+25}A{/size}"
     Child "eyyy"
+    $ write_diary("Apple")
     "B"
     Child "bhii"
     "C"
@@ -40,4 +42,5 @@ label start:
     "E"
     "F"
     "G"
+    $ write_diary("Tree")
     return

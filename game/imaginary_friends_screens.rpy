@@ -8,7 +8,7 @@ screen diary():
         yalign 0.0
         xoffset 30
         yoffset 30
-        idle icon_back_arrow
+        idle button_back_arrow
         action Return()
     
     text _("Diary"):
@@ -24,34 +24,46 @@ screen book():
         xsize 1600
         ysize 800
         xalign 0.5
-        yalign 0.6
+        yalign 0.7
         frame:
             xsize 800
             yfill True
-            background jacarta
-            text diary_list[first_page - 1]
+            background bg_left_page
+            if len(diary_pages) > 0:
+                image diary_pages[first_page - 1]:
+                    xalign 0.5
+                    yalign 0.5
+            text f"[first_page]":
+                color black
+                xalign 0.5
+                yalign 1.0
             if identify_back_page():
                 imagebutton:
                     yalign 1.0
-                    xoffset 10
+                    xoffset 30
                     yoffset -10
-                    idle icon_back_arrow
+                    idle button_back_page
                     action Function(back_page)
         
         frame:
             xsize 800
             yfill True
-            background dark_gunmetal
+            background bg_right_page
             if identify_second_page():
-                text diary_list[second_page - 1]
-            
+                image diary_pages[second_page - 1]:
+                    xalign 0.5
+                    yalign 0.5
+            text f"[second_page]":
+                color black
+                xalign 0.5
+                yalign 1.0
             if identify_next_page():
                 imagebutton:
                     xalign 1.0
                     yalign 1.0
                     xoffset -10
                     yoffset -10
-                    idle icon_next_arrow
+                    idle button_next_page
                     action Function(next_page)
 
 ################################################################################
@@ -66,7 +78,7 @@ screen achievements():
         yalign 0.0
         xoffset 30
         yoffset 30
-        idle icon_back_arrow
+        idle button_back_arrow
         action Return()
     
     text _("Achievements"):
@@ -138,16 +150,16 @@ screen statsUI():
                 text _("Sanity:")
                 bar:
                     range 100
-                    value 90
+                    value sanity
                     xysize(400, 50)
-                    left_bar identify_bar_color(90)
+                    left_bar identify_bar_color(sanity)
                     right_bar white
                 text _("Happiness:")
                 bar:
                     range 100
-                    value 20
+                    value happiness
                     xysize(400, 50)
-                    left_bar identify_bar_color(20)
+                    left_bar identify_bar_color(happiness)
                     right_bar white
             
             frame:

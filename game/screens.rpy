@@ -1313,7 +1313,7 @@ style notify_frame:
     padding gui.notify_frame_borders.padding
 
 style notify_text:
-    properties gui.text_properties("notify")
+    properties ("notify")
 
 
 ## NVL screen ##################################################################

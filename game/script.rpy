@@ -4,7 +4,9 @@
 label start:
     scene kitchen
     "Im showing some sprites"
-    "Meet Phantom"
+    "Ahmmm before that, what is your name?"
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    "Meet Phantom [Child]"
     $ meet_friend(Phantom.name)
     $ write_diary("Ghost")
     show phantom 920

@@ -38,7 +38,8 @@ define bg_right_page = gui_path("right_page.png")
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-define Child = Character("The Child", color=sugar_plum)
+default player_name = "Child"
+define Child = Character("[player_name]", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple, font=font_title)
 define Someone = Character("Someone", color=dark_gunmetal)
 ################################################################################

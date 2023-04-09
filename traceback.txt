@@ -1,35 +1,39 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 8, in script
-    $ player_name = renpy.input("[Phanto]\nWhat is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-  File "game/script.rpy", line 8, in <module>
-    $ player_name = renpy.input("[Phanto]\nWhat is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-  File "game/screens.rpy", line 174, in execute
-    screen input(prompt):
-  File "game/screens.rpy", line 174, in execute
-    screen input(prompt):
-  File "game/screens.rpy", line 177, in execute
-    window:
-  File "game/screens.rpy", line 179, in execute
-    vbox:
-  File "game/screens.rpy", line 185, in execute
-    text prompt style "input_prompt"
-NameError: Name 'Phanto' is not defined.
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen diary():
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen diary():
+  File "game/imaginary_friends_screens.rpy", line 20, in execute
+    use book
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 23, in execute
+    hbox:
+  File "game/imaginary_friends_screens.rpy", line 28, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 32, in execute
+    $ print(diary_page)
+  File "game/imaginary_friends_screens.rpy", line 32, in <module>
+    $ print(diary_page)
+NameError: name 'diary_page' is not defined
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 8, in script
-    $ player_name = renpy.input("[Phanto]\nWhat is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/script.rpy", line 8, in <module>
-    $ player_name = renpy.input("[Phanto]\nWhat is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\exports.py", line 885, in input
-    rv = renpy.ui.interact(mouse='prompt', type="input", roll_forward=roll_forward)
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
@@ -50,33 +54,27 @@ Full traceback:
     self.update()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/screens.rpy", line 174, in execute
-    screen input(prompt):
-  File "game/screens.rpy", line 174, in execute
-    screen input(prompt):
-  File "game/screens.rpy", line 177, in execute
-    window:
-  File "game/screens.rpy", line 179, in execute
-    vbox:
-  File "game/screens.rpy", line 185, in execute
-    text prompt style "input_prompt"
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 1594, in __init__
-    self.set_text(text, scope, substitute)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 1712, in set_text
-    i, did_sub = renpy.substitutions.substitute(i, scope, substitute)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\substitutions.py", line 278, in substitute
-    s = formatter.vformat(s, (), kwargs) # type: ignore
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 165, in vformat
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 205, in _vformat
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\substitutions.py", line 168, in get_field
-    obj, arg_used = super(Formatter, self).get_field(field_name, args, kwargs)
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 270, in get_field
-  File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/string.py", line 227, in get_value
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\substitutions.py", line 236, in __getitem__
-    raise NameError("Name '{}' is not defined.".format(key))
-NameError: Name 'Phanto' is not defined.
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen diary():
+  File "game/imaginary_friends_screens.rpy", line 2, in execute
+    screen diary():
+  File "game/imaginary_friends_screens.rpy", line 20, in execute
+    use book
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 22, in execute
+    screen book():
+  File "game/imaginary_friends_screens.rpy", line 23, in execute
+    hbox:
+  File "game/imaginary_friends_screens.rpy", line 28, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 32, in execute
+    $ print(diary_page)
+  File "game/imaginary_friends_screens.rpy", line 32, in <module>
+    $ print(diary_page)
+NameError: name 'diary_page' is not defined
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Sat Apr  8 17:15:20 2023
+Fri Apr  7 21:35:33 2023

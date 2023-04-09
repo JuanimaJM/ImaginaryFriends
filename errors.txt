@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 109: invalid syntax
-        for key, value in diary_content.items() if value.get("found", False):
-                                                                             ^
-    
+File "game/screens.rpy", line 301: keyword argument 'spacing' appears more than once in a vbox statement.
+    spacing gui.navigation_spacing
+           ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Apr  7 21:21:59 2023
+Mon Apr 10 00:31:16 2023

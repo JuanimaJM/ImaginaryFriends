@@ -374,10 +374,10 @@ screen main_menu():
         yalign 0.0
         xoffset -30
         yoffset 30
+        spacing 20
         
         imagebutton:
             idle icon_diary
-            bottom_margin 10
             action Show("diary")
         
         imagebutton:
@@ -1313,7 +1313,7 @@ style notify_frame:
     padding gui.notify_frame_borders.padding
 
 style notify_text:
-    properties ("notify")
+    properties gui.text_properties("notify")
 
 
 ## NVL screen ##################################################################

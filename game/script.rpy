@@ -3,6 +3,12 @@
 # The game starts here.
 label start:
     scene kitchen
+    $ output = renpy.variant("small")
+    "Is Small Variant?: [output]"
+    $ output = renpy.variant("pc")
+    "Is PC Variant?: [output]"
+    $ output = renpy.variant("mobile")
+    "Is Mobile Variant?: [output]"
     "Im showing some sprites"
     "Ahmmm before that, what is your name?"
     $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")

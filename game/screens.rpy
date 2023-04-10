@@ -112,7 +112,7 @@ screen say(who, what):
 
     ## If there's a side image, display it above the text. Do not display on the
     ## phone variant - there's no room.
-    if not renpy.variant("small"):
+    if not renpy.variant("small") or not renpy.variant("mobile"):
         add SideImage() xalign 0.0 yalign 1.0
 
 
@@ -374,7 +374,7 @@ screen main_menu():
         yalign 0.0
         xoffset -30
         yoffset 30
-        spacing 20
+        spacing 30
         
         imagebutton:
             idle icon_diary
@@ -1542,4 +1542,88 @@ style slider_vbox:
 
 style slider_slider:
     variant "small"
+    xsize 900
+
+#########################################################################################################
+# For Mobile Variant
+#########################################################################################################
+
+style window:
+    variant "mobile"
+    background "gui/phone/textbox.png"
+
+style radio_button:
+    variant "mobile"
+    foreground "gui/phone/button/radio_[prefix_]foreground.png"
+
+style check_button:
+    variant "mobile"
+    foreground "gui/phone/button/check_[prefix_]foreground.png"
+
+style nvl_window:
+    variant "mobile"
+    background "gui/phone/nvl.png"
+
+style main_menu_frame:
+    variant "mobile"
+    # background "gui/phone/overlay/main_menu.png"
+
+style game_menu_outer_frame:
+    variant "mobile"
+    #background "gui/phone/overlay/game_menu.png"
+
+style game_menu_navigation_frame:
+    variant "mobile"
+    xsize 510
+
+style game_menu_content_frame:
+    variant "mobile"
+    top_margin 0
+
+style pref_vbox:
+    variant "mobile"
+    xsize 600
+
+style bar:
+    variant "mobile"
+    ysize gui.bar_size
+    left_bar Frame("gui/phone/bar/left.png", gui.bar_borders, tile=gui.bar_tile)
+    right_bar Frame("gui/phone/bar/right.png", gui.bar_borders, tile=gui.bar_tile)
+
+style vbar:
+    variant "mobile"
+    xsize gui.bar_size
+    top_bar Frame("gui/phone/bar/top.png", gui.vbar_borders, tile=gui.bar_tile)
+    bottom_bar Frame("gui/phone/bar/bottom.png", gui.vbar_borders, tile=gui.bar_tile)
+
+style scrollbar:
+    variant "mobile"
+    ysize gui.scrollbar_size
+    base_bar Frame("gui/phone/scrollbar/horizontal_[prefix_]bar.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/phone/scrollbar/horizontal_[prefix_]thumb.png", gui.scrollbar_borders, tile=gui.scrollbar_tile)
+
+style vscrollbar:
+    variant "mobile"
+    xsize gui.scrollbar_size
+    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+
+style slider:
+    variant "mobile"
+    ysize gui.slider_size
+    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
+
+style vslider:
+    variant "mobile"
+    xsize gui.slider_size
+    base_bar Frame("gui/phone/slider/vertical_[prefix_]bar.png", gui.vslider_borders, tile=gui.slider_tile)
+    thumb "gui/phone/slider/vertical_[prefix_]thumb.png"
+
+style slider_vbox:
+    variant "mobile"
+    xsize None
+
+style slider_slider:
+    variant "mobile"
     xsize 900

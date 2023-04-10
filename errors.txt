@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 301: keyword argument 'spacing' appears more than once in a vbox statement.
-    spacing gui.navigation_spacing
+File "game/screens.rpy", line 301: 'variant' is not a keyword argument or valid child for the vbox statement.
+    variant "mobile"
            ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Apr 10 00:31:16 2023
+Mon Apr 10 18:24:11 2023

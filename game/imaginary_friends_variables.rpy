@@ -7,6 +7,7 @@ define config.rollback_enabled = False
 ################################################################################
 
 # Imaginary friends gui
+define semi_transparent ="#000000bf"
 define transparent = "#ffffff00"
 define american_violet = '#5b1e99'
 define american_purple = '#3d1466'

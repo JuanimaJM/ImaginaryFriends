@@ -103,9 +103,11 @@ screen achievements():
                         xfill True
                         yfill True
                         spacing 20
-                        image identify_image(key):
-                                xalign 0.0
-                                yalign 0.5
+                        imagebutton:
+                            xalign 0.0
+                            yalign 0.5
+                            idle identify_image(key)
+                            action Show("badge")
                         vbox:
                             xfill True
                             spacing 10
@@ -115,6 +117,18 @@ screen achievements():
                                 size gui.label_text_size
                             text _(identify_achievement_description(key)):
                                 size gui.notify_text_size
+
+screen badge():
+    add semi_transparent
+    dismiss action Hide("badge")
+    frame:
+        modal True
+        xalign 0.5
+        yalign 0.5
+        background transparent
+        image img_badge:
+            xsize 480
+            ysize 400
 ################################################################################
 
 # Screen for Stats

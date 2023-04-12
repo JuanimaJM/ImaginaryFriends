@@ -2,20 +2,35 @@
 python early:
     import datetime
 
+    # Get the current time
+    now = datetime.datetime.now().time()
+
+    # Set the start and end times for each period
+    sunrise_start = datetime.time(6, 0)
+    sunrise_end = datetime.time(6, 59)
+    morning_start = datetime.time(7, 0)
+    morning_end = datetime.time(11, 59)
+    afternoon_start = datetime.time(12, 0)
+    afternoon_end = datetime.time(15, 59)
+    sunset_start = datetime.time(16, 0)
+    sunset_end = datetime.time(17, 59)
+    night_start = datetime.time(18, 0)
+    night_end = datetime.time(5, 59)
+
     def gui_path(file):
         return "gui/imaginary_friends/" + file
     
     def identify_bar_color(value):
         if value > 80:
-            return electric_green
+            return bar_green
         elif value > 60 and value < 80:
-            return mango_green
+            return bar_yellowgreen
         elif value > 40 and value < 60:
-            return lemon_glacier
+            return bar_yellow
         elif value > 20 and value < 40:
-            return american_orange
+            return bar_orange
         else:
-            return red
+            return bar_red
 
     def identify_image(key):
         if achievement_list[key]["granted"]:
@@ -30,21 +45,6 @@ python early:
             return "???"
     
     def timely_bg():
-        # Get the current time
-        now = datetime.datetime.now().time()
-
-        # Set the start and end times for each period
-        sunrise_start = datetime.time(6, 0)
-        sunrise_end = datetime.time(6, 59)
-        morning_start = datetime.time(7, 0)
-        morning_end = datetime.time(11, 59)
-        afternoon_start = datetime.time(12, 0)
-        afternoon_end = datetime.time(15, 59)
-        sunset_start = datetime.time(16, 0)
-        sunset_end = datetime.time(17, 59)
-        night_start = datetime.time(18, 0)
-        night_end = datetime.time(5, 59)
-
         if sunrise_start <= now <= sunrise_end:
             return gui_path("bg_main_menu_sunrise.jpg")
         elif morning_start <= now <= morning_end:
@@ -92,7 +92,7 @@ python early:
             return key
         else:
             return "???"
-################################################################################
+##############################################################################################################
 
 # Game Functions
 python early:
@@ -111,4 +111,4 @@ python early:
     
     def write_diary(key):
         diary_content[key]["found"] = True
-################################################################################
+##############################################################################################################

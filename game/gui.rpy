@@ -63,22 +63,22 @@ define gui.name_text_font = font_regular
 define gui.interface_text_font = font_regular
 
 ## The size of normal dialogue text.
-define gui.text_size = 38 # 33
+define gui.text_size = 33
 
 ## The size of character names.
-define gui.name_text_size = 50 # 45
+define gui.name_text_size = 45
 
 ## The size of text in the game's user interface.
-define gui.interface_text_size = 38 # 33
+define gui.interface_text_size = 33
 
 ## The size of labels in the game's user interface.
-define gui.label_text_size = 41 # 36
+define gui.label_text_size = 36
 
 ## The size of text on the notify screen.
-define gui.notify_text_size = 29 # 24
+define gui.notify_text_size = 24
 
 ## The size of the game's title.
-define gui.title_text_size = 125 # 120
+define gui.title_text_size = 120
 
 
 ## Main and Game Menus #########################################################
@@ -471,7 +471,8 @@ init python:
 
         gui.nvl_button_width = 1860
         gui.nvl_button_xpos = 30
-    
+
+##############################################################################################################  
     @gui.variant
     def mobile():
 

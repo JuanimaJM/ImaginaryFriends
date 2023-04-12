@@ -1,19 +1,7 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While running game code:
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen diary():
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen diary():
-  File "game/imaginary_friends_screens.rpy", line 20, in execute
-    use book
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 23, in execute
-    imagebutton:
-Exception: Imagebutton does not have a idle image.
+While processing text tag {second_page} in '{second_page}'.:
+Exception: Unknown text tag 'second_page'
 
 -- Full Traceback ------------------------------------------------------------
 
@@ -32,41 +20,49 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
-    d.visit_all(callback, seen)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
-    callback(self)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
-    root_widget.visit_all(lambda i : i.per_interact())
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
-    self.update()
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
-    self.screen.function(**self.scope)
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen diary():
-  File "game/imaginary_friends_screens.rpy", line 2, in execute
-    screen diary():
-  File "game/imaginary_friends_screens.rpy", line 20, in execute
-    use book
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 22, in execute
-    screen book():
-  File "game/imaginary_friends_screens.rpy", line 23, in execute
-    imagebutton:
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 952, in _imagebutton
-    idle = choice(idle, idle_image, "idle", required=True)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 948, in choice
-    raise Exception("Imagebutton does not have a %s image." % (name,))
-Exception: Imagebutton does not have a idle image.
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3912, in interact_core
+    self.draw_screen(root_widget, fullscreen_video, (not fullscreen_video) or video_frame_drawn)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 2602, in draw_screen
+    surftree = renpy.display.render.render_screen(
+  File "render.pyx", line 495, in renpy.display.render.render_screen
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 704, in render
+    child = renpy.display.render.render(self.child, w, h, st, at)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
+    surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1060, in render
+    surf = render(d, rw, height - y, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1334, in render
+    surf = render(child,
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 2109, in render
+    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 627, in __init__
+    self.paragraphs = self.segment(text.tokens, style, renders, text)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 1278, in segment
+    raise Exception("Unknown text tag %r" % text)
+Exception: Unknown text tag 'second_page'
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Tue Apr 11 19:32:37 2023
+Wed Apr 12 11:02:30 2023

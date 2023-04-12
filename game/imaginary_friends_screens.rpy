@@ -2,7 +2,6 @@
 screen diary():
     tag menu
     add gui.game_menu_background
-
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -10,13 +9,11 @@ screen diary():
         yoffset 30
         idle button_back_arrow
         action Return()
-    
     text _("Diary"):
         yalign 0.0
         xalign 0.5
         font font_title
         size gui.title_text_size
-
     use book
 
 screen book():
@@ -33,7 +30,7 @@ screen book():
                 image diary_pages[first_page - 1]:
                     xalign 0.5
                     yalign 0.5
-            text f"[first_page]":
+            text "[first_page]":
                 color black
                 xalign 0.5
                 yalign 1.0
@@ -44,7 +41,6 @@ screen book():
                     yoffset -10
                     idle button_back_page
                     action Function(back_page)
-        
         frame:
             xsize 800
             yfill True
@@ -53,7 +49,7 @@ screen book():
                 image diary_pages[second_page - 1]:
                     xalign 0.5
                     yalign 0.5
-            text f"[second_page]":
+            text "[second_page]":
                 color black
                 xalign 0.5
                 yalign 1.0
@@ -66,13 +62,12 @@ screen book():
                     idle button_next_page
                     action Function(next_page)
 
-################################################################################
+##############################################################################################################
 
 # Screen for Achievements
 screen achievements():
     tag menu
     add gui.game_menu_background
-
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -80,13 +75,11 @@ screen achievements():
         yoffset 30
         idle button_back_arrow
         action Return()
-    
     text _("Achievements"):
         yalign 0.0
         xalign 0.5
         font font_title
         size gui.title_text_size
-    
     frame:
         xsize 1600
         ysize 800
@@ -97,39 +90,41 @@ screen achievements():
             xfill True
             yfill True
             for key in achievement_list:
-                frame:
-                    background None
-                    hbox:
+                grid 2 1:
+                    xfill True
+                    yfill True
+                    frame:
                         xfill True
                         yfill True
-                        spacing 20
-                        imagebutton:
-                            xalign 0.0
-                            yalign 0.5
-                            idle identify_image(key)
-                            action Show("badge")
-                        vbox:
-                            xfill True
-                            spacing 10
-                            xalign 0.3
-                            yalign 0.5
-                            text _(achievement_list[key]["title"]):
-                                size gui.label_text_size
-                            text _(identify_achievement_description(key)):
-                                size gui.notify_text_size
+                        background None
+                        if achievement_list[key]["granted"]:
+                            imagebutton:
+                                xalign 0.5
+                                yalign 0.5
+                                idle img_badge
+                                action Show("badge", img=img_badge)
+                    vbox:
+                        xfill True
+                        spacing 10
+                        xalign 0.3
+                        yalign 0.5
+                        text _(achievement_list[key]["title"]):
+                            size gui.text_size
+                        text _(identify_achievement_description(key)):
+                            size gui.notify_text_size
 
-screen badge():
+screen badge(img):
     add semi_transparent
     dismiss action Hide("badge")
     frame:
         modal True
         xalign 0.5
         yalign 0.5
-        background transparent
-        image img_badge:
+        background None
+        image img:
             xsize 480
             ysize 400
-################################################################################
+##############################################################################################################
 
 # Screen for Stats
 screen stats():
@@ -146,39 +141,38 @@ screen statsUI():
     tag menu
     modal True
     frame:
-        xsize 500
+        xsize 600
         ysize 1080
         xalign 1.0
-        padding(20, 20)
+        left_padding 50
         background dark_gunmetal
-        
         vbox:
-            xsize 500
+            xfill True
             yoffset 50
             vbox:
+                xfill True
                 spacing 10
                 text _("STATS"):
                     xalign 0.5
                     font font_title
-                text "Name: Player"
+                text "Name: [player_name]"
                 text _("Sanity:")
                 bar:
                     range 100
                     value sanity
-                    xysize(400, 50)
+                    xsize 400
                     left_bar identify_bar_color(sanity)
-                    right_bar white
+                    right_bar bar_white
                 text _("Happiness:")
                 bar:
                     range 100
                     value happiness
-                    xysize(400, 50)
+                    xsize 400
                     left_bar identify_bar_color(happiness)
-                    right_bar white
-            
+                    right_bar bar_white
             frame:
-                top_padding 30
-                right_padding 30
+                xfill True
+                top_margin 50
                 bottom_padding 50
                 background None
                 viewport:
@@ -186,6 +180,7 @@ screen statsUI():
                     scrollbars "vertical"
                     draggable True
                     vbox:
+                        xfill True
                         spacing 10
                         box_wrap True
                         text _("IMAGINARY FRIENDS"):
@@ -196,7 +191,7 @@ screen statsUI():
                             bar:
                                 range 100
                                 value friends_stats[key]["stats"]
-                                xysize(400, 50)
+                                xsize 400
                                 left_bar identify_bar_color(friends_stats[key]["stats"])
-                                right_bar white
-################################################################################
+                                right_bar bar_white
+##############################################################################################################

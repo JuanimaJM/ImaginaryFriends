@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_screens.rpy", line 122: 'background' is not a keyword argument or valid child for the screen statement.
-    background semi_transparent
-              ^
+File "game/imaginary_friends_screens.rpy", line 150: 'xalign' is not a keyword argument or valid child for the screen statement.
+    xalign 1.0
+          ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Tue Apr 11 20:11:04 2023
+Wed Apr 12 10:43:30 2023

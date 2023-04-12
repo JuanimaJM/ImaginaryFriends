@@ -1,10 +1,10 @@
 # offset
 init offset = -8
-################################################################################
+##############################################################################################################
 
 # Imaginary friends configurations
 define config.rollback_enabled = False
-################################################################################
+##############################################################################################################
 
 # Imaginary friends gui
 define semi_transparent ="#000000bf"
@@ -35,7 +35,13 @@ define icon_cancel = gui_path("stats_selected_idle.png")
 define icon_menu = gui_path("stats_idle.png")
 define bg_left_page = gui_path("left_page.png")
 define bg_right_page = gui_path("right_page.png")
-################################################################################
+define bar_green = gui_path("bar_green.png")
+define bar_yellowgreen = gui_path("bar_yellowgreen.png")
+define bar_yellow = gui_path("bar_yellow.png")
+define bar_orange = gui_path("bar_orange.png")
+define bar_red = gui_path("bar_red.png")
+define bar_white = gui_path("bar_white.png")
+##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
@@ -43,7 +49,7 @@ default player_name = "Child"
 define Child = Character("[player_name]", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple, font=font_title)
 define Someone = Character("Someone", color=dark_gunmetal)
-################################################################################
+##############################################################################################################
 
 # Stats
 default sanity = 100
@@ -58,7 +64,7 @@ default friends_stats = {
         "meet": False
     }
 }
-################################################################################
+##############################################################################################################
 
 # Achvievement
 define achievement_list = {
@@ -109,7 +115,7 @@ define achievement_list = {
     }
 }
 
-################################################################################
+##############################################################################################################
 
 # Diary
 default first_page = 1
@@ -141,4 +147,4 @@ define diary_content = {
     }
 }
 default diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]
-################################################################################
+##############################################################################################################

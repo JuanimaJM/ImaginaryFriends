@@ -145,7 +145,7 @@ screen statsUI():
         ysize 1080
         xalign 1.0
         left_padding 50
-        background dark_gunmetal
+        background bg_paper
         vbox:
             xfill True
             yoffset 50

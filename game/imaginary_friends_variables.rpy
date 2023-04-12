@@ -41,6 +41,7 @@ define bar_yellow = gui_path("bar_yellow.png")
 define bar_orange = gui_path("bar_orange.png")
 define bar_red = gui_path("bar_red.png")
 define bar_white = gui_path("bar_white.png")
+define bg_paper = gui_path("bg_paper.jpg")
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the

@@ -155,21 +155,25 @@ screen statsUI():
                 text _("STATS"):
                     xalign 0.5
                     font font_title
-                text "Name: [player_name]"
-                text _("Sanity:")
+                    color black
+                text "Name: [player_name]":
+                    color black
+                text _("Sanity:"):
+                    color black
                 bar:
                     range 100
                     value sanity
                     xsize 400
                     left_bar identify_bar_color(sanity)
-                    right_bar bar_white
-                text _("Happiness:")
+                    right_bar bar_black
+                text _("Happiness:"):
+                    color black
                 bar:
                     range 100
                     value happiness
                     xsize 400
                     left_bar identify_bar_color(happiness)
-                    right_bar bar_white
+                    right_bar bar_black
             frame:
                 xfill True
                 top_margin 50
@@ -186,12 +190,14 @@ screen statsUI():
                         text _("IMAGINARY FRIENDS"):
                             xalign 0.5
                             font font_title
+                            color black
                         for key in friends_stats:
-                            text identify_character(key)
+                            text identify_character(key):
+                                color black
                             bar:
                                 range 100
                                 value friends_stats[key]["stats"]
                                 xsize 400
                                 left_bar identify_bar_color(friends_stats[key]["stats"])
-                                right_bar bar_white
+                                right_bar bar_black
 ##############################################################################################################

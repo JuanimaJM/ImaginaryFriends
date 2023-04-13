@@ -41,6 +41,7 @@ define bar_yellow = gui_path("bar_yellow.png")
 define bar_orange = gui_path("bar_orange.png")
 define bar_red = gui_path("bar_red.png")
 define bar_white = gui_path("bar_white.png")
+define bar_black = gui_path("bar_black.png")
 define bg_paper = gui_path("bg_paper.jpg")
 ##############################################################################################################
 

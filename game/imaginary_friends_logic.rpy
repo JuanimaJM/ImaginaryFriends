@@ -106,11 +106,6 @@ python early:
         store.first_page -= 2
         store.second_page -= 2
     
-    def diary_pages():
-        for key, value in diary_content.items():
-            if value.get("found", False):
-                diary_pages.append(value)
-    
     def identify_character(key):
         if friends_stats[key]["meet"]:
             return key

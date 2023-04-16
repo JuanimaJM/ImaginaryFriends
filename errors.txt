@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/screens.rpy", line 302: a non-constant keyword argument like 'spacing gui.navigation_spacing' is not allowed after a python block.
-    spacing gui.navigation_spacing
-                                  ^
+File "game/imaginary_friends_logic.rpy", line 50: invalid syntax
+        return not (sunrise_start <= now = afternoon_end)
+                                          ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Apr 16 11:03:15 2023
+Sun Apr 16 15:19:36 2023

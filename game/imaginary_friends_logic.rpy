@@ -45,10 +45,7 @@ python early:
             return "???"
 
     def is_sky_dark():
-        if sunrise_start <= now <= afternoon_end:
-            return False
-        else:
-            return True
+        return not (sunrise_start <= now <= afternoon_end)
 
     def timely_bg():
         if sunrise_start <= now <= sunrise_end:
@@ -63,6 +60,7 @@ python early:
             return Movie(play=gui_path("bg_main_menu.webm"))
     
     def timely_text_color():
+        print(is_sky_dark())
         if is_sky_dark():
             return white
         else:
@@ -80,17 +78,11 @@ python early:
         else:
             return gui_path("ic_achievement_black.png")
     
-    def identify_next_page():
-        if second_page < len(diary_pages):
-            return True
-        else:
-            return False
+    def has_next_page():
+        return (second_page < len(diary_pages))
     
-    def identify_back_page():
-        if (first_page >= 3) and (len(diary_pages) >= 3):
-            return True
-        else:
-            return False
+    def has_back_page():
+        return (first_page >= 3) and (len(diary_pages) >= 3)
     
     def identify_second_page():
         if first_page < len(diary_pages):

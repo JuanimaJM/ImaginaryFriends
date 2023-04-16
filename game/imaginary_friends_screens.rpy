@@ -34,7 +34,7 @@ screen book():
                 color black
                 xalign 0.5
                 yalign 1.0
-            if identify_back_page():
+            if has_back_page():
                 imagebutton:
                     yalign 1.0
                     xoffset 10
@@ -53,7 +53,7 @@ screen book():
                 color black
                 xalign 0.5
                 yalign 1.0
-            if identify_next_page():
+            if has_next_page():
                 imagebutton:
                     xalign 1.0
                     yalign 1.0

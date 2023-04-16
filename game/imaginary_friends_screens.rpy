@@ -5,7 +5,7 @@ screen diary():
     imagebutton:
         xalign 0.0
         yalign 0.0
-        xoffset 30
+        xoffset 10
         yoffset 30
         idle button_back_arrow
         action Return()
@@ -37,7 +37,7 @@ screen book():
             if identify_back_page():
                 imagebutton:
                     yalign 1.0
-                    xoffset 30
+                    xoffset 10
                     yoffset -10
                     idle button_back_page
                     action Function(back_page)
@@ -71,7 +71,7 @@ screen achievements():
     imagebutton:
         xalign 0.0
         yalign 0.0
-        xoffset 30
+        xoffset 10
         yoffset 30
         idle button_back_arrow
         action Return()

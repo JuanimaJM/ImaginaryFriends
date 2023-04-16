@@ -290,7 +290,7 @@ screen navigation():
     vbox:
         style_prefix "navigation"
 
-        if main_menu and renpy.get_screen("main_menu"):
+        if renpy.get_screen("main_menu"):
             xalign 0.5
             yalign 0.6
         else:
@@ -300,39 +300,39 @@ screen navigation():
         spacing gui.navigation_spacing
 
         if main_menu:
-
-            textbutton _("Start") action Start()
-
+            textbutton _("Start") action Start():
+                if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
         else:
-
             textbutton _("History") action ShowMenu("history")
-
             textbutton _("Save") action ShowMenu("save")
 
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Settings") action ShowMenu("settings")
+        textbutton _("Load") action ShowMenu("load"):
+            if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
+        textbutton _("Settings") action ShowMenu("settings"):
+            if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
 
         if _in_replay:
-
             textbutton _("End Replay") action EndReplay(confirm=True)
-
         elif not main_menu:
-
             textbutton _("Main Menu") action MainMenu()
 
-        textbutton _("About") action ShowMenu("about")
+        textbutton _("About") action ShowMenu("about"):
+            if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
 
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
 
         #if renpy.variant("pc"):
-
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-        textbutton _("Exit") action Quit(confirm=not main_menu)
+        textbutton _("Exit") action Quit(confirm=not main_menu):
+            if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
 
 
 style navigation_button is gui_button
@@ -421,6 +421,7 @@ style main_menu_title:
     xalign 0.5
     yalign 0.1
     font font_title
+    color timely_text_color()
 
 style main_menu_version:
     properties gui.text_properties("version")

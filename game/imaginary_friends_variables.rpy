@@ -1,12 +1,12 @@
-# offset
+# Offset
 init offset = -8
 ##############################################################################################################
 
-# Imaginary friends configurations
+# Imaginary Friends Configurations
 define config.rollback_enabled = False
 ##############################################################################################################
 
-# Imaginary friends gui
+# Imaginary Friends GUI
 define semi_transparent ="#000000bf"
 define transparent = "#ffffff00"
 define american_violet = '#5b1e99'
@@ -26,11 +26,11 @@ define gray = "#808080"
 define font_title = gui_path("Griffy-Regular.ttf")
 define font_regular = gui_path("SongMyung-Regular.ttf")
 define img_badge = gui_path("badge.png")
-define icon_diary = gui_path("diary.png")
-define icon_achievement = gui_path("achievement.png")
-define button_back_arrow = gui_path("back_arrow_button.png")
-define button_back_page = gui_path("back_page_button.png")
-define button_next_page = gui_path("next_page_button.png")
+define icon_diary_white = gui_path("ic_diary_white.png")
+define icon_achievement_white = gui_path("ic_achievement_white.png")
+define button_back_arrow = gui_path("button_back.png")
+define button_back_page = gui_path("button_back_page.png")
+define button_next_page = gui_path("button_next_page.png")
 define icon_cancel = gui_path("stats_selected_idle.png")
 define icon_menu = gui_path("stats_idle.png")
 define bg_left_page = gui_path("left_page.png")
@@ -43,6 +43,11 @@ define bar_red = gui_path("bar_red.png")
 define bar_white = gui_path("bar_white.png")
 define bar_black = gui_path("bar_black.png")
 define bg_paper = gui_path("bg_paper.jpg")
+
+# Changing GUI
+default icon_diary = timely_icon_diary()
+default icon_achievement = timely_icon_achievement()
+default bg_timely_main_menu = timely_bg()
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the

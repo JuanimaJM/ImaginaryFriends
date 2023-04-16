@@ -43,7 +43,13 @@ python early:
             return achievement_list[key]["description"]
         else:
             return "???"
-    
+
+    def is_sky_dark():
+        if sunrise_start <= now <= afternoon_end:
+            return False
+        else:
+            return True
+
     def timely_bg():
         if sunrise_start <= now <= sunrise_end:
             return gui_path("bg_main_menu_sunrise.jpg")
@@ -55,6 +61,24 @@ python early:
             return gui_path("bg_main_menu_sunset.jpg")
         else:
             return Movie(play=gui_path("bg_main_menu.webm"))
+    
+    def timely_text_color():
+        if is_sky_dark():
+            return white
+        else:
+            return sugar_plum
+    
+    def timely_icon_diary():
+        if is_sky_dark():
+            return gui_path("ic_diary_white.png")
+        else:
+            return gui_path("ic_diary_black.png")
+    
+    def timely_icon_achievement():
+        if is_sky_dark():
+            return gui_path("ic_achievement_white.png")
+        else:
+            return gui_path("ic_achievement_black.png")
     
     def identify_next_page():
         if second_page < len(diary_pages):

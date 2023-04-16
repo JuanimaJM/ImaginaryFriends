@@ -1,21 +1,19 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While processing text tag {second_page} in '{second_page}'.:
-Exception: Unknown text tag 'second_page'
+While running game code:
+TypeError: 'NoneType' object is not iterable
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in script
+    $ ui.interact()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
+  File "renpy/common/_layout/screen_load_save.rpym", line 35, in <module>
+    $ ui.interact()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
@@ -28,6 +26,10 @@ Full traceback:
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
     surf = render(child, width, height, cst, cat)
+  File "render.pyx", line 170, in renpy.display.render.render
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\transition.py", line 378, in render
+    top = render(self.new_widget, width, height, st, at)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 884, in render
@@ -46,23 +48,34 @@ Full traceback:
     surf = render(child, width, height, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1060, in render
-    surf = render(d, rw, height - y, cst, cat)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1105, in render
+    surf = render(d, width - x, rh, cst, cat)
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\behavior.py", line 885, in render
+    rv = super(Button, self).render(width, height, st, at)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1287, in render
+    xminimum = max(xminimum, size_groups[size_group].width(width, height, st, at))
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1224, in width
+    rend = renpy.display.render.render_for_size(i, width, height, st, at)
+  File "render.pyx", line 318, in renpy.display.render.render_for_size
+  File "render.pyx", line 266, in renpy.display.render.render
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\behavior.py", line 885, in render
+    rv = super(Button, self).render(width, height, st, at)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\layout.py", line 1334, in render
     surf = render(child,
   File "render.pyx", line 170, in renpy.display.render.render
   File "render.pyx", line 266, in renpy.display.render.render
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 2109, in render
-    virtual_layout = Layout(self, width, height, renders, drawable_res=False, size_only=True)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 627, in __init__
-    self.paragraphs = self.segment(text.tokens, style, renders, text)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 1278, in segment
-    raise Exception("Unknown text tag %r" % text)
-Exception: Unknown text tag 'second_page'
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 2121, in render
+    layout = Layout(self, width, height, renders, splits_from=virtual_layout)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 877, in __init__
+    ts.draw(glyphs, di, self.add_left, self.add_top, self)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\text\text.py", line 288, in draw
+    fo.draw(di.surface, xo, yo, color, glyphs, self.underline, self.strikethrough, black_color)
+  File "ftfont.pyx", line 718, in renpy.text.ftfont.FTFont.draw
+TypeError: 'NoneType' object is not iterable
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Wed Apr 12 11:02:30 2023
+Sun Apr 16 10:37:43 2023

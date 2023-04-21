@@ -23,6 +23,7 @@ define red = "#FF0000"
 define white = "#ffffff"
 define black = "#000000"
 define gray = "#808080"
+define black_olive = "#3e3e3e"
 define font_title = gui_path("Griffy-Regular.ttf")
 define font_regular = gui_path("SongMyung-Regular.ttf")
 define img_badge = gui_path("badge.png")
@@ -88,17 +89,17 @@ define achievement_list = {
     "Achv3": {
         "title": "I'm the Menu",
         "description": "Get eaten.",
-        "granted": False
+        "granted": True
     },
     "Achv4": {
         "title": "Moonlight Lovers",
         "description": "Unite the couple.",
-        "granted": False
+        "granted": True
     },
     "Achv5": {
         "title": "Bad ending 1",
         "description": "Get the first bad ending.",
-        "granted": False
+        "granted": True
     },
     "Achv6": {
         "title": "The Cat Idol",
@@ -108,7 +109,7 @@ define achievement_list = {
     "Achv7": {
         "title": "The Dog Idol",
         "description": "Meet the Dog Idol.",
-        "granted": True
+        "granted": False
     },
     "Achv8": {
         "title": "The Blue Alien",

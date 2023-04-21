@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_screens.rpy", line 106: 'zoom' is not a keyword argument or valid child for the imagebutton statement.
-    zoom 0.5
-        ^
+File "game/imaginary_friends_screens.rpy", line 110: 'im' is not a keyword argument or valid child for the image statement.
+    im.Grayscale(img_badge)
+      ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Apr 21 15:25:10 2023
+Fri Apr 21 16:47:18 2023

@@ -30,7 +30,7 @@ label start:
     show phantom 960
     Phantom "960x960"
     $ update_friends_stats(Phantom.name, -20)
-    $ grant_achievement("Achv3")
+    $ grant_achievement("Achv8")
     "Life: [life]"
     $ life -= 10
     "Get some damage"

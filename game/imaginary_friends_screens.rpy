@@ -103,6 +103,10 @@ screen achievements():
                                 yalign 0.5
                                 idle im.FactorScale(img_badge, 0.4)
                                 action Show("badge", img=img_badge)
+                        else:
+                            image im.FactorScale(im.Grayscale(img_badge), 0.4):
+                                xalign 0.5
+                                yalign 0.5
                     vbox:
                         xfill True
                         spacing 10
@@ -110,8 +114,10 @@ screen achievements():
                         yalign 0.5
                         text _(achievement_list[key]["title"]):
                             size gui.text_size
+                            color identify_text_color(key)
                         text _(identify_achievement_description(key)):
                             size gui.notify_text_size
+                            color identify_text_color(key)
 
 screen badge(img):
     add semi_transparent

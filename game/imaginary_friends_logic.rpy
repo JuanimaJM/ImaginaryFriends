@@ -60,7 +60,6 @@ python early:
             return Movie(play=gui_path("bg_main_menu.webm"))
     
     def timely_text_color():
-        print(is_sky_dark())
         if is_sky_dark():
             return white
         else:
@@ -121,5 +120,5 @@ python early:
         friends_stats[character]["meet"] = True
     
     def write_diary(key):
-        diary_content[key]["found"] = True
+        diary_pages.append(diary_content[key]["content"])
 ##############################################################################################################

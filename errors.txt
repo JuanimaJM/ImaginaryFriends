@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 50: invalid syntax
-        return not (sunrise_start <= now = afternoon_end)
-                                          ^
-    
+File "game/imaginary_friends_screens.rpy", line 106: 'zoom' is not a keyword argument or valid child for the imagebutton statement.
+    zoom 0.5
+        ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Apr 16 15:19:36 2023
+Fri Apr 21 15:25:10 2023

@@ -134,7 +134,7 @@ define diary_content = {
     },
     "Cat": {
         "content": "images/cat_diary.png",
-        "found": False
+        "found": True
     },
     "Teddy": {
         "content": "images/teddy_diary.png",
@@ -150,8 +150,8 @@ define diary_content = {
     },
     "Family": {
         "content": "images/family_diary.png",
-        "found": False
+        "found": True
     }
 }
-default diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]
+define diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]
 ##############################################################################################################

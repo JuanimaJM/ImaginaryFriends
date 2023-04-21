@@ -101,7 +101,7 @@ screen achievements():
                             imagebutton:
                                 xalign 0.5
                                 yalign 0.5
-                                idle img_badge
+                                idle im.FactorScale(img_badge, 0.4)
                                 action Show("badge", img=img_badge)
                     vbox:
                         xfill True

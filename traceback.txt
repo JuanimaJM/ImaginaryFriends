@@ -1,32 +1,82 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
-While parsing C:\Users\Beller\Documents\Ren'Py\ImaginaryFriends\game/imaginary_friends_logic.rpy.
-  File "game/imaginary_friends_logic.rpy", line 20, in <module>
-    now = night_star
-NameError: name 'night_star' is not defined
+While running game code:
+  File "game/imaginary_friends_screens.rpy", line 68, in execute
+    screen achievements():
+  File "game/imaginary_friends_screens.rpy", line 68, in execute
+    screen achievements():
+  File "game/imaginary_friends_screens.rpy", line 83, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 89, in execute
+    grid 3 3:
+  File "game/imaginary_friends_screens.rpy", line 92, in execute
+    for key in sorted_achievements:
+  File "game/imaginary_friends_screens.rpy", line 93, in execute
+    grid 2 1:
+  File "game/imaginary_friends_screens.rpy", line 96, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 100, in execute
+    if sorted_achievements[key]["granted"]:
+  File "game/imaginary_friends_screens.rpy", line 100, in <module>
+    if sorted_achievements[key]["granted"]:
+TypeError: list indices must be integers or slices, not str
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\bootstrap.py", line 277, in bootstrap
-    renpy.main.main()
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\main.py", line 490, in main
-    renpy.game.script.load_script() # sets renpy.game.script.
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\script.py", line 297, in load_script
-    self.load_appropriate_file(".rpyc", ".rpy", dir, fn, initcode)
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\script.py", line 809, in load_appropriate_file
-    self.finish_load(stmts, initcode, filename=lastfn) # type: ignore
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\script.py", line 499, in finish_load
-    node.early_execute()
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1188, in early_execute
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
+    python hide:
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "game/imaginary_friends_logic.rpy", line 20, in <module>
-    now = night_star
-NameError: name 'night_star' is not defined
+  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
+    python hide:
+  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
+    ui.interact()
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
+    rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
+    repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in interact_core
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 582, in visit_all
+    d.visit_all(callback, seen)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 451, in visit_all
+    callback(self)
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3810, in <lambda>
+    root_widget.visit_all(lambda i : i.per_interact())
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 462, in per_interact
+    self.update()
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
+    self.screen.function(**self.scope)
+  File "game/imaginary_friends_screens.rpy", line 68, in execute
+    screen achievements():
+  File "game/imaginary_friends_screens.rpy", line 68, in execute
+    screen achievements():
+  File "game/imaginary_friends_screens.rpy", line 83, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 89, in execute
+    grid 3 3:
+  File "game/imaginary_friends_screens.rpy", line 92, in execute
+    for key in sorted_achievements:
+  File "game/imaginary_friends_screens.rpy", line 93, in execute
+    grid 2 1:
+  File "game/imaginary_friends_screens.rpy", line 96, in execute
+    frame:
+  File "game/imaginary_friends_screens.rpy", line 100, in execute
+    if sorted_achievements[key]["granted"]:
+  File "game/imaginary_friends_screens.rpy", line 100, in <module>
+    if sorted_achievements[key]["granted"]:
+  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\revertable.py", line 217, in __getitem__
+    rv = list.__getitem__(self, index)
+TypeError: list indices must be integers or slices, not str
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
- 
-Sat Apr 22 08:46:45 2023
+Imaginary Friends 1.0
+Sat Apr 22 14:05:14 2023

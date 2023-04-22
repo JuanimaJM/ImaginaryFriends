@@ -123,6 +123,8 @@ define achievement_list = {
     }
 }
 
+default sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
+
 ##############################################################################################################
 
 # Diary

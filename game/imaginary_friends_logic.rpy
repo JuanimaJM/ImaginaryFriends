@@ -65,6 +65,7 @@ python early:
         elif sunset_start <= now <= sunset_end:
             return gui_path("bg_main_menu_sunset.jpg")
         else:
+            # return gui_path("bg_main_menu_night.jpg")
             return Movie(play=gui_path("bg_main_menu.webm"))
     
     def timely_text_color():
@@ -115,9 +116,10 @@ python early:
 # Game Functions
 python early:
     def grant_achievement(key):
-        achievement_list[key]["granted"] = True
-        title = achievement_list[key]["title"]
-        renpy.display_notify(f"You achieve the {title}")
+        if not achievement_list[key]["granted"]:
+            achievement_list[key]["granted"] = True
+            title = achievement_list[key]["title"]
+            renpy.display_notify(f"You achieve the {title}")
         return renpy.say(None, "You get some achievement")
     
     def update_friends_stats(character, value):
@@ -128,5 +130,7 @@ python early:
         friends_stats[character]["meet"] = True
     
     def write_diary(key):
-        diary_pages.append(diary_content[key]["content"])
+        diary_content[key]["found"] = True
+        if (diary_content[key]["found"]) and not (diary_content[key]["content"] in diary_pages):
+            diary_pages.append(diary_content[key]["content"])
 ##############################################################################################################

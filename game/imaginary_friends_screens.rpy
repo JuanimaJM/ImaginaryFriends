@@ -89,7 +89,7 @@ screen achievements():
         grid 3 3:
             xfill True
             yfill True
-            for key in achievement_list:
+            for key in sorted_achievements:
                 grid 2 1:
                     xfill True
                     yfill True
@@ -97,7 +97,7 @@ screen achievements():
                         xfill True
                         yfill True
                         background None
-                        if achievement_list[key]["granted"]:
+                        if sorted_achievements[key]["granted"]:
                             imagebutton:
                                 xalign 0.5
                                 yalign 0.5
@@ -112,7 +112,7 @@ screen achievements():
                         spacing 10
                         xalign 0.3
                         yalign 0.5
-                        text _(achievement_list[key]["title"]):
+                        text _(sorted_achievements[key]["title"]):
                             size gui.text_size
                             color identify_text_color(key)
                         text _(identify_achievement_description(key)):

@@ -246,7 +246,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            yalign 1.0
+            yalign 0.9
 
             # textbutton _("Back") action Rollback()
             textbutton _("History") action ShowMenu('history')
@@ -1457,7 +1457,7 @@ screen quick_menu():
             style_prefix "quick"
 
             xalign 0.5
-            yalign 1.0
+            yalign 0.98
 
             # textbutton _("Back") action Rollback()
             textbutton _("Skip") action Skip() alternate Skip(fast=True, confirm=True)

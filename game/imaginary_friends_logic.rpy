@@ -17,6 +17,8 @@ python early:
     night_start = datetime.time(18, 0)
     night_end = datetime.time(5, 59)
 
+    now = night_start
+
     def gui_path(file):
         return "gui/imaginary_friends/" + file
     

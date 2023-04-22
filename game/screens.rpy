@@ -291,8 +291,8 @@ screen navigation():
         style_prefix "navigation"
 
         if renpy.get_screen("main_menu"):
-            xalign 0.5
-            yalign 0.6
+            xalign 0.7
+            yalign 0.65
         else:
             xpos gui.navigation_xpos
             yalign 0.5
@@ -418,8 +418,8 @@ style main_menu_text:
 
 style main_menu_title:
     properties gui.text_properties("title")
-    xalign 0.5
-    yalign 0.1
+    xalign 0.85
+    yalign 0.25
     font font_title
     color timely_text_color()
 

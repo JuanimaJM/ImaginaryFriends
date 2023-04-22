@@ -36,9 +36,9 @@ screen book():
                 yalign 1.0
             if has_back_page():
                 imagebutton:
-                    yalign 1.0
+                    yalign 0
                     xoffset 10
-                    yoffset -10
+                    yoffset 10
                     idle button_back_page
                     action Function(back_page)
         frame:
@@ -56,9 +56,9 @@ screen book():
             if has_next_page():
                 imagebutton:
                     xalign 1.0
-                    yalign 1.0
+                    yalign 0
                     xoffset -10
-                    yoffset -10
+                    yoffset 10
                     idle button_next_page
                     action Function(next_page)
 

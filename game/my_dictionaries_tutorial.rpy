@@ -40,7 +40,7 @@ init python:
 # The "name" is a String, the "age" is an integer, the "is_student" is a boolean
 # The "grades" is a list of integer, the "interest" is a tuple of Strings, and the "address" is a nested dictionary
     ex3 = {
-        "name": "John",
+        "name": "Lourence",
         "age": 30,
         "is_student": True,
         "grades": [80, 85, 90],
@@ -66,5 +66,5 @@ init python:
 # Note 3
 # The tuples uses parenthesis and their items can be diffrent data types
 # Tuples items can't be change unlike list and arrays
-    tuple1 = ("MJ", "Escalona", 21, True)
-    tuple2 = ("JM", 89, 88, 90, 95, True, True, False)
+    tuple1 = ("Kheem", "Beller", 21, True)
+    tuple2 = ("KL", 89, 88, 90, 95, True, True, False)

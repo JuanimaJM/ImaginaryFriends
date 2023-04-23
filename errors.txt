@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_screens.rpy", line 110: 'im' is not a keyword argument or valid child for the image statement.
-    im.Grayscale(img_badge)
-      ^
+File "game/imaginary_friends_screens.rpy", line 188: Line is indented, but the preceding image statement does not expect a block. Please check this line's indentation.
+    frame:
+    ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Fri Apr 21 16:47:18 2023
+Sun Apr 23 11:29:18 2023

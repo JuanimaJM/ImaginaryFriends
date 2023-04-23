@@ -1,39 +1,43 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/imaginary_friends_screens.rpy", line 68, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 68, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 83, in execute
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
+  File "game/imaginary_friends_screens.rpy", line 145, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 145, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 149, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 89, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 92, in execute
-    for key in sorted_achievements:
-  File "game/imaginary_friends_screens.rpy", line 93, in execute
-    grid 2 1:
-  File "game/imaginary_friends_screens.rpy", line 96, in execute
+  File "game/imaginary_friends_screens.rpy", line 155, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 187, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 100, in execute
-    if sorted_achievements[key]["granted"]:
-  File "game/imaginary_friends_screens.rpy", line 100, in <module>
-    if sorted_achievements[key]["granted"]:
-TypeError: list indices must be integers or slices, not str
+  File "game/imaginary_friends_screens.rpy", line 195, in execute
+    viewport id "vp_stats":
+  File "game/imaginary_friends_screens.rpy", line 197, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 205, in execute
+    for key, v in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 205, in execute
+    for key, v in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 205, in <module>
+    for key, v in friends_stats:
+ValueError: too many values to unpack (expected 2)
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in script
-    python hide:
+  File "renpy/common/00gamemenu.rpy", line 170, in script
+    $ ui.interact()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ast.py", line 1131, in execute
     renpy.python.py_exec_bytecode(self.code.bytecode, self.hide, store=self.store)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\python.py", line 1061, in py_exec_bytecode
     exec(bytecode, globals, locals)
-  File "renpy/common/_layout/screen_main_menu.rpym", line 28, in <module>
-    python hide:
-  File "renpy/common/_layout/screen_main_menu.rpym", line 35, in _execute_python_hide
-    ui.interact()
+  File "renpy/common/00gamemenu.rpy", line 170, in <module>
+    $ ui.interact()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\ui.py", line 299, in interact
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
@@ -54,29 +58,29 @@ Full traceback:
     self.update()
   File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\display\screen.py", line 653, in update
     self.screen.function(**self.scope)
-  File "game/imaginary_friends_screens.rpy", line 68, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 68, in execute
-    screen achievements():
-  File "game/imaginary_friends_screens.rpy", line 83, in execute
+  File "game/imaginary_friends_screens.rpy", line 145, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 145, in execute
+    screen statsUI():
+  File "game/imaginary_friends_screens.rpy", line 149, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 89, in execute
-    grid 3 3:
-  File "game/imaginary_friends_screens.rpy", line 92, in execute
-    for key in sorted_achievements:
-  File "game/imaginary_friends_screens.rpy", line 93, in execute
-    grid 2 1:
-  File "game/imaginary_friends_screens.rpy", line 96, in execute
+  File "game/imaginary_friends_screens.rpy", line 155, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 187, in execute
     frame:
-  File "game/imaginary_friends_screens.rpy", line 100, in execute
-    if sorted_achievements[key]["granted"]:
-  File "game/imaginary_friends_screens.rpy", line 100, in <module>
-    if sorted_achievements[key]["granted"]:
-  File "C:\Users\Beller\Desktop\Saved Files\renpy-8.0.3-sdk\renpy\revertable.py", line 217, in __getitem__
-    rv = list.__getitem__(self, index)
-TypeError: list indices must be integers or slices, not str
+  File "game/imaginary_friends_screens.rpy", line 195, in execute
+    viewport id "vp_stats":
+  File "game/imaginary_friends_screens.rpy", line 197, in execute
+    vbox:
+  File "game/imaginary_friends_screens.rpy", line 205, in execute
+    for key, v in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 205, in execute
+    for key, v in friends_stats:
+  File "game/imaginary_friends_screens.rpy", line 205, in <module>
+    for key, v in friends_stats:
+ValueError: too many values to unpack (expected 2)
 
 Windows-10-10.0.19044 AMD64
 Ren'Py 8.0.3.22090809
 Imaginary Friends 1.0
-Sat Apr 22 14:05:14 2023
+Sun Apr 23 11:49:49 2023

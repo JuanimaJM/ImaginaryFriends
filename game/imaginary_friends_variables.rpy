@@ -24,8 +24,10 @@ define white = "#ffffff"
 define black = "#000000"
 define gray = "#808080"
 define black_olive = "#3e3e3e"
+define alice_blue = "#F0F8FF"
 define font_title = gui_path("Griffy-Regular.ttf")
 define font_regular = gui_path("SongMyung-Regular.ttf")
+define font_stats = gui_path("erasdust.ttf")
 define img_badge = gui_path("badge.png")
 define icon_diary_white = gui_path("ic_diary_white.png")
 define icon_achievement_white = gui_path("ic_achievement_white.png")
@@ -44,6 +46,10 @@ define bar_red = gui_path("bar_red.png")
 define bar_white = gui_path("bar_white.png")
 define bar_black = gui_path("bar_black.png")
 define bg_paper = gui_path("bg_paper.jpg")
+define scrollbar_crayon = gui_path("scrollbar_crayon.png")
+define scrollbar_paper_white = gui_path("scrollbar_paper_white.png")
+define scrollbar_paper_black = gui_path("scrollbar_paper_black.png")
+define crayon_black_line = gui_path("crayon_black_line.png")
 
 # Changing GUI
 default icon_diary = timely_icon_diary()

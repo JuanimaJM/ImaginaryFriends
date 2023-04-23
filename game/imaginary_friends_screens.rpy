@@ -89,7 +89,7 @@ screen achievements():
         grid 3 3:
             xfill True
             yfill True
-            for key in sorted_achievements:
+            for key, value in sorted_achievements.items():
                 grid 2 1:
                     xfill True
                     yfill True
@@ -97,7 +97,7 @@ screen achievements():
                         xfill True
                         yfill True
                         background None
-                        if sorted_achievements[key]["granted"]:
+                        if value["granted"]:
                             imagebutton:
                                 xalign 0.5
                                 yalign 0.5
@@ -112,7 +112,7 @@ screen achievements():
                         spacing 10
                         xalign 0.3
                         yalign 0.5
-                        text _(sorted_achievements[key]["title"]):
+                        text _(value["title"]):
                             size gui.text_size
                             color identify_text_color(key)
                         text _(identify_achievement_description(key)):
@@ -147,37 +147,43 @@ screen statsUI():
     tag menu
     modal True
     frame:
-        xsize 600
+        xsize 650
         ysize 1080
         xalign 1.0
-        left_padding 50
+        left_padding 25
         background bg_paper
         vbox:
             xfill True
-            yoffset 50
+            yoffset 10
             vbox:
                 xfill True
                 spacing 10
                 text _("STATS"):
                     xalign 0.5
-                    font font_title
+                    font font_stats
                     color black
+                    size (gui.name_text_size + 10)
                 text "Name: [player_name]":
                     color black
+                    font font_stats
                 text _("Sanity:"):
                     color black
+                    font font_stats
                 bar:
+                    xalign 0.3
                     range 100
                     value sanity
-                    xsize 400
+                    xsize 500
                     left_bar identify_bar_color(sanity)
                     right_bar bar_black
                 text _("Happiness:"):
                     color black
+                    font font_stats
                 bar:
+                    xalign 0.3
                     range 100
                     value happiness
-                    xsize 400
+                    xsize 500
                     left_bar identify_bar_color(happiness)
                     right_bar bar_black
             frame:
@@ -185,25 +191,33 @@ screen statsUI():
                 top_margin 50
                 bottom_padding 50
                 background None
-                viewport:
+                image crayon_black_line:
+                    xsize 565
+                    yoffset -30
+                viewport id "vp_stats":
                     yinitial 0.0
-                    scrollbars "vertical"
-                    draggable True
                     vbox:
                         xfill True
                         spacing 10
-                        box_wrap True
                         text _("IMAGINARY FRIENDS"):
                             xalign 0.5
-                            font font_title
+                            font font_stats
                             color black
-                        for key in friends_stats:
+                            size gui.name_text_size
+                        for key, value in friends_stats.items():
                             text identify_character(key):
                                 color black
+                                font font_stats
                             bar:
+                                xalign 0.2
                                 range 100
-                                value friends_stats[key]["stats"]
-                                xsize 400
-                                left_bar identify_bar_color(friends_stats[key]["stats"])
+                                value value["stats"]
+                                xsize 500
+                                left_bar identify_bar_color(value["stats"])
                                 right_bar bar_black
-##############################################################################################################
+                vbar value YScrollValue("vp_stats"):
+                    xalign 1.0
+                    base_bar scrollbar_paper_white
+                    hover_base_bar scrollbar_paper_black
+                    thumb scrollbar_crayon
+#####################################################################S#########################################

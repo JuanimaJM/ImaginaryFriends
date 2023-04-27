@@ -81,6 +81,7 @@ default friends_stats = {
 ##############################################################################################################
 
 # Achvievement
+default achievement_unlocked = False
 define achievement_list = {
     "Achv1": {
         "title": "Normal Ending",
@@ -134,6 +135,7 @@ default sorted_achievements = {k: v for k, v in sorted(achievement_list.items(),
 ##############################################################################################################
 
 # Diary
+default diary_unlocked = False
 default first_page = 1
 default second_page = 2
 define diary_content = {

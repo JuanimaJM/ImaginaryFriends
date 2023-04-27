@@ -30,17 +30,20 @@ define config.version = "1.0"
 
 define gui.about = _p("""
     \n
-    Story:  \n
-    {space=60}Justine Mae Juanima  \n\n
-    UI Designer:    \n
-    {space=60}Anne Louise Lopez   \n
-    {space=60}Allysah Valerie Dela Cruz  \n\n
-    Programmer: \n
-    {space=60}Kimwel Lourence Beller  \n\n
-    Artist: \n
-    {space=60}SERAPHIM    \n
-    {space=60}soleia  \n
-    {space=60}Yukeiri
+    {size=+15}Story:{/size}  \n
+    Justine Mae Juanima  \n
+    \n
+    {size=+15}UI Designer:{/size}    \n
+    Anne Louise Lopez   \n
+    Allysah Valerie Dela Cruz  \n
+    \n
+    {size=+15}Programmer:{/size} \n
+    Kimwel Lourence Beller  \n
+    \n
+    {size=+15}Artist:{/size} \n
+    SERAPHIM    \n
+    soleia  \n
+    Yukeiri
     \n
 """)
 

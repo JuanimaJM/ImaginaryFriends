@@ -34,12 +34,6 @@ python early:
         else:
             return bar_red
 
-    # def identify_image(key):
-    #     if achievement_list[key]["granted"]:
-    #         return img_badge
-    #     else:
-    #         return im.Grayscale(img_badge)
-
     def identify_text_color(key):
         if achievement_list[key]["granted"]:
             return  white

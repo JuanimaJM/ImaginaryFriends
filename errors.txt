@@ -2,9 +2,10 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_screens.rpy", line 188: Line is indented, but the preceding image statement does not expect a block. Please check this line's indentation.
-    frame:
-    ^
+File "game/imaginary_friends_logic.rpy", line 131: invalid syntax
+    global count = 0
+                  ^
+    
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Apr 23 11:29:18 2023
+Sat Apr 29 16:31:13 2023

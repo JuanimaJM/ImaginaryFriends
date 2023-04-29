@@ -59,8 +59,8 @@ python early:
         elif sunset_start <= now <= sunset_end:
             return gui_path("bg_main_menu_sunset.jpg")
         else:
-            # return gui_path("bg_main_menu_night.jpg")
-            return Movie(play=gui_path("bg_main_menu.webm"))
+            return gui_path("bg_main_menu_night.png")
+            # return Movie(play=gui_path("bg_main_menu.webm"))
     
     def timely_text_color():
         if is_sky_dark():

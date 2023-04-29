@@ -359,7 +359,11 @@ screen main_menu():
 
     # add gui.main_menu_background
 
-    add timely_bg()
+    # add timely_bg()
+    add "animated_bg"
+    add leaf_particles1
+    add leaf_particles2
+    add leaf_particles3
 
     ## This empty frame darkens the main menu.
     frame:

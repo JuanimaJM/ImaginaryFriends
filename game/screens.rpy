@@ -499,7 +499,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     use navigation
 
     imagebutton:
-        xoffset 10
+        xoffset 30
         yoffset 30
         idle button_back_arrow
         action Return()

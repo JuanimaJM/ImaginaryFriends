@@ -5,7 +5,7 @@ screen diary():
     imagebutton:
         xalign 0.0
         yalign 0.0
-        xoffset 10
+        xoffset 30
         yoffset 30
         idle button_back_arrow
         action Return()
@@ -71,7 +71,7 @@ screen achievements():
     imagebutton:
         xalign 0.0
         yalign 0.0
-        xoffset 10
+        xoffset 30
         yoffset 30
         idle button_back_arrow
         action Return()
@@ -135,11 +135,14 @@ screen badge(img):
 # Screen for Stats
 screen stats():
     zorder 110
-    imagebutton auto ("gui/imaginary_friends/stats_%s.png"):
+    imagebutton:
         xalign 1.0
         yalign 0.0
         xoffset -30
         yoffset 30
+        idle icon_menu
+        selected_idle icon_cancel
+        selected_hover icon_cancel
         action ToggleScreen("statsUI")
 
 screen statsUI():

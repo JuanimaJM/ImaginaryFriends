@@ -2,10 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/imaginary_friends_logic.rpy", line 131: invalid syntax
-    global count = 0
-                  ^
-    
+File "game/screens.rpy", line 501: 'button_back_arrow' is not a keyword argument or valid child for the imagebutton statement.
+    imagebutton button_back_arrow:
+                                 ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sat Apr 29 16:31:13 2023
+Mon May  1 09:52:40 2023

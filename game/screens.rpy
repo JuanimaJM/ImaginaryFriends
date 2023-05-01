@@ -314,11 +314,6 @@ screen navigation():
             if renpy.get_screen("main_menu"):
                     text_idle_color timely_text_color()
 
-        if _in_replay:
-            textbutton _("End Replay") action EndReplay(confirm=True)
-        elif not main_menu:
-            textbutton _("Main Menu") action MainMenu()
-
         textbutton _("Credits") action ShowMenu("about"):
             if renpy.get_screen("main_menu"):
                     text_idle_color timely_text_color()
@@ -330,9 +325,15 @@ screen navigation():
         #if renpy.variant("pc"):
             ## The quit button is banned on iOS and unnecessary on Android and
             ## Web.
-        textbutton _("Exit") action Quit(confirm=not main_menu):
-            if renpy.get_screen("main_menu"):
-                    text_idle_color timely_text_color()
+
+        if _in_replay:
+            textbutton _("End Replay") action EndReplay(confirm=True)
+        elif not main_menu:
+            textbutton _("Main Menu") action MainMenu()
+        
+        if renpy.get_screen("main_menu"):
+            textbutton _("Exit") action Quit(confirm=not main_menu):
+                text_idle_color timely_text_color()
 
 
 style navigation_button is gui_button
@@ -360,7 +361,7 @@ screen main_menu():
     # add gui.main_menu_background
 
     # add timely_bg()
-    add "animated_bg"
+    add bg_timely_main_menu
     add leaf_particles1
     add leaf_particles2
     add leaf_particles3
@@ -497,12 +498,23 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
     use navigation
 
-    textbutton _("Return"):
-        style "return_button"
-
+    imagebutton:
+        xoffset 10
+        yoffset 30
+        idle button_back_arrow
         action Return()
 
-    label title
+    textbutton _("Exit"):
+        style "return_button"
+        action Quit(confirm=not main_menu)
+
+    # textbutton _("Return"):
+    #     style "return_button"
+
+    #     action Return()
+
+    label title:
+        xalign 0.6
 
     if main_menu:
         key "game_menu" action ShowMenu("main_menu")

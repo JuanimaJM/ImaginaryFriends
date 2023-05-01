@@ -1,4 +1,4 @@
-image animated_bg:
+image animated_bg_main_menu_night:
     "gui/imaginary_friends/bg_main_menu_night/bg_main_menu_night (1).png"
     pause 0.08
     "gui/imaginary_friends/bg_main_menu_night/bg_main_menu_night (2).png"

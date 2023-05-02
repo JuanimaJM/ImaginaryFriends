@@ -2,6 +2,7 @@
 
 # The game starts here.
 label start:
+    stop music fadeout 1.0
     scene kitchen
     $ output = renpy.variant("small")
     "Is Small Variant?: [output]"

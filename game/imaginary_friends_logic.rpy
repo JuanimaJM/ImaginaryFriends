@@ -57,7 +57,7 @@ python early:
             return "images/game_backgrounds/bg_main_menu_sunset.jpg"
         else:
             # return "images/game_backgrounds/bg_main_menu_night.png")
-            # return Movie(play="movies/bg_main_menu.webm"))
+            # return Movie(play="videos/bg_main_menu.webm")
             return "animated_bg_main_menu_night"
     
     def timely_text_color():

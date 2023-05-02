@@ -25,34 +25,36 @@ define black = "#000000"
 define gray = "#808080"
 define black_olive = "#3e3e3e"
 define alice_blue = "#F0F8FF"
-define font_title = gui_path("Griffy-Regular.ttf")
-define font_regular = gui_path("SongMyung-Regular.ttf")
-define font_stats = gui_path("erasdust.ttf")
-define img_badge = gui_path("badge.png")
-define icon_diary_white = gui_path("ic_diary_white.png")
-define icon_achievement_white = gui_path("ic_achievement_white.png")
-define button_back_arrow = gui_path("button_back.png")
-define button_back_page = gui_path("button_back_page.png")
-define button_next_page = gui_path("button_next_page.png")
-define icon_cancel = gui_path("ic_cancel.png")
-define icon_menu = gui_path("ic_menu.png")
-define bg_left_page = gui_path("left_page.png")
-define bg_right_page = gui_path("right_page.png")
-define bar_green = gui_path("bar_green.png")
-define bar_yellowgreen = gui_path("bar_yellowgreen.png")
-define bar_yellow = gui_path("bar_yellow.png")
-define bar_orange = gui_path("bar_orange.png")
-define bar_red = gui_path("bar_red.png")
-define bar_white = gui_path("bar_white.png")
-define bar_black = gui_path("bar_black.png")
-define bg_paper = gui_path("bg_paper.jpg")
-define scrollbar_crayon = gui_path("scrollbar_crayon.png")
-define scrollbar_paper_white = gui_path("scrollbar_paper_white.png")
-define scrollbar_paper_black = gui_path("scrollbar_paper_black.png")
-define crayon_black_line = gui_path("crayon_black_line.png")
-define leaf_particles1 = SnowBlossom(im.FactorScale(gui_path("leaf.png"), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
-define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip(gui_path("leaf.png"), horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=5)
-define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip(gui_path("leaf.png"), vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
+define font_title = "gui/fonts/Griffy-Regular.ttf"
+define font_regular = "gui/fonts/SongMyung-Regular.ttf"
+define font_stats = "gui/fonts/erasdust.ttf"
+define img_badge = "images/achievement/badge.png"
+define icon_diary_white = "gui/icons/ic_diary_white.png"
+define icon_diary_black = "gui/icons/ic_diary_black.png"
+define icon_achievement_white = "gui/icons/ic_achievement_white.png"
+define icon_achievement_black = "gui/icons/ic_achievement_black.png"
+define button_back_arrow = "gui/icons/button_back.png"
+define button_back_page = "gui/icons/button_back_page.png"
+define button_next_page = "gui/icons/button_next_page.png"
+define icon_cancel = "gui/icons/ic_cancel.png"
+define icon_menu = "gui/icons/ic_menu.png"
+define bar_green = "gui/bar/bar_green.png"
+define bar_yellowgreen = "gui/bar/bar_yellowgreen.png"
+define bar_yellow = "gui/bar/bar_yellow.png"
+define bar_orange = "gui/bar/bar_orange.png"
+define bar_red = "gui/bar/bar_red.png"
+define bar_white = "gui/bar/bar_white.png"
+define bar_black = "gui/bar/bar_black.png"
+define bg_left_page = "gui/frame_backgrounds/left_page.png"
+define bg_right_page = "gui/frame_backgrounds/right_page.png"
+define bg_paper = "gui/frame_backgrounds/bg_paper.jpg"
+define scrollbar_crayon = "gui/scrollbar/scrollbar_crayon.png"
+define scrollbar_paper_white = "gui/scrollbar/scrollbar_paper_white.png"
+define scrollbar_paper_black = "gui/scrollbar/scrollbar_paper_black.png"
+define crayon_black_line = "gui/scrollbar/crayon_black_line.png"
+define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
+define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=5)
+define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
 
 # Changing GUI
 default icon_diary = timely_icon_diary()
@@ -143,27 +145,27 @@ default first_page = 1
 default second_page = 2
 define diary_content = {
     "Apple": {
-        "content": "images/apple_diary.png",
+        "content": "images/diary/apple_diary.png",
         "found": False
     },
     "Cat": {
-        "content": "images/cat_diary.png",
+        "content": "images/diary/cat_diary.png",
         "found": True
     },
     "Teddy": {
-        "content": "images/teddy_diary.png",
+        "content": "images/diary/teddy_diary.png",
         "found": False
     },
     "Ghost": {
-        "content": "images/ghost_diary.png",
+        "content": "images/diary/ghost_diary.png",
         "found": False
     },
     "Tree": {
-        "content": "images/tree_diary.png",
+        "content": "images/diary/tree_diary.png",
         "found": False
     },
     "Family": {
-        "content": "images/family_diary.png",
+        "content": "images/diary/family_diary.png",
         "found": True
     }
 }

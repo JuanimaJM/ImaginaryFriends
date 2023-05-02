@@ -18,9 +18,6 @@ python early:
     night_end = datetime.time(5, 59)
 
     now = night_start
-
-    def gui_path(file):
-        return "gui/imaginary_friends/" + file
     
     def identify_bar_color(value):
         if value > 80:
@@ -51,16 +48,16 @@ python early:
 
     def timely_bg():
         if sunrise_start <= now <= sunrise_end:
-            return gui_path("bg_main_menu_sunrise.jpg")
+            return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
         elif morning_start <= now <= morning_end:
-            return gui_path("bg_main_menu_morning.jpg")
+            return "images/game_backgrounds/bg_main_menu_morning.jpg"
         elif afternoon_start <= now <= afternoon_end:
-            return gui_path("bg_main_menu_afternoon.jpg")
+            return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
         elif sunset_start <= now <= sunset_end:
-            return gui_path("bg_main_menu_sunset.jpg")
+            return "images/game_backgrounds/bg_main_menu_sunset.jpg"
         else:
-            # return gui_path("bg_main_menu_night.png")
-            # return Movie(play=gui_path("bg_main_menu.webm"))
+            # return "images/game_backgrounds/bg_main_menu_night.png")
+            # return Movie(play="movies/bg_main_menu.webm"))
             return "animated_bg_main_menu_night"
     
     def timely_text_color():
@@ -71,15 +68,15 @@ python early:
     
     def timely_icon_diary():
         if is_sky_dark():
-            return gui_path("ic_diary_white.png")
+            return icon_diary_white
         else:
-            return gui_path("ic_diary_black.png")
+            return icon_diary_black
     
     def timely_icon_achievement():
         if is_sky_dark():
-            return gui_path("ic_achievement_white.png")
+            return icon_achievement_white
         else:
-            return gui_path("ic_achievement_black.png")
+            return icon_achievement_black
     
     def has_next_page():
         return (second_page < len(diary_pages))

@@ -34,7 +34,7 @@ define icon_diary_black = "gui/icons/ic_diary_black.png"
 define icon_achievement_white = "gui/icons/ic_achievement_white.png"
 define icon_achievement_black = "gui/icons/ic_achievement_black.png"
 define button_back_arrow = "gui/icons/button_back.png"
-define button_back_page = "gui/icons/button_back_page.png"
+define button_prev_page = "gui/icons/button_prev_page.png"
 define button_next_page = "gui/icons/button_next_page.png"
 define icon_cancel = "gui/icons/ic_cancel.png"
 define icon_menu = "gui/icons/ic_menu.png"
@@ -154,7 +154,7 @@ define diary_content = {
     },
     "Teddy": {
         "content": "images/diary/teddy_diary.png",
-        "found": False
+        "found": True
     },
     "Ghost": {
         "content": "images/diary/ghost_diary.png",
@@ -166,7 +166,7 @@ define diary_content = {
     },
     "Family": {
         "content": "images/diary/family_diary.png",
-        "found": True
+        "found": False
     }
 }
 define diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]

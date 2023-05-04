@@ -39,7 +39,7 @@ screen book():
                     yalign 0
                     xoffset 10
                     yoffset 10
-                    idle button_back_page
+                    idle button_prev_page
                     action Function(back_page)
         frame:
             xsize 800
@@ -85,7 +85,7 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
-        background dark_gunmetal
+        background im.Crop(bg_paper, (0, 0, 1600, 800))
         grid 3 3:
             xfill True
             yfill True

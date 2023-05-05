@@ -1,6 +1,6 @@
 # Utility Functions
 python early:
-    import datetime
+    import datetime, math
 
     # Get the current time
     now = datetime.datetime.now().time()
@@ -103,6 +103,9 @@ python early:
             return key
         else:
             return "???"
+
+    def calculate_rows(columns,list):
+        return math.ceil(len(list) / columns)
 ##############################################################################################################
 
 # Game Functions
@@ -125,4 +128,30 @@ python early:
         diary_content[key]["found"] = True
         if (diary_content[key]["found"]) and not (diary_content[key]["content"] in diary_pages):
             diary_pages.append(diary_content[key]["content"])
+##############################################################################################################
+
+# Debugging
+python early:
+    def start_debug():
+        renpy.config.always_shown_screens.append("debug")
+    
+    def grant_all_achievements():
+        for value in achievement_list.values():
+            value["granted"] = True
+    
+    def remove_all_achievements():
+        for value in achievement_list.values():
+            value["granted"] = False
+        
+    def write_all_diary_pages():
+        for value in diary_content.values():
+            value["found"] = True
+            if (value["found"]) and not (value["content"] in diary_pages):
+                diary_pages.append(value["content"])
+    
+    def remove_all_diary_pages():
+        for value in diary_content.values():
+            value["found"] = False
+            if (value["content"] in diary_pages):
+                diary_pages.remove(value["content"])
 ##############################################################################################################

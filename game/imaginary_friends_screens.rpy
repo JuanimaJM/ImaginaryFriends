@@ -86,7 +86,7 @@ screen achievements():
         xalign 0.5
         yalign 0.6
         # background im.Crop(bg_paper, (0, 0, 1600, 800))
-        grid 3 3:
+        grid 3 calculate_rows(3, achievement_list):
             xfill True
             yfill True
             for key, value in sorted_achievements.items():
@@ -224,3 +224,46 @@ screen statsUI():
                     hover_base_bar scrollbar_paper_black
                     thumb scrollbar_crayon
 #####################################################################S#########################################
+
+# Debug Window
+screen debug():
+    zorder 200
+    imagebutton:
+        xalign 0.0
+        yalign 0.0
+        idle icon_debug
+        action ToggleScreen("debugWindow")
+
+screen debugWindow():
+    add semi_transparent
+    dismiss action Hide("debugWindow")
+    frame:
+        xalign 0.0
+        yalign 0.0
+        yoffset 100
+        xoffset 100
+        background None
+        grid 3 2:
+            xspacing 25
+            yspacing 10
+            textbutton "Grant All Achievements" action Function(grant_all_achievements)
+            textbutton "Remove All Achievements" action Function(remove_all_achievements)
+            textbutton "Write All Diary Pages" action Function(write_all_diary_pages)
+            textbutton "Remove All Diary Pages" action Function(remove_all_diary_pages)
+            vbox:
+                text "Sanity:"
+                bar:
+                    xsize 300
+                    left_bar sugar_plum
+                    right_bar sugar_plum
+                    thumb dark_gunmetal
+                    value VariableValue("sanity", 100)
+            vbox:
+                text "Happiness:"
+                bar:
+                    xsize 300
+                    left_bar sugar_plum
+                    right_bar sugar_plum
+                    thumb dark_gunmetal
+                    value VariableValue("happiness", 100)
+##############################################################################################################

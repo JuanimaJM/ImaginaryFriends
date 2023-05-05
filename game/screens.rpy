@@ -267,6 +267,8 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
     config.overlay_screens.append("stats")
+    if renpy.variant("mobile"):
+        config.always_shown_screens.append("debug")
 
 default quick_menu = True
 

@@ -72,7 +72,8 @@ style vslider:
 
 style frame:
     padding gui.frame_borders.padding
-    background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
+    background Frame(paper_frame, gui.frame_borders, tile=gui.frame_tile)
+    # background Frame("gui/frame.png", gui.frame_borders, tile=gui.frame_tile)
 
 
 
@@ -741,6 +742,7 @@ style page_button_text:
 
 style slot_button:
     properties gui.button_properties("slot_button")
+    background paper_slot
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")

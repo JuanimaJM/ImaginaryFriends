@@ -50,6 +50,8 @@ define bg_right_page = "gui/frame_backgrounds/right_page.png"
 define bg_paper = "gui/frame_backgrounds/bg_paper.jpg"
 define paper_textbox = "gui/frame_backgrounds/paper_textbox.png"
 define paper_namebox = "gui/frame_backgrounds/paper_namebox.png"
+define paper_frame = "gui/frame_backgrounds/paper_frame.png"
+define paper_slot = "gui/frame_backgrounds/paper_slot.png"
 define scrollbar_crayon = "gui/scrollbar/scrollbar_crayon.png"
 define scrollbar_paper_white = "gui/scrollbar/scrollbar_paper_white.png"
 define scrollbar_paper_black = "gui/scrollbar/scrollbar_paper_black.png"
@@ -68,7 +70,7 @@ default bg_timely_main_menu = timely_bg()
 # name of the character.
 default player_name = "Child"
 define Child = Character("[player_name]", color=sugar_plum)
-define Phantom = Character("Phantom", color=american_purple, font=font_title)
+define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)
 ##############################################################################################################
 

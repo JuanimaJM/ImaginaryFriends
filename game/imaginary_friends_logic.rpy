@@ -33,7 +33,7 @@ python early:
 
     def identify_text_color(key):
         if achievement_list[key]["granted"]:
-            return  white
+            return black
         else:
             return gray
     

@@ -85,7 +85,7 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
-        background im.Crop(bg_paper, (0, 0, 1600, 800))
+        # background im.Crop(bg_paper, (0, 0, 1600, 800))
         grid 3 3:
             xfill True
             yfill True
@@ -154,7 +154,7 @@ screen statsUI():
         ysize 1080
         xalign 1.0
         left_padding 25
-        background bg_paper
+        # background bg_paper
         vbox:
             xfill True
             yoffset 10

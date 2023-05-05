@@ -107,7 +107,8 @@ screen say(who, what):
                 style "namebox"
                 text who id "who"
 
-        text what id "what"
+        text what id "what":
+            color black
 
 
     ## If there's a side image, display it above the text. Do not display on the
@@ -134,8 +135,8 @@ style window:
     xfill True
     yalign gui.textbox_yalign
     ysize gui.textbox_height
-
-    background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
+    background Image(paper_textbox, xalign=0.5, yalign=1.0)
+    # background Image("gui/textbox.png", xalign=0.5, yalign=1.0)
 
 style namebox:
     xpos gui.name_xpos
@@ -144,7 +145,8 @@ style namebox:
     ypos gui.name_ypos
     ysize gui.namebox_height
 
-    background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # background Frame(paper_namebox, gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
+    # background Frame("gui/namebox.png", gui.namebox_borders, tile=gui.namebox_tile, xalign=gui.name_xalign)
     padding gui.namebox_borders.padding
 
 style say_label:
@@ -190,6 +192,7 @@ style input_prompt is default
 style input_prompt:
     xalign gui.dialogue_text_xalign
     properties gui.text_properties("input_prompt")
+    color black
 
 style input:
     xalign gui.dialogue_text_xalign
@@ -274,6 +277,7 @@ style quick_button:
 
 style quick_button_text:
     properties gui.button_text_properties("quick_button")
+    idle_color black
 
 
 ################################################################################
@@ -1483,7 +1487,8 @@ screen quick_menu():
 
 style window:
     variant "small"
-    background "gui/phone/textbox.png"
+    background paper_textbox
+    # background "gui/phone/textbox.png"
 
 style radio_button:
     variant "small"
@@ -1567,7 +1572,8 @@ style slider_slider:
 
 style window:
     variant "mobile"
-    background "gui/phone/textbox.png"
+    background paper_textbox
+    # background "gui/phone/textbox.png"
 
 style radio_button:
     variant "mobile"

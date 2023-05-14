@@ -151,7 +151,7 @@ screen statsUI():
     modal True
     frame:
         xsize 650
-        ysize 1080
+        ysize 800
         xalign 1.0
         left_padding 25
         # background bg_paper
@@ -197,8 +197,9 @@ screen statsUI():
                 image crayon_black_line:
                     xsize 565
                     yoffset -30
-                viewport id "vp_stats":
+                viewport:
                     yinitial 0.0
+                    scrollbars "vertical"
                     vbox:
                         xfill True
                         spacing 10
@@ -218,11 +219,11 @@ screen statsUI():
                                 xsize 500
                                 left_bar identify_bar_color(value["stats"])
                                 right_bar bar_black
-                vbar value YScrollValue("vp_stats"):
-                    xalign 1.0
-                    base_bar scrollbar_paper_white
-                    hover_base_bar scrollbar_paper_black
-                    thumb scrollbar_crayon
+                # vbar value YScrollValue("vp_stats"):
+                #     xalign 1.0
+                #     base_bar scrollbar_paper_white
+                #     hover_base_bar scrollbar_paper_black
+                #     thumb scrollbar_crayon
 #####################################################################S#########################################
 
 # Debug Window

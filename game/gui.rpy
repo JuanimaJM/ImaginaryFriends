@@ -177,9 +177,9 @@ define gui.button_text_xalign = 0.0
 ##
 ## These customizations are used by the default interface:
 
-define gui.radio_button_borders = Borders(27, 6, 6, 6)
+define gui.radio_button_borders = Borders(40, 10, 10, 10) #Borders(27, 6, 6, 6)
 
-define gui.check_button_borders = Borders(27, 6, 6, 6)
+define gui.check_button_borders = Borders(40, 10, 10, 10) #Borders(27, 6, 6, 6)
 
 define gui.confirm_button_text_xalign = 0.5
 
@@ -306,22 +306,22 @@ define gui.frame_tile = False
 ## The height of horizontal bars, scrollbars, and sliders. The width of vertical
 ## bars, scrollbars, and sliders.
 define gui.bar_size = 38
-define gui.scrollbar_size = 18
-define gui.slider_size = 38
+define gui.scrollbar_size = 24 #18
+define gui.slider_size = 64 #38
 
 ## True if bar images should be tiled. False if they should be linearly scaled.
 define gui.bar_tile = False
-define gui.scrollbar_tile = False
+define gui.scrollbar_tile = True #False
 define gui.slider_tile = False
 
 ## Horizontal borders.
 define gui.bar_borders = Borders(6, 6, 6, 6)
-define gui.scrollbar_borders = Borders(6, 6, 6, 6)
+define gui.scrollbar_borders = Borders(10, 6, 10, 6) #Borders(6, 6, 6, 6)
 define gui.slider_borders = Borders(6, 6, 6, 6)
 
 ## Vertical borders.
 define gui.vbar_borders = Borders(6, 6, 6, 6)
-define gui.vscrollbar_borders = Borders(6, 6, 6, 6)
+define gui.vscrollbar_borders = Borders(6, 10, 6, 10) #Borders(6, 6, 6, 6)
 define gui.vslider_borders = Borders(6, 6, 6, 6)
 
 ## What to do with unscrollable scrollbars in the gui. "hide" hides them, while

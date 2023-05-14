@@ -56,13 +56,17 @@ style scrollbar:
 
 style vscrollbar:
     xsize gui.scrollbar_size
-    base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/bar/paper_[prefix_]vertical_scrollbar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb scrollbar_thumb_vertical
+    # base_bar Frame("gui/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    # thumb Frame("gui/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     ysize gui.slider_size
-    base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/slider/horizontal_[prefix_]thumb.png"
+    base_bar Frame("gui/bar/paper_[prefix_]horizontal_bar.png", gui.slider_borders, tile=gui.slider_tile)
+    thumb slider_thumb_horizontal
+    # base_bar Frame("gui/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    # thumb "gui/slider/horizontal_[prefix_]thumb.png"
 
 style vslider:
     xsize gui.slider_size
@@ -797,17 +801,17 @@ screen settings():
                     label _("Text Speed")
 
                     bar:
-                        left_bar sugar_plum
-                        right_bar sugar_plum
-                        thumb dark_gunmetal
+                        # left_bar sugar_plum
+                        # right_bar sugar_plum
+                        # thumb dark_gunmetal
                         value Preference("text speed")
 
                     label _("Auto-Forward Time")
 
                     bar:
-                        left_bar sugar_plum
-                        right_bar sugar_plum
-                        thumb dark_gunmetal
+                        # left_bar sugar_plum
+                        # right_bar sugar_plum
+                        # thumb dark_gunmetal
                         value Preference("auto-forward time")
 
                 vbox:
@@ -817,9 +821,9 @@ screen settings():
 
                         hbox:
                             bar:
-                                left_bar sugar_plum
-                                right_bar sugar_plum
-                                thumb dark_gunmetal
+                                # left_bar sugar_plum
+                                # right_bar sugar_plum
+                                # thumb dark_gunmetal
                                 value Preference("music volume")
 
                     if config.has_sound:
@@ -828,9 +832,9 @@ screen settings():
 
                         hbox:
                             bar:
-                                left_bar sugar_plum
-                                right_bar sugar_plum
-                                thumb dark_gunmetal
+                                # left_bar sugar_plum
+                                # right_bar sugar_plum
+                                # thumb dark_gunmetal
                                 value Preference("sound volume")
 
                             if config.sample_sound:
@@ -895,7 +899,8 @@ style radio_vbox:
 
 style radio_button:
     properties gui.button_properties("radio_button")
-    foreground "gui/button/radio_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/button/radio_[prefix_]foreground.png"
 
 style radio_button_text:
     properties gui.button_text_properties("radio_button")
@@ -905,12 +910,14 @@ style check_vbox:
 
 style check_button:
     properties gui.button_properties("check_button")
-    foreground "gui/button/check_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/button/check_[prefix_]foreground.png"
 
 style check_button_text:
     properties gui.button_text_properties("check_button")
 
 style slider_slider:
+    # xsize 350
     xsize 525
 
 style slider_button:
@@ -1290,7 +1297,8 @@ style skip_triangle is skip_text
 
 style skip_frame:
     ypos gui.skip_ypos
-    background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
+    background Frame(paper_skip, gui.skip_frame_borders, tile=gui.frame_tile)
+    # background Frame("gui/skip.png", gui.skip_frame_borders, tile=gui.frame_tile)
     padding gui.skip_frame_borders.padding
 
 style skip_text:
@@ -1333,8 +1341,8 @@ style notify_text is gui_text
 
 style notify_frame:
     ypos gui.notify_ypos
-
-    background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
+    background Frame(paper_notify, gui.notify_frame_borders, tile=gui.frame_tile)
+    # background Frame("gui/notify.png", gui.notify_frame_borders, tile=gui.frame_tile)
     padding gui.notify_frame_borders.padding
 
 style notify_text:
@@ -1496,11 +1504,13 @@ style window:
 
 style radio_button:
     variant "small"
-    foreground "gui/phone/button/radio_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/phone/button/radio_[prefix_]foreground.png"
 
 style check_button:
     variant "small"
-    foreground "gui/phone/button/check_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/phone/button/check_[prefix_]foreground.png"
 
 style nvl_window:
     variant "small"
@@ -1547,14 +1557,18 @@ style scrollbar:
 style vscrollbar:
     variant "small"
     xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/bar/paper_[prefix_]vertical_scrollbar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb scrollbar_thumb_vertical
+    # base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    # thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     variant "small"
     ysize gui.slider_size
-    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
+    base_bar Frame("gui/bar/paper_[prefix_]horizontal_bar.png", gui.slider_borders, tile=gui.slider_tile)
+    thumb slider_thumb_horizontal
+    # base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    # thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
 
 style vslider:
     variant "small"
@@ -1581,11 +1595,13 @@ style window:
 
 style radio_button:
     variant "mobile"
-    foreground "gui/phone/button/radio_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/phone/button/radio_[prefix_]foreground.png"
 
 style check_button:
     variant "mobile"
-    foreground "gui/phone/button/check_[prefix_]foreground.png"
+    foreground "gui/button/paper_[prefix_]checkbox.png"
+    # foreground "gui/phone/button/check_[prefix_]foreground.png"
 
 style nvl_window:
     variant "mobile"
@@ -1632,14 +1648,18 @@ style scrollbar:
 style vscrollbar:
     variant "mobile"
     xsize gui.scrollbar_size
-    base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
-    thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    base_bar Frame("gui/bar/paper_[prefix_]vertical_scrollbar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    thumb scrollbar_thumb_vertical
+    # base_bar Frame("gui/phone/scrollbar/vertical_[prefix_]bar.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
+    # thumb Frame("gui/phone/scrollbar/vertical_[prefix_]thumb.png", gui.vscrollbar_borders, tile=gui.scrollbar_tile)
 
 style slider:
     variant "mobile"
     ysize gui.slider_size
-    base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
-    thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
+    base_bar Frame("gui/bar/paper_[prefix_]horizontal_bar.png", gui.slider_borders, tile=gui.slider_tile)
+    thumb slider_thumb_horizontal
+    # base_bar Frame("gui/phone/slider/horizontal_[prefix_]bar.png", gui.slider_borders, tile=gui.slider_tile)
+    # thumb "gui/phone/slider/horizontal_[prefix_]thumb.png"
 
 style vslider:
     variant "mobile"

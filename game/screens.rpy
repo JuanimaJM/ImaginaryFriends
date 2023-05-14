@@ -738,20 +738,26 @@ style page_label:
 style page_label_text:
     text_align 0.5
     layout "subtitle"
-    hover_color gui.hover_color
+    hover_color sugar_plum #gui.hover_color
 
 style page_button:
     properties gui.button_properties("page_button")
 
 style page_button_text:
     properties gui.button_text_properties("page_button")
+    hover_color sugar_plum
+    selected_color sugar_plum
 
 style slot_button:
     properties gui.button_properties("slot_button")
-    background paper_slot
+    background paper_idle_slot
+    idle_background paper_idle_slot
+    hover_background paper_hover_slot
 
 style slot_button_text:
     properties gui.button_text_properties("slot_button")
+    idle_color sugar_plum
+    hover_color dark_gunmetal
 
 
 ## Preferences screen ##########################################################

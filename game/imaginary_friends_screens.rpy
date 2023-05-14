@@ -228,7 +228,7 @@ screen statsUI():
 
 # Debug Window
 screen debug():
-    zorder 200
+    zorder 210
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -236,6 +236,7 @@ screen debug():
         action ToggleScreen("debugWindow")
 
 screen debugWindow():
+    zorder 200
     add semi_transparent
     dismiss action Hide("debugWindow")
     frame:

@@ -119,7 +119,7 @@ screen achievements():
                             size gui.notify_text_size
                             color identify_text_color(key)
 
-screen badge(img):
+screen badge(img):      
     add semi_transparent
     dismiss action Hide("badge")
     frame:
@@ -219,21 +219,20 @@ screen statsUI():
                                 xsize 500
                                 left_bar identify_bar_color(value["stats"])
                                 right_bar bar_black
-                # vbar value YScrollValue("vp_stats"):
-                #     xalign 1.0
-                #     base_bar scrollbar_paper_white
-                #     hover_base_bar scrollbar_paper_black
-                #     thumb scrollbar_crayon
 #####################################################################S#########################################
 
 # Debug Window
 screen debug():
     zorder 210
-    imagebutton:
-        xalign 0.0
-        yalign 0.0
-        idle icon_debug
-        action ToggleScreen("debugWindow")
+    drag:
+        frame:
+            background transparent
+            xysize (100, 100)
+            imagebutton:
+                xalign 0.5
+                yalign 0.5
+                idle icon_debug
+                action ToggleScreen("debugWindow")
 
 screen debugWindow():
     zorder 200

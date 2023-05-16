@@ -4,6 +4,7 @@ init offset = -8
 
 # Imaginary Friends Configurations
 define config.rollback_enabled = False
+define config.developer = True
 ##############################################################################################################
 
 # Imaginary Friends GUI

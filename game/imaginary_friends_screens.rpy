@@ -225,14 +225,10 @@ screen statsUI():
 screen debug():
     zorder 210
     drag:
-        frame:
-            background transparent
-            xysize (100, 100)
-            imagebutton:
-                xalign 0.5
-                yalign 0.5
-                idle icon_debug
-                action ToggleScreen("debugWindow")
+        xoffset 30
+        yoffset 30
+        image icon_debug
+        clicked ToggleScreen("debugWindow")
 
 screen debugWindow():
     zorder 200

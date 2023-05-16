@@ -20,13 +20,13 @@ python early:
     now = night_start
     
     def identify_bar_color(value):
-        if value > 80:
+        if value >= 80:
             return bar_green
-        elif value > 60 and value < 80:
+        elif value >= 60 and value < 80:
             return bar_yellowgreen
-        elif value > 40 and value < 60:
+        elif value >= 40 and value < 60:
             return bar_yellow
-        elif value > 20 and value < 40:
+        elif value >= 20 and value < 40:
             return bar_orange
         else:
             return bar_red

@@ -4,6 +4,22 @@
 label start:
     stop music fadeout 1.0
     scene kitchen
+    "1"
+    "2"
+    "3"
+    "Before we start, I would like you to input something"
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    "Oohh. So your name is [player_name]"
+    "I will show some choices for testing"
+    menu:
+        "Get random achievement":
+            $ randomly_grant_achievement()
+        "Show sprite size":
+            show phantom 960
+            "The sprite size is 960x960"
+    jump end
+
+label testing:
     $ output = renpy.variant("small")
     "Is Small Variant?: [output]"
     $ output = renpy.variant("pc")
@@ -12,7 +28,6 @@ label start:
     "Is Mobile Variant?: [output]"
     "Im showing some sprites"
     "Ahmmm before that, what is your name?"
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
     "Meet Phantom [Child]"
     $ meet_friend(Phantom.name)
     $ write_diary("Ghost")
@@ -53,4 +68,10 @@ label start:
     "F"
     "G"
     $ write_diary("Tree")
+
+label end:
+    "3"
+    "2"
+    "1"
+    "The End!"
     return

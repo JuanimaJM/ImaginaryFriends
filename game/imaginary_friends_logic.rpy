@@ -106,6 +106,10 @@ python early:
 
     def calculate_rows(columns,list):
         return math.ceil(len(list) / columns)
+
+    def notify_achievement(key):
+        title = achievement_list[key]["title"]
+        renpy.display_notify(f"You achieve the {title}")
 ##############################################################################################################
 
 # Game Functions
@@ -113,9 +117,7 @@ python early:
     def grant_achievement(key):
         if not achievement_list[key]["granted"]:
             achievement_list[key]["granted"] = True
-            title = achievement_list[key]["title"]
-            renpy.display_notify(f"You achieve the {title}")
-        return renpy.say(None, "You get some achievement")
+            notify_achievement(key)
     
     def update_friends_stats(character, value):
         friends_stats[character]["stats"] += value
@@ -149,6 +151,7 @@ python early:
         if keys_with_false:
             random_key = random.choice(keys_with_false)
             achievement_list[random_key]["granted"] = True
+            notify_achievement(random_key)
 
     def remove_all_achievements():
         modify_achievements(False)

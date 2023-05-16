@@ -155,3 +155,60 @@ python early:
             if (value["content"] in diary_pages):
                 diary_pages.remove(value["content"])
 ##############################################################################################################
+
+# Color Spectrum
+python early:
+    def get_color(number):
+        if number >= 80:
+            start_color = "#00FF00"  # Electric Green
+            end_color = "#8EFD00"  # Mango Green
+            start_percentage = 80
+            end_percentage = 100
+        elif number >= 60:
+            start_color = "#8EFD00"  # Mango Green
+            end_color = "#FAFF00"  # Lemon Glacier
+            start_percentage = 60
+            end_percentage = 79
+        elif number >= 40:
+            start_color = "#FAFF00"  # Lemon Glacier
+            end_color = "#FF8A00"  # American Orange
+            start_percentage = 40
+            end_percentage = 59
+        elif number >= 20:
+            start_color = "#FF8A00"  # American Orange
+            end_color = "#FF0000"  # Red
+            start_percentage = 20
+            end_percentage = 39
+        else:
+            return "#FF0000"  # Red
+
+        percentage = (number - start_percentage) / (end_percentage - start_percentage)
+        color = blend_colors(start_color, end_color, percentage)
+        return color
+
+
+    def blend_colors(start_color, end_color, percentage):
+        r1, g1, b1 = hex_to_rgb(start_color)
+        r2, g2, b2 = hex_to_rgb(end_color)
+
+        r = int(r1 + (r2 - r1) * percentage)
+        g = int(g1 + (g2 - g1) * percentage)
+        b = int(b1 + (b2 - b1) * percentage)
+
+        blended_color = rgb_to_hex((r, g, b))
+        return blended_color
+
+
+    def hex_to_rgb(hex_color):
+        hex_color = hex_color.lstrip("#")
+        return tuple(int(hex_color[i:i + 2], 16) for i in (0, 2, 4))
+
+
+    def rgb_to_hex(rgb_color):
+        r, g, b = rgb_color
+        return f"#{r:02x}{g:02x}{b:02x}"
+
+    # number = 75
+    # color = get_color(number)
+    # print(color)  # Output: "#9df200" (Blended color between Mango Green and Electric Green)
+##############################################################################################################

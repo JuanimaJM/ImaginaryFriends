@@ -177,7 +177,8 @@ screen statsUI():
                     range 100
                     value sanity
                     xsize 500
-                    left_bar identify_bar_color(sanity)
+                    left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(sanity))
+                    # left_bar identify_bar_color(sanity)
                     right_bar bar_black
                 text _("Happiness:"):
                     color black
@@ -187,7 +188,8 @@ screen statsUI():
                     range 100
                     value happiness
                     xsize 500
-                    left_bar identify_bar_color(happiness)
+                    left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(happiness))
+                    # left_bar identify_bar_color(happiness)
                     right_bar bar_black
             frame:
                 xfill True
@@ -217,7 +219,8 @@ screen statsUI():
                                 range 100
                                 value value["stats"]
                                 xsize 500
-                                left_bar identify_bar_color(value["stats"])
+                                left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(happiness))
+                                # left_bar identify_bar_color(value["stats"])
                                 right_bar bar_black
 #####################################################################S#########################################
 

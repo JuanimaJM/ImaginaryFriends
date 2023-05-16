@@ -132,28 +132,52 @@ python early:
 
 # Debugging
 python early:
+    import random
+
     def start_debug():
         renpy.config.always_shown_screens.append("debug")
     
+    def modify_achievements(granted):
+        for achievement in achievement_list.values():
+            achievement["granted"] = granted
+
     def grant_all_achievements():
-        for value in achievement_list.values():
-            value["granted"] = True
-    
+        modify_achievements(True)
+
+    def randomly_grant_achievement():
+        keys_with_false = [key for key, value in achievement_list.items() if not value["granted"]]
+        if keys_with_false:
+            random_key = random.choice(keys_with_false)
+            achievement_list[random_key]["granted"] = True
+
     def remove_all_achievements():
-        for value in achievement_list.values():
-            value["granted"] = False
-        
-    def write_all_diary_pages():
+        modify_achievements(False)
+
+    def modify_diary_pages(found):
         for value in diary_content.values():
-            value["found"] = True
+            value["found"] = found
+            refresh_diary()
+    
+    def refresh_diary():
+        for value in diary_content.values():
             if (value["found"]) and not (value["content"] in diary_pages):
                 diary_pages.append(value["content"])
-    
+
+    def write_all_diary_pages():
+        modify_diary_pages(True)
+
+    def randomly_write_diary():
+        keys_with_false = [key for key, value in diary_content.items() if not value["found"]]
+        if keys_with_false:
+            random_key = random.choice(keys_with_false)
+            diary_content[random_key]["found"] = True
+        refresh_diary()
+
     def remove_all_diary_pages():
-        for value in diary_content.values():
-            value["found"] = False
-            if (value["content"] in diary_pages):
-                diary_pages.remove(value["content"])
+        modify_diary_pages(False)
+        diary_pages.clear()
+        store.first_page = 1
+        store.second_page = 2
 ##############################################################################################################
 
 # Color Spectrum

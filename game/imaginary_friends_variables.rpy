@@ -109,32 +109,32 @@ define achievement_list = {
     "Achv1": {
         "title": "Normal Ending",
         "description": "Get a normal ending.",
-        "granted": True
+        "granted": False
     },
     "Achv2": {
         "title": "Best Ending",
         "description": "Help all of your friends.",
-        "granted": True
+        "granted": False
     },
     "Achv3": {
         "title": "I'm the Menu",
         "description": "Get eaten.",
-        "granted": True
+        "granted": False
     },
     "Achv4": {
         "title": "Moonlight Lovers",
         "description": "Unite the couple.",
-        "granted": True
+        "granted": False
     },
     "Achv5": {
         "title": "Bad ending 1",
         "description": "Get the first bad ending.",
-        "granted": True
+        "granted": False
     },
     "Achv6": {
         "title": "The Cat Idol",
         "description": "Meet the Cat Idol.",
-        "granted": True
+        "granted": False
     },
     "Achv7": {
         "title": "The Dog Idol",
@@ -168,11 +168,11 @@ define diary_content = {
     },
     "Cat": {
         "content": "images/diary/cat_diary.png",
-        "found": True
+        "found": False
     },
     "Teddy": {
         "content": "images/diary/teddy_diary.png",
-        "found": True
+        "found": False
     },
     "Ghost": {
         "content": "images/diary/ghost_diary.png",

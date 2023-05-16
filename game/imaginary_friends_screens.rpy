@@ -243,27 +243,30 @@ screen debugWindow():
         yoffset 100
         xoffset 100
         background None
-        grid 3 2:
-            xspacing 25
+        grid 3 3:
+            xspacing 50
             yspacing 10
             textbutton "Grant All Achievements" action Function(grant_all_achievements)
+            textbutton "Randomly Grant Achievement" action Function(randomly_grant_achievement)
             textbutton "Remove All Achievements" action Function(remove_all_achievements)
             textbutton "Write All Diary Pages" action Function(write_all_diary_pages)
+            textbutton "Randomly Write Diary" action Function(randomly_write_diary)
             textbutton "Remove All Diary Pages" action Function(remove_all_diary_pages)
             vbox:
                 text "Sanity:"
                 bar:
                     xsize 300
                     left_bar sugar_plum
-                    right_bar sugar_plum
-                    thumb dark_gunmetal
+                    right_bar jacarta
+                    thumb american_violet
                     value VariableValue("sanity", 100)
             vbox:
                 text "Happiness:"
                 bar:
                     xsize 300
                     left_bar sugar_plum
-                    right_bar sugar_plum
-                    thumb dark_gunmetal
+                    right_bar jacarta
+                    thumb american_violet
                     value VariableValue("happiness", 100)
+            null
 ##############################################################################################################

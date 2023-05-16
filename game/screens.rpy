@@ -480,7 +480,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
                         yinitial yinitial
                         scrollbars "vertical"
                         mousewheel True
-                        draggable True
+                        # draggable True
                         pagekeys True
 
                         side_yfill True
@@ -496,7 +496,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                         scrollbars "vertical"
                         mousewheel True
-                        draggable True
+                        # draggable True
                         pagekeys True
 
                         side_yfill True

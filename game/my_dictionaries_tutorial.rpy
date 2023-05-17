@@ -68,3 +68,28 @@ init python:
 # Tuples items can't be change unlike list and arrays
     tuple1 = ("Kheem", "Beller", 21, True)
     tuple2 = ("KL", 89, 88, 90, 95, True, True, False)
+
+"""
+In Python, you can use various methods to modify the contents of lists, tuples, arrays, and dictionaries without reassigning them. 
+Here are some common methods and techniques:
+
+Lists:
+list.extend(iterable): Appends elements from an iterable to the end of the list.
+list += iterable or list.extend(iterable): Concatenates another iterable to the end of the list.
+list.append(item): Appends a single item to the end of the list.
+List comprehension: Allows you to create a new list by applying an operation to each element of an existing list.
+
+Tuples:
+Tuples are immutable in Python, meaning their elements cannot be modified. 
+To change the contents, you would need to create a new tuple.
+
+Arrays:
+array.extend(iterable): Extends the array by appending elements from an iterable.
+array.fromlist(list): Appends items from a list to the array.
+array.frombytes(bytes): Appends items from a bytes object to the array.
+
+
+Dictionaries:
+dict.update(other_dict): Merges the keys and values from another dictionary into the current dictionary.
+Dictionary comprehension: Allows you to create a new dictionary by applying an operation to each key-value pair of an existing dictionary.
+"""

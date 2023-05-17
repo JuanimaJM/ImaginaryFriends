@@ -109,7 +109,7 @@ python early:
 
     def notify_achievement(key):
         title = achievement_list[key]["title"]
-        renpy.display_notify(f"You achieve the {title}")
+        renpy.display_notify(f"You achieve the \"{title}\"")
 ##############################################################################################################
 
 # Game Functions

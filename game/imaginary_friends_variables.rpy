@@ -72,8 +72,8 @@ define scrollbar_paper_white = "gui/bar/scrollbar_paper_white.png"
 define scrollbar_paper_black = "gui/bar/scrollbar_paper_black.png"
 define crayon_black_line = "gui/bar/crayon_black_line.png"
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
-define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=5)
-define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
+define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
+define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=11)
 
 # Changing GUI
 default icon_diary = timely_icon_diary()

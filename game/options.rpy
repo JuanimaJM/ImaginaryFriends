@@ -77,7 +77,7 @@ define config.has_voice = False
 ## the player is at the main menu. This file will continue playing into the
 ## game, until it is stopped or another file is played.
 
-define config.main_menu_music = "audio/Pan's_Labyrinth_Lullaby_(Piano).mp3"
+define config.main_menu_music = "audio/Pan's_Labyrinth_Lullaby_(Piano and with Wind).mp3"
 define config.game_menu_music = None
 
 

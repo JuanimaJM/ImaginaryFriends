@@ -3,7 +3,7 @@ init offset = -8
 ##############################################################################################################
 
 # Imaginary Friends Configurations
-define config.rollback_enabled = False
+define config.rollback_enabled = True
 define config.developer = True
 ##############################################################################################################
 
@@ -39,7 +39,7 @@ define button_prev_page = "gui/icons/button_prev_page.png"
 define button_next_page = "gui/icons/button_next_page.png"
 define icon_cancel = "gui/icons/ic_cancel.png"
 define icon_menu = "gui/icons/ic_menu.png"
-define icon_debug = "gui/icons/ic_debug.png"
+define icon_developer = "gui/icons/ic_dev_menu.png"
 define bar_green = "gui/bar/bar_green.png"
 define bar_yellowgreen = "gui/bar/bar_yellowgreen.png"
 define bar_yellow = "gui/bar/bar_yellow.png"
@@ -84,9 +84,14 @@ default bg_timely_main_menu = timely_bg()
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
 default player_name = "Child"
+define name_list = (
+    "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
+    "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"
+)
 define Child = Character("[player_name]", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)
+define Cloud = Character("Cloud")
 ##############################################################################################################
 
 # Stats
@@ -128,33 +133,33 @@ define achievement_list = {
         "granted": False
     },
     "Achv5": {
-        "title": "Bad ending 1",
-        "description": "Get the first bad ending.",
-        "granted": False
-    },
-    "Achv6": {
         "title": "The Cat Idol",
         "description": "Meet the Cat Idol.",
         "granted": False
     },
-    "Achv7": {
+    "Achv6": {
         "title": "The Dog Idol",
         "description": "Meet the Dog Idol.",
         "granted": False
     },
-    "Achv8": {
+    "Achv7": {
         "title": "The Blue Alien",
         "description": "Meet the Blue Alien.",
         "granted": False
     },
-    "Achv9": {
+    "Achv8": {
         "title": "Secret Ending",
         "description": "Get the secret ending.",
+        "granted": False
+    },
+    "Achv9": {
+        "title": "Are you Stupid? Ending",
+        "description": "Don't tell your name.",
         "granted": False
     }
 }
 
-default sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
+define sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
 
 ##############################################################################################################
 

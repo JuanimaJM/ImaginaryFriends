@@ -4,22 +4,91 @@
 label start:
     stop music fadeout 1.0
     scene kitchen
+    jump testing
+
+label asking_name:
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    if not player_name == "":
+        jump end
+    Cloud "You haven't given me your name yet."
+    Cloud "Please tell me your name."
+    "Cloud smiled warmly at me."
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    if not player_name == "":
+        jump end
+    Cloud "Don't tell me you don't have a name?"
+    Cloud "You must have one. Even a nickname."
+    Cloud "What is your name?"
+    "Cloud asked me once again, still having a smile on his face."
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    if not player_name == "":
+        jump end
+    Cloud "Ha!"
+    "Cloud exclaimed loudly. He seems to be irritated."
+    Cloud "My patience is running out."
+    Cloud "Are you stupid!?"
+    Cloud "It's either you are being stubborn or you are really stupid since you don't even know your own name."
+    Cloud "What am I to do with you?"
+    "Cloud sighed."
+    Cloud "I'll give you once last chance."
+    Cloud "Just tell me your name kid, please."
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    if not player_name == "":
+        jump end
+    else:
+        $ player_name = "Stupid"
+    $ grant_achievement("Achv9")
+    Cloud "Fine! I'll name you myself!"
+    "Cloud shouted."
+    Cloud "From now on, your name is Stupid."
+    Cloud "Hi Stupid!"
+    Cloud "But since you made me quite upset-"
+    Cloud "No."
+    Cloud "I must say, I'm quite disappointed in you."
+    Cloud "You must leave this game!"
+    Cloud "Come back when you are willing to give me your name."
+    Cloud "Thank you and good bye. Stupid."
+    "Cloud smiled at me, but I feel like he isn't really happy."
+    "I think he's angry at me."
+    $ renpy.quit()
+
+label testing:
     "1"
     "2"
     "3"
     "Before we start, I would like you to input something"
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    $ player_name = renpy.input("What is your name?", random_name(), length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
     "Oohh. So your name is [player_name]"
     "I will show some choices for testing"
+    call testing_menu
+    jump end
+
+label testing_menu:
     menu:
+        "Change player name":
+            $ player_name = renpy.input("Input your new name.", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+            "Your new name is [player_name]"
         "Get random achievement":
             $ randomly_grant_achievement()
+            "Check your achievements I added some"
         "Show sprite size":
             show phantom 960
             "The sprite size is 960x960"
-    jump end
+        "Write random diary":
+            $ randomly_write_diary()
+            "Check your diary I added some"
+    jump show_test_choices
 
-label testing:
+label show_test_choices:
+    "Do you want to test something again?"
+    menu:
+        "Yes":
+            jump testing_menu
+        "No":
+            return
+    
+
+label random_test:
     $ output = renpy.variant("small")
     "Is Small Variant?: [output]"
     $ output = renpy.variant("pc")

@@ -273,7 +273,7 @@ init python:
     config.overlay_screens.append("quick_menu")
     config.overlay_screens.append("stats")
     if config.developer:
-        config.always_shown_screens.append("debug")
+        config.always_shown_screens.append("developer")
 
 default quick_menu = True
 
@@ -326,10 +326,6 @@ screen navigation():
             if renpy.get_screen("main_menu"):
                     text_idle_color timely_text_color()
 
-        textbutton _("Credits") action ShowMenu("about"):
-            if renpy.get_screen("main_menu"):
-                    text_idle_color timely_text_color()
-
         if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
             ## Help isn't necessary or relevant to mobile devices.
             textbutton _("Help") action ShowMenu("help")
@@ -341,7 +337,15 @@ screen navigation():
         if _in_replay:
             textbutton _("End Replay") action EndReplay(confirm=True)
         elif not main_menu:
-            textbutton _("Main Menu") action MainMenu()
+            textbutton _("Home") action MainMenu()
+        
+        if not main_menu:
+            textbutton "Diary" action ShowMenu("diary")
+            textbutton "Achievements" action ShowMenu("achievements")
+        
+        textbutton _("Credits") action ShowMenu("about"):
+            if renpy.get_screen("main_menu"):
+                    text_idle_color timely_text_color()
         
         if renpy.get_screen("main_menu"):
             textbutton _("Exit") action Quit(confirm=not main_menu):

@@ -1,3 +1,20 @@
+# Utility Screens
+screen ask(who, question):
+    style_prefix "input"
+
+    window:
+
+        vbox:
+            xanchor gui.dialogue_text_xalign
+            xpos gui.dialogue_xpos
+            xsize gui.dialogue_width
+            ypos gui.dialogue_ypos
+
+            text who style "namebox"
+            text question style "input_prompt"
+            input id "input"
+##############################################################################################################
+
 # Screen for Diary
 screen diary():
     tag menu
@@ -147,8 +164,8 @@ screen stats():
 
 screen statsUI():
     zorder 100
-    tag menu
-    modal True
+    # tag menu
+    # modal True
     frame:
         xsize 650
         ysize 800
@@ -224,26 +241,26 @@ screen statsUI():
                                 right_bar bar_black
 #####################################################################S#########################################
 
-# Debug Window
-screen debug():
+# Screen for Developer Options
+screen developer():
     zorder 210
     drag:
-        xoffset 30
+        xalign 0.5
         yoffset 30
-        image icon_debug
-        clicked ToggleScreen("debugWindow")
+        image icon_developer
+        clicked ToggleScreen("developerOptions")
 
-screen debugWindow():
+screen developerOptions():
     zorder 200
     add semi_transparent
-    dismiss action Hide("debugWindow")
+    dismiss action Hide("developerOptions")
     frame:
         xalign 0.0
         yalign 0.0
         yoffset 100
         xoffset 100
         background None
-        grid 3 3:
+        grid 3 4:
             xspacing 50
             yspacing 10
             textbutton "Grant All Achievements" action Function(grant_all_achievements)
@@ -252,6 +269,8 @@ screen debugWindow():
             textbutton "Write All Diary Pages" action Function(write_all_diary_pages)
             textbutton "Randomly Write Diary" action Function(randomly_write_diary)
             textbutton "Remove All Diary Pages" action Function(remove_all_diary_pages)
+            textbutton "Open Diary" action ShowMenu("diary")
+            textbutton "Open Achievements" action ShowMenu("achievements")
             vbox:
                 text "Sanity:"
                 bar:
@@ -268,5 +287,6 @@ screen debugWindow():
                     right_bar jacarta
                     thumb american_violet
                     value VariableValue("happiness", 100)
+            textbutton "Previous Dialogue" action Rollback()
             null
 ##############################################################################################################

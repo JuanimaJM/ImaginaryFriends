@@ -117,7 +117,17 @@ python early:
     def grant_achievement(key):
         if not achievement_list[key]["granted"]:
             achievement_list[key]["granted"] = True
+            refresh_achievements()
             notify_achievement(key)
+    
+    def refresh_achievements():
+        sorted_achievements.clear()
+        sorted_achievements.update({k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))})
+
+    def refresh_diary():
+        for value in diary_content.values():
+            if (value["found"]) and not (value["content"] in diary_pages):
+                diary_pages.append(value["content"])
     
     def update_friends_stats(character, value):
         friends_stats[character]["stats"] += value
@@ -128,16 +138,20 @@ python early:
     
     def write_diary(key):
         diary_content[key]["found"] = True
-        if (diary_content[key]["found"]) and not (diary_content[key]["content"] in diary_pages):
-            diary_pages.append(diary_content[key]["content"])
+        refresh_diary()
+        # if (diary_content[key]["found"]) and not (diary_content[key]["content"] in diary_pages):
+        #     diary_pages.append(diary_content[key]["content"])
+    
+    def random_name():
+        return random.choice(name_list)
 ##############################################################################################################
 
-# Debugging
+# Developer Options
 python early:
     import random
 
-    def start_debug():
-        renpy.config.always_shown_screens.append("debug")
+    def developer_mode():
+        renpy.config.always_shown_screens.append("developer")
     
     def modify_achievements(granted):
         for achievement in achievement_list.values():
@@ -151,6 +165,7 @@ python early:
         if keys_with_false:
             random_key = random.choice(keys_with_false)
             achievement_list[random_key]["granted"] = True
+            refresh_achievements()
             notify_achievement(random_key)
 
     def remove_all_achievements():
@@ -160,11 +175,6 @@ python early:
         for value in diary_content.values():
             value["found"] = found
             refresh_diary()
-    
-    def refresh_diary():
-        for value in diary_content.values():
-            if (value["found"]) and not (value["content"] in diary_pages):
-                diary_pages.append(value["content"])
 
     def write_all_diary_pages():
         modify_diary_pages(True)
@@ -187,10 +197,13 @@ python early:
 python early:
     class ColorSpectrum:
         def get_color_spectrum(number):
-            if number >= 50:
-                start_color = "#FAFF00"  # Lemon Glacier
-                end_color = "#00FF00"  # Electric Green
-                start_percentage = 50
+            pastel_green = "#77dd77"
+            pastel_yellow = "#fdfd96"
+            pastel_red = "#ff6961"
+            if number >= 51:
+                start_color = pastel_yellow  # Lemon Glacier
+                end_color = pastel_green  # Electric Green
+                start_percentage = 51
                 end_percentage = 100
             # elif 60 <= number < 80:
             #     start_color = "#FAFF00"  # Lemon Glacier
@@ -208,10 +221,10 @@ python early:
             #     start_percentage = 20
             #     end_percentage = 39
             else:
-                start_color = "#FF0000"  # Red
-                end_color = "#FAFF00"  # Lemon Glacier
+                start_color = pastel_red  # Red
+                end_color = pastel_yellow  # Lemon Glacier
                 start_percentage = 1
-                end_percentage = 49
+                end_percentage = 50
             percentage = (number - start_percentage) / (end_percentage - start_percentage)
             color = ColorSpectrum._blend_colors(start_color, end_color, percentage)
             return color

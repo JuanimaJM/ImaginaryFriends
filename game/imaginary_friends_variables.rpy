@@ -5,6 +5,7 @@ init offset = -8
 # Imaginary Friends Configurations
 define config.rollback_enabled = True
 define config.developer = True
+default showDevMenu = True
 ##############################################################################################################
 
 # Imaginary Friends GUI

@@ -244,16 +244,20 @@ screen statsUI():
 # Screen for Developer Options
 screen developer():
     zorder 210
-    drag:
-        xalign 0.5
+    frame:
         yoffset 30
-        image icon_developer
-        clicked ToggleScreen("developerOptions")
+        background None
+        xysize (1920, 50)
+        if showDevMenu:
+            drag:
+                xalign 0.5
+                add icon_developer
+                clicked [ToggleScreen("developerOptions"), ToggleVariable("showDevMenu")]
 
 screen developerOptions():
     zorder 200
     add semi_transparent
-    dismiss action Hide("developerOptions")
+    dismiss action [Hide("developerOptions"), ToggleVariable("showDevMenu")]
     frame:
         xalign 0.0
         yalign 0.0

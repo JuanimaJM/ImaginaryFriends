@@ -213,4 +213,35 @@ python early:
         def _rgb_to_hex(rgb_color):
             r, g, b = rgb_color
             return f"#{r:02x}{g:02x}{b:02x}"
+"""
+The code defines a class called ColorSpectrum.
+
+The get_color_spectrum method is a public method of the ColorSpectrum class. 
+
+It takes a number as input and returns a color based on that number.
+
+Inside the get_color_spectrum method, an if-else statement is used to determine the color based on the value of the number.
+
+If the number is greater than or equal to 51, the start color is set to pastel_yellow, the end color is set to pastel_green, and the start and end percentages are set to 51 and 100, respectively.
+
+Otherwise, if the number is less than 51, the start color is set to pastel_red, the end color is set to pastel_yellow, and the start and end percentages are set to 1 and 50, respectively.
+
+The percentage is calculated by subtracting the start percentage from the number and dividing it by the difference between the start and end percentages. 
+
+This calculates how far the number is between the start and end range.
+
+The _blend_colors method is a private method of the ColorSpectrum class. 
+
+It takes the start color, end color, and percentage as input and blends the colors based on the percentage.
+
+Inside the _blend_colors method, the start and end colors are converted from hexadecimal to RGB values using the _hex_to_rgb method.
+
+The RGB values of the blended color are calculated by interpolating between the start and end colors based on the percentage.
+
+The _rgb_to_hex method is a private method of the ColorSpectrum class. 
+
+It takes RGB values as input and converts them back to a hexadecimal color code.
+
+Finally, the blended color is returned as the result of the get_color_spectrum method.
+"""
 ##############################################################################################################

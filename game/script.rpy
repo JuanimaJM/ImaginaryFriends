@@ -9,22 +9,22 @@ label start:
     jump testing
 
 label asking_name:
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    call screen ask(Cloud.name, "What is your name?")
     if not player_name == "":
-        jump end
+        return
     Cloud "You haven't given me your name yet."
     Cloud "Please tell me your name."
     "Cloud smiled warmly at me."
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    call screen ask(Cloud.name, "What is your name?")
     if not player_name == "":
-        jump end
+        return
     Cloud "Don't tell me you don't have a name?"
     Cloud "You must have one. Even a nickname."
     Cloud "What is your name?"
     "Cloud asked me once again, still having a smile on his face."
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    call screen ask(Cloud.name, "What is your name?")
     if not player_name == "":
-        jump end
+        return
     Cloud "Ha!"
     "Cloud exclaimed loudly. He seems to be irritated."
     Cloud "My patience is running out."
@@ -34,9 +34,9 @@ label asking_name:
     "Cloud sighed."
     Cloud "I'll give you once last chance."
     Cloud "Just tell me your name kid, please."
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
+    call screen ask(Cloud.name, "What is your name?")
     if not player_name == "":
-        jump end
+        return
     else:
         $ player_name = "Stupid"
     $ grant_achievement("Achv9")
@@ -103,6 +103,8 @@ label testing_menu:
             $ random_sanity = abs(random_sanity)
             $ random_happiness = abs(random_happiness)
             "Check your stats window. I increase your sanity by [random_sanity] and happiness by [random_happiness]"
+        "Test Other Routes":
+            jump routes_choices
     jump show_test_choices
 
 label show_test_choices:
@@ -112,7 +114,14 @@ label show_test_choices:
             jump testing_menu
         "No":
             return
-    
+
+label routes_choices:
+    menu:
+        "Cloud Asking Name":
+            call asking_name
+        "Random Test":
+            call random_test
+    jump show_test_choices
 
 label random_test:
     $ output = renpy.variant("small")
@@ -140,16 +149,9 @@ label random_test:
     $ update_friends_stats(Someone.name, 75)
     show phantom 960
     Phantom "960x960"
+    hide phantom
     $ update_friends_stats(Phantom.name, -20)
     $ grant_achievement("Achv8")
-    $ life = 100
-    "Life: [life]"
-    $ life -= 10
-    "Get some damage"
-    "Life: [life]"
-    $ damage()
-    "Get some damage"
-    "Life: [life]"
     "A{size=+5}A{/size}{size=+10}A{/size}{size=+15}A{/size}{size=+25}A{/size}"
     Child "eyyy"
     $ write_diary("Apple")
@@ -163,6 +165,7 @@ label random_test:
     "F"
     "G"
     $ write_diary("Tree")
+    return
 
 label end:
     "3"

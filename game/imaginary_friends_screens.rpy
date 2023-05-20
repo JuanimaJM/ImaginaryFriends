@@ -1,4 +1,27 @@
 # Utility Screens
+screen ask(who=None, question=""):
+    style_prefix "input"      
+
+    window:
+        if who is not None:
+            frame:
+                style "namebox"
+                text who id "who" style "namebox_label"
+        
+        vbox:
+            xanchor gui.dialogue_text_xalign
+            xpos gui.dialogue_xpos
+            xsize gui.dialogue_width
+            ypos gui.dialogue_ypos
+
+            
+            text question style "input_prompt"
+            input:
+                default ""
+                length 12 
+                allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                value VariableInputValue("player_name", returnable=True)
+
 screen script_keymap():
     key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, "sanity", sanity + 1)
     key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, "sanity", sanity - 1)

@@ -102,7 +102,6 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
-        # background im.Crop(bg_paper, (0, 0, 1600, 800))
         grid 3 calculate_rows(3, achievement_list):
             xfill True
             yfill True
@@ -164,14 +163,11 @@ screen stats():
 
 screen statsUI():
     zorder 100
-    # tag menu
-    # modal True
     frame:
         xsize 650
         ysize 800
         xalign 1.0
         left_padding 25
-        # background bg_paper
         vbox:
             xfill True
             yoffset 10
@@ -196,7 +192,6 @@ screen statsUI():
                     value sanity
                     xsize 500
                     left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(sanity))
-                    # left_bar identify_bar_color(sanity)
                     right_bar bar_black
                 text _("Happiness:"):
                     color black
@@ -207,7 +202,6 @@ screen statsUI():
                     value happiness
                     xsize 500
                     left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(happiness))
-                    # left_bar identify_bar_color(happiness)
                     right_bar bar_black
             frame:
                 xfill True
@@ -237,8 +231,7 @@ screen statsUI():
                                 range 100
                                 value value["stats"]
                                 xsize 500
-                                left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(happiness))
-                                # left_bar identify_bar_color(value["stats"])
+                                left_bar im.Color(bar_white, ColorSpectrum.get_color_spectrum(value["stats"]))
                                 right_bar bar_black
 #####################################################################S#########################################
 

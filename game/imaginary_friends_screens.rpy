@@ -8,9 +8,10 @@ screen script_keymap():
 
 # Screen for Diary
 screen diary():
-    key "ctrl_alt_shift_K_a" action Function(write_all_diary_pages)
-    key "ctrl_alt_shift_K_r" action Function(randomly_write_diary)
-    key "ctrl_alt_shift_K_d" action Function(remove_all_diary_pages)
+    if config.developer:
+        key "ctrl_alt_shift_K_a" action Function(write_all_diary_pages)
+        key "ctrl_alt_shift_K_r" action Function(randomly_write_diary)
+        key "ctrl_alt_shift_K_d" action Function(remove_all_diary_pages)
 
     tag menu
     add gui.game_menu_background
@@ -78,9 +79,10 @@ screen book():
 
 # Screen for Achievements
 screen achievements():
-    key "ctrl_alt_shift_K_a" action Function(grant_all_achievements)
-    key "ctrl_alt_shift_K_r" action Function(randomly_grant_achievement)
-    key "ctrl_alt_shift_K_d" action Function(remove_all_achievements)
+    if config.developer:
+        key "ctrl_alt_shift_K_a" action Function(grant_all_achievements)
+        key "ctrl_alt_shift_K_r" action Function(randomly_grant_achievement)
+        key "ctrl_alt_shift_K_d" action Function(remove_all_achievements)
 
     tag menu
     add gui.game_menu_background

@@ -102,6 +102,10 @@ python early:
 
 # Game Functions
 python early:
+    def update_player_stats(variable_name, value):
+        value = max(0, min(value, 100))  # Enforce limits of 0 and 100
+        globals()[variable_name] = value
+
     def grant_achievement(key):
         if not achievement_list[key]["granted"]:
             achievement_list[key]["granted"] = True
@@ -118,6 +122,7 @@ python early:
                 diary_pages.append(value["content"])
     
     def update_friends_stats(character, value):
+        value = max(0, min(value, 100))  # Enforce limits of 0 and 100
         friends_stats[character]["stats"] += value
         return friends_stats[character]["stats"]
     
@@ -183,6 +188,7 @@ python early:
 python early:
     class ColorSpectrum:
         def get_color_spectrum(number):
+            number = max(0, min(number, 100))  # Enforce limits of 0 and 100
             if number >= 51:
                 start_color = pastel_yellow
                 end_color = pastel_green

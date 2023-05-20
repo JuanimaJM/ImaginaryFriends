@@ -1,22 +1,17 @@
 # Utility Screens
-screen ask(who, question):
-    style_prefix "input"
-
-    window:
-
-        vbox:
-            xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
-
-            text who style "namebox"
-            text question style "input_prompt"
-            input id "input"
+screen script_keymap():
+    key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, "sanity", sanity + 1)
+    key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, "sanity", sanity - 1)
+    key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, "happiness", happiness + 1)
+    key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, "happiness", happiness - 1)
 ##############################################################################################################
 
 # Screen for Diary
 screen diary():
+    key "ctrl_alt_shift_K_a" action Function(write_all_diary_pages)
+    key "ctrl_alt_shift_K_r" action Function(randomly_write_diary)
+    key "ctrl_alt_shift_K_d" action Function(remove_all_diary_pages)
+
     tag menu
     add gui.game_menu_background
     imagebutton:
@@ -83,6 +78,10 @@ screen book():
 
 # Screen for Achievements
 screen achievements():
+    key "ctrl_alt_shift_K_a" action Function(grant_all_achievements)
+    key "ctrl_alt_shift_K_r" action Function(randomly_grant_achievement)
+    key "ctrl_alt_shift_K_d" action Function(remove_all_achievements)
+
     tag menu
     add gui.game_menu_background
     imagebutton:

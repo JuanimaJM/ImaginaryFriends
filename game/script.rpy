@@ -2,6 +2,7 @@
 
 # The game starts here.
 label start:
+    show screen script_keymap
     stop music fadeout 1.0
     scene kitchen
     jump testing

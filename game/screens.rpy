@@ -272,7 +272,7 @@ screen quick_menu():
 init python:
     config.overlay_screens.append("quick_menu")
     config.overlay_screens.append("stats")
-    if config.developer:
+    if config.developer and allowDev:
         config.always_shown_screens.append("developer")
 
 default quick_menu = True

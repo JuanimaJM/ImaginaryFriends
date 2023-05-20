@@ -59,8 +59,7 @@ label testing:
     "2"
     "3"
     "Before we start, I would like you to input something"
-    $ player_name = renpy.input("What is your name?", random_name(), length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-    $ player_name = random_name() if player_name == "" else player_name
+    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
     "Oohh. So your name is [player_name]"
     "I will show some choices for testing"
     call testing_menu
@@ -70,7 +69,6 @@ label testing_menu:
     menu:
         "Change player name":
             $ player_name = renpy.input("Input your new name.", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-            $ player_name = random_name() if player_name == "" else player_name
             "Your new name is [player_name]"
         "Get random achievement":
             $ randomly_grant_achievement()

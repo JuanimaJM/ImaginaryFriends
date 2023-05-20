@@ -77,6 +77,28 @@ label testing_menu:
         "Write random diary":
             $ randomly_write_diary()
             "Check your diary I added some"
+        "Meet some friend":
+            $ meet_friend("Phantom")
+            show phantom
+            Phantom "Hi, nice to meet you."
+            hide phantom
+            "Now that you meet some friend, it will now be shown in your stats window."
+        "Randomly decrease the value sanity and happiness" if  1 < sanity <= 100 and 1 < happiness <= 100:
+            $ random_sanity = random.randint(1, sanity - 1)
+            $ random_happiness = random.randint(1, happiness - 1)
+            $ sanity -= random_sanity
+            $ happiness -= random_happiness
+            $ random_sanity = abs(random_sanity)
+            $ random_happiness = abs(random_happiness)
+            "Check your stats window. I decrease your sanity by [random_sanity] and happiness by [random_happiness]"
+        "Randomly increase the value sanity and happiness" if  1 <= sanity <= 99 and 1 <= happiness <= 99:
+            $ random_sanity = random.randint(1, 100 - sanity)
+            $ random_happiness = random.randint(1, 100 - happiness)
+            $ sanity += random_sanity
+            $ happiness += random_happiness
+            $ random_sanity = abs(random_sanity)
+            $ random_happiness = abs(random_happiness)
+            "Check your stats window. I increase your sanity by [random_sanity] and happiness by [random_happiness]"
     jump show_test_choices
 
 label show_test_choices:

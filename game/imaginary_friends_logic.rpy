@@ -18,18 +18,6 @@ python early:
     night_end = datetime.time(5, 59)
 
     now = night_start
-    
-    # def identify_bar_color(value):
-    #     if value >= 80:
-    #         return bar_green
-    #     elif value >= 60 and value < 80:
-    #         return bar_yellowgreen
-    #     elif value >= 40 and value < 60:
-    #         return bar_yellow
-    #     elif value >= 20 and value < 40:
-    #         return bar_orange
-    #     else:
-    #         return bar_red
 
     def identify_text_color(key):
         if achievement_list[key]["granted"]:
@@ -139,8 +127,6 @@ python early:
     def write_diary(key):
         diary_content[key]["found"] = True
         refresh_diary()
-        # if (diary_content[key]["found"]) and not (diary_content[key]["content"] in diary_pages):
-        #     diary_pages.append(diary_content[key]["content"])
     
     def random_name():
         return random.choice(name_list)
@@ -197,32 +183,14 @@ python early:
 python early:
     class ColorSpectrum:
         def get_color_spectrum(number):
-            pastel_green = "#77dd77"
-            pastel_yellow = "#fdfd96"
-            pastel_red = "#ff6961"
             if number >= 51:
-                start_color = pastel_yellow  # Lemon Glacier
-                end_color = pastel_green  # Electric Green
+                start_color = pastel_yellow
+                end_color = pastel_green
                 start_percentage = 51
                 end_percentage = 100
-            # elif 60 <= number < 80:
-            #     start_color = "#FAFF00"  # Lemon Glacier
-            #     end_color = "#8EFD00"  # Mango Green
-            #     start_percentage = 60
-            #     end_percentage = 79
-            # elif 40 <= number < 60:
-            #     start_color = "#FF8A00"  # American Orange
-            #     end_color = "#FAFF00"  # Lemon Glacier
-            #     start_percentage = 40
-            #     end_percentage = 59
-            # elif 20 <= number < 40:
-            #     start_color = "#FF0000"  # Red
-            #     end_color = "#FF8A00"  # American Orange
-            #     start_percentage = 20
-            #     end_percentage = 39
             else:
-                start_color = pastel_red  # Red
-                end_color = pastel_yellow  # Lemon Glacier
+                start_color = pastel_red
+                end_color = pastel_yellow
                 start_percentage = 1
                 end_percentage = 50
             percentage = (number - start_percentage) / (end_percentage - start_percentage)

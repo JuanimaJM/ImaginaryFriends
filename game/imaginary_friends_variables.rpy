@@ -4,7 +4,7 @@ init offset = -8
 
 # Imaginary Friends Configurations
 define config.rollback_enabled = True
-define config.developer = True
+define config.developer = False
 default showDevMenu = True
 ##############################################################################################################
 
@@ -27,6 +27,9 @@ define black = "#000000"
 define gray = "#808080"
 define black_olive = "#3e3e3e"
 define alice_blue = "#F0F8FF"
+define pastel_green = "#77dd77"
+define pastel_yellow = "#fdfd96"
+define pastel_red = "#ff6961"
 define font_title = "gui/fonts/Griffy-Regular.ttf"
 define font_regular = "gui/fonts/SongMyung-Regular.ttf"
 define font_stats = "gui/fonts/erasdust.ttf"
@@ -41,11 +44,6 @@ define button_next_page = "gui/icons/button_next_page.png"
 define icon_cancel = "gui/icons/ic_cancel.png"
 define icon_menu = "gui/icons/ic_menu.png"
 define icon_developer = "gui/icons/ic_dev_menu.png"
-define bar_green = "gui/bar/bar_green.png"
-define bar_yellowgreen = "gui/bar/bar_yellowgreen.png"
-define bar_yellow = "gui/bar/bar_yellow.png"
-define bar_orange = "gui/bar/bar_orange.png"
-define bar_red = "gui/bar/bar_red.png"
 define bar_white = "gui/bar/bar_white.png"
 define bar_black = "gui/bar/bar_black.png"
 define bg_left_page = "gui/frame_backgrounds/left_page.png"
@@ -68,9 +66,6 @@ define paper_idle_horizontal_bar = "gui/bar/paper_idle_horizontal_bar.png"
 define paper_hover_horizontal_bar = "gui/bar/paper_hover_horizontal_bar.png"
 define paper_idle_vertical_scrollbar = "gui/bar/paper_idle_vertical_scrollbar.png"
 define paper_hover_vertical_scrollbar = "gui/bar/paper_hover_vertical_scrollbar.png"
-define scrollbar_crayon = "gui/bar/scrollbar_crayon.png"
-define scrollbar_paper_white = "gui/bar/scrollbar_paper_white.png"
-define scrollbar_paper_black = "gui/bar/scrollbar_paper_black.png"
 define crayon_black_line = "gui/bar/crayon_black_line.png"
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
 define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)

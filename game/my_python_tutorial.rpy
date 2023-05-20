@@ -93,3 +93,28 @@ Dictionaries:
 dict.update(other_dict): Merges the keys and values from another dictionary into the current dictionary.
 Dictionary comprehension: Allows you to create a new dictionary by applying an operation to each key-value pair of an existing dictionary.
 """
+
+# Uses of >>>random<<<
+init python:
+# Generate a random integer between 0 and 9
+    random_int = random.randint(0, 9)
+
+# Generate a random float between 0.0 and 1.0
+    random_float = random.random()
+
+# Generate a random float between 1.0 and 10.0
+    random_float_range = random.uniform(1.0, 10.0)
+
+    my_list = [1, 2, 3, 4, 5]
+# Choose a random element from the list
+    random_element = random.choice(my_list)
+
+# Shuffle the list randomly
+    random.shuffle(my_list)
+
+# Choose 3 random elements from the list without replacement
+    random_sample = random.sample(my_list, 3)
+
+    my_list = ['A', 'B', 'C']
+# Choose a random element based on the provided weights
+    random_weighted = random.choices(my_list, weights=[0.2, 0.3, 0.5])

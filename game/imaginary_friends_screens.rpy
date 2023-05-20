@@ -183,9 +183,10 @@ screen statsUI():
                     font font_stats
                     color black
                     size (gui.name_text_size + 10)
-                text "Name: [player_name]":
-                    color black
-                    font font_stats
+                if not player_name == "":
+                    text "Name: [player_name]":
+                        color black
+                        font font_stats
                 text _("Sanity:"):
                     color black
                     font font_stats

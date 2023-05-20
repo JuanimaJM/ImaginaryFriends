@@ -79,7 +79,7 @@ default bg_timely_main_menu = timely_bg()
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-default player_name = "Child"
+default player_name = ""
 define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"

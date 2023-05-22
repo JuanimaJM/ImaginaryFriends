@@ -1,5 +1,5 @@
 # Utility Screens
-screen ask(who=None, question=""):
+screen ask_name(who=None, question=""):
     style_prefix "input"      
 
     window:
@@ -17,7 +17,6 @@ screen ask(who=None, question=""):
             
             text question style "input_prompt"
             input:
-                default ""
                 length 12 
                 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                 value VariableInputValue("player_name", returnable=True)
@@ -27,6 +26,7 @@ screen script_keymap():
     key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, "sanity", sanity - 1)
     key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, "happiness", happiness + 1)
     key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, "happiness", happiness - 1)
+    key "ctrl_alt_shift_K_n" action Function(set_random_name)
 ##############################################################################################################
 
 # Screen for Diary
@@ -293,6 +293,7 @@ screen developerOptions():
             textbutton "Remove All Diary Pages" action Function(remove_all_diary_pages)
             textbutton "Open Diary" action ShowMenu("diary")
             textbutton "Open Achievements" action ShowMenu("achievements")
+            textbutton "Set Random Name" action Function(set_random_name)
             vbox:
                 text "Sanity:"
                 bar:
@@ -310,5 +311,4 @@ screen developerOptions():
                     thumb american_violet
                     value VariableValue("happiness", 100)
             textbutton "Previous Dialogue" action Rollback()
-            null
 ##############################################################################################################

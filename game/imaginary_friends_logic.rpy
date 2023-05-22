@@ -182,6 +182,9 @@ python early:
         diary_pages.clear()
         store.first_page = 1
         store.second_page = 2
+
+    def set_random_name():
+        store.player_name = random_name()
 ##############################################################################################################
 
 # Color Spectrum

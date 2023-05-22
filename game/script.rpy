@@ -9,20 +9,20 @@ label start:
     jump testing
 
 label asking_name:
-    call screen ask(Cloud.name, "What is your name?")
+    call screen ask_name(Cloud.name, "What is your name?")
     if not player_name == "":
         return
     Cloud "You haven't given me your name yet."
     Cloud "Please tell me your name."
     "Cloud smiled warmly at me."
-    call screen ask(Cloud.name, "What is your name?")
+    call screen ask_name(question="Tell Cloud your name.")
     if not player_name == "":
         return
     Cloud "Don't tell me you don't have a name?"
     Cloud "You must have one. Even a nickname."
     Cloud "What is your name?"
     "Cloud asked me once again, still having a smile on his face."
-    call screen ask(Cloud.name, "What is your name?")
+    call screen ask_name(question="Please tell Cloud your name.")
     if not player_name == "":
         return
     Cloud "Ha!"
@@ -34,7 +34,7 @@ label asking_name:
     "Cloud sighed."
     Cloud "I'll give you once last chance."
     Cloud "Just tell me your name kid, please."
-    call screen ask(Cloud.name, "What is your name?")
+    call screen ask_name(question="Just tell Cloud your name. You'll regret it if you don't.")
     if not player_name == "":
         return
     else:

@@ -7,6 +7,7 @@ define config.rollback_enabled = True
 define config.developer = True
 define allowDev = True
 default showDevMenu = True
+default game_time = 4
 ##############################################################################################################
 
 # Imaginary Friends GUI
@@ -71,16 +72,11 @@ define crayon_black_line = "gui/bar/crayon_black_line.png"
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
 define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
 define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=11)
-
-# Changing GUI
-default icon_diary = timely_icon_diary()
-default icon_achievement = timely_icon_achievement()
-default bg_timely_main_menu = timely_bg()
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the
 # name of the character.
-default player_name = ""
+default player_name = random_name()
 define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"

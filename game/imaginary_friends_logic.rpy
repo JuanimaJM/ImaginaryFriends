@@ -17,8 +17,6 @@ python early:
     night_start = datetime.time(18, 0)
     night_end = datetime.time(5, 59)
 
-    now = night_start
-
     def identify_text_color(key):
         if achievement_list[key]["granted"]:
             return black
@@ -30,38 +28,48 @@ python early:
             return achievement_list[key]["description"]
         else:
             return "???"
-
-    def is_sky_dark():
-        return not (sunrise_start <= now <= afternoon_end)
+    
+    def check_time():
+        now = datetime.datetime.now().time()
+        if sunrise_start <= now <= sunrise_end:
+            store.game_time = 0
+        elif morning_start <= now <= morning_end:
+            store.game_time = 1
+        elif afternoon_start <= now <= afternoon_end:
+            store.game_time = 2
+        elif sunset_start <= now <= sunset_end:
+            store.game_time = 3
+        else:
+            store.game_time = 4
 
     def timely_bg():
-        if sunrise_start <= now <= sunrise_end:
+        if game_time == 0:
             return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
-        elif morning_start <= now <= morning_end:
+        elif game_time == 1:
             return "images/game_backgrounds/bg_main_menu_morning.jpg"
-        elif afternoon_start <= now <= afternoon_end:
+        elif game_time == 2:
             return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
-        elif sunset_start <= now <= sunset_end:
+        elif game_time == 3:
             return "images/game_backgrounds/bg_main_menu_sunset.jpg"
-        else:
+        elif game_time == 4:
             # return "images/game_backgrounds/bg_main_menu_night.png")
             # return Movie(play="videos/bg_main_menu.webm")
             return "animated_bg_main_menu_night"
     
     def timely_text_color():
-        if is_sky_dark():
+        if game_time >= 3:
             return white
         else:
             return sugar_plum
     
     def timely_icon_diary():
-        if is_sky_dark():
+        if game_time >= 3:
             return icon_diary_white
         else:
             return icon_diary_black
     
     def timely_icon_achievement():
-        if is_sky_dark():
+        if game_time >= 3:
             return icon_achievement_white
         else:
             return icon_achievement_black

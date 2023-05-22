@@ -289,7 +289,7 @@ screen developerOptions():
         yoffset 100
         xoffset 100
         background None
-        grid 3 4:
+        grid 3 5:
             xspacing 50
             yspacing 10
             textbutton "Grant All Achievements" action Function(grant_all_achievements)
@@ -302,7 +302,7 @@ screen developerOptions():
             textbutton "Open Achievements" action ShowMenu("achievements")
             textbutton "Set Random Name" action Function(set_random_name)
             vbox:
-                text "Sanity:"
+                text "Sanity: ([sanity])"
                 bar:
                     xsize 300
                     left_bar sugar_plum
@@ -310,7 +310,7 @@ screen developerOptions():
                     thumb american_violet
                     value VariableValue("sanity", 100)
             vbox:
-                text "Happiness:"
+                text "Happiness: ([happiness])"
                 bar:
                     xsize 300
                     left_bar sugar_plum
@@ -318,4 +318,14 @@ screen developerOptions():
                     thumb american_violet
                     value VariableValue("happiness", 100)
             textbutton "Previous Dialogue" action Rollback()
+            vbox:
+                text "Time: ([game_time])"
+                bar:
+                    xsize 300
+                    left_bar sugar_plum
+                    right_bar jacarta
+                    thumb american_violet
+                    value VariableValue("game_time", 4)
+            null
+            null
 ##############################################################################################################

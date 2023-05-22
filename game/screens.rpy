@@ -370,14 +370,15 @@ style navigation_button_text:
 ##
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 screen main_menu():
+    on "show" action Function(check_time)
+    on "replaced" action Function(check_time)
 
     ## This ensures that any other menu screen is replaced.
     tag menu
 
     # add gui.main_menu_background
-
-    # add timely_bg()
-    add bg_timely_main_menu
+    add timely_bg()
+    # add bg_timely_main_menu
     add leaf_particles1
     add leaf_particles2
     add leaf_particles3
@@ -398,16 +399,17 @@ screen main_menu():
         spacing 30
         
         imagebutton:
-            idle icon_diary
+            idle timely_icon_diary()
             action Show("diary")
         
         imagebutton:
-            idle icon_achievement
+            idle timely_icon_achievement()
             action Show("achievements")
 
     if gui.show_name:
 
         text "[config.name!t]":
+            color timely_text_color()
             style "main_menu_title"
         
         vbox:
@@ -442,7 +444,6 @@ style main_menu_title:
     xalign 0.85
     yalign 0.25
     font font_title
-    color timely_text_color()
 
 style main_menu_version:
     properties gui.text_properties("version")

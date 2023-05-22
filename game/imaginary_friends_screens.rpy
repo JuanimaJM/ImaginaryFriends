@@ -8,15 +8,22 @@ screen ask_name(who=None, question=""):
                 style "namebox"
                 text who id "who" style "namebox_label"
         
+        imagebutton:
+            xalign gui.dialogue_text_xalign
+            xpos gui.dialogue_xpos - 75
+            ypos gui.dialogue_ypos + 50
+            xmaximum gui.dialogue_width
+            idle icon_cancel
+            action Function(set_random_name)
+
         vbox:
             xanchor gui.dialogue_text_xalign
             xpos gui.dialogue_xpos
             xsize gui.dialogue_width
             ypos gui.dialogue_ypos
 
-            
             text question style "input_prompt"
-            input:
+            input id "input":
                 length 12 
                 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
                 value VariableInputValue("player_name", returnable=True)

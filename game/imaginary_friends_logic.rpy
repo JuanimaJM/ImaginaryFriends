@@ -152,6 +152,13 @@ python early:
     def developer_mode():
         renpy.config.always_shown_screens.append("developer")
     
+    def delete_persistent():
+        persistent._clear(True)
+        renpy.reload_script()
+    
+    def add_number():
+        persistent.devNum += 1
+    
     def modify_achievements(granted):
         for achievement in achievement_list.values():
             achievement["granted"] = granted

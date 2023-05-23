@@ -8,6 +8,7 @@ define config.developer = True
 define allowDev = True
 default showDevMenu = True
 default game_time = 4
+default persistent.devNum = 0
 ##############################################################################################################
 
 # Imaginary Friends GUI
@@ -43,6 +44,7 @@ define icon_achievement_black = "gui/icons/ic_achievement_black.png"
 define button_back_arrow = "gui/icons/button_back.png"
 define button_prev_page = "gui/icons/button_prev_page.png"
 define button_next_page = "gui/icons/button_next_page.png"
+define button_randomizer = "gui/icons/button_randomizer.png"
 define icon_cancel = "gui/icons/ic_cancel.png"
 define icon_menu = "gui/icons/ic_menu.png"
 define icon_developer = "gui/icons/ic_dev_menu.png"
@@ -152,8 +154,7 @@ define achievement_list = {
     }
 }
 
-define sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
-
+default sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
 ##############################################################################################################
 
 # Diary

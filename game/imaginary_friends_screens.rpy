@@ -11,9 +11,9 @@ screen ask_name(who=None, question=""):
         imagebutton:
             xalign gui.dialogue_text_xalign
             xpos gui.dialogue_xpos - 75
-            ypos gui.dialogue_ypos + 50
+            ypos gui.dialogue_ypos + 60
             xmaximum gui.dialogue_width
-            idle icon_cancel
+            idle button_randomizer
             action Function(set_random_name)
 
         vbox:
@@ -289,9 +289,11 @@ screen developerOptions():
         yoffset 100
         xoffset 100
         background None
-        grid 3 5:
+        grid 3 6:
             xspacing 50
             yspacing 10
+            textbutton "Delete Persistent" action Show("confirm", message="Are you sure you want to delete persistent data?", yes_action=Function(delete_persistent), no_action=Hide("confirm"))
+            textbutton "Previous Dialogue" action Rollback()
             textbutton "Grant All Achievements" action Function(grant_all_achievements)
             textbutton "Randomly Grant Achievement" action Function(randomly_grant_achievement)
             textbutton "Remove All Achievements" action Function(remove_all_achievements)
@@ -317,7 +319,6 @@ screen developerOptions():
                     right_bar jacarta
                     thumb american_violet
                     value VariableValue("happiness", 100)
-            textbutton "Previous Dialogue" action Rollback()
             vbox:
                 text "Time: ([game_time])"
                 bar:
@@ -326,6 +327,8 @@ screen developerOptions():
                     right_bar jacarta
                     thumb american_violet
                     value VariableValue("game_time", 4)
+            textbutton "Add" action Function(add_number)
+            text "Persistent Number: [persistent.devNum]"
             null
             null
 ##############################################################################################################

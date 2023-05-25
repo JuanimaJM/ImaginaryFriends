@@ -11,6 +11,7 @@ default game_time = 4
 ##############################################################################################################
 
 # Imaginary Friends GUI
+# Colors
 define semi_transparent ="#000000bf"
 define transparent = "#ffffff00"
 define american_violet = '#5b1e99'
@@ -32,9 +33,13 @@ define alice_blue = "#F0F8FF"
 define pastel_green = "#77dd77"
 define pastel_yellow = "#fdfd96"
 define pastel_red = "#ff6961"
+
+# Fonts
 define font_title = "gui/fonts/Griffy-Regular.ttf"
 define font_regular = "gui/fonts/SongMyung-Regular.ttf"
 define font_stats = "gui/fonts/erasdust.ttf"
+
+# Assets
 define img_badge = "images/achievement/badge.png"
 define icon_diary_white = "gui/icons/ic_diary_white.png"
 define icon_diary_black = "gui/icons/ic_diary_black.png"
@@ -70,13 +75,14 @@ define paper_hover_horizontal_bar = "gui/bar/paper_hover_horizontal_bar.png"
 define paper_idle_vertical_scrollbar = "gui/bar/paper_idle_vertical_scrollbar.png"
 define paper_hover_vertical_scrollbar = "gui/bar/paper_hover_vertical_scrollbar.png"
 define crayon_black_line = "gui/bar/crayon_black_line.png"
+
+# Particles
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
 define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
 define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=11)
 ##############################################################################################################
 
-# Declare characters used by this game. The color argument colorizes the
-# name of the character.
+# Declare characters used by this game. The color argument colorizes the name of the character.
 default player_name = random_name()
 define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
@@ -103,7 +109,7 @@ default friends_stats = {
 }
 ##############################################################################################################
 
-# Achvievement
+# Achievement
 default achievement_unlocked = False
 define persistent.achievement_list = {
     "Achv1": {

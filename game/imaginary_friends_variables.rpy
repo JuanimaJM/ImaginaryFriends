@@ -8,7 +8,6 @@ define config.developer = True
 define allowDev = True
 default showDevMenu = True
 default game_time = 4
-default persistent.devNum = 0
 ##############################################################################################################
 
 # Imaginary Friends GUI
@@ -106,7 +105,7 @@ default friends_stats = {
 
 # Achvievement
 default achievement_unlocked = False
-define achievement_list = {
+define persistent.achievement_list = {
     "Achv1": {
         "title": "Normal Ending",
         "description": "Get a normal ending.",
@@ -154,14 +153,14 @@ define achievement_list = {
     }
 }
 
-default sorted_achievements = {k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
+default sorted_achievements = {k: v for k, v in sorted(persistent.achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))}
 ##############################################################################################################
 
 # Diary
 default diary_unlocked = False
 default first_page = 1
 default second_page = 2
-define diary_content = {
+define persistent.diary_content = {
     "Apple": {
         "content": "images/diary/apple_diary.png",
         "found": False
@@ -187,5 +186,5 @@ define diary_content = {
         "found": False
     }
 }
-define diary_pages = [value["content"] for key, value in diary_content.items() if value.get("found", False)]
+define persistent.diary_pages = [value["content"] for key, value in persistent.diary_content.items() if value.get("found", False)]
 ##############################################################################################################

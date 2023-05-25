@@ -69,8 +69,8 @@ screen book():
             xsize 800
             yfill True
             background bg_left_page
-            if len(diary_pages) > 0:
-                image diary_pages[first_page - 1]:
+            if len(persistent.diary_pages) > 0:
+                image persistent.diary_pages[first_page - 1]:
                     xalign 0.5
                     yalign 0.5
             text "[first_page]":
@@ -89,7 +89,7 @@ screen book():
             yfill True
             background bg_right_page
             if identify_second_page():
-                image diary_pages[second_page - 1]:
+                image persistent.diary_pages[second_page - 1]:
                     xalign 0.5
                     yalign 0.5
             text "[second_page]":
@@ -133,7 +133,7 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
-        grid 3 calculate_rows(3, achievement_list):
+        grid 3 calculate_rows(3, persistent.achievement_list):
             xfill True
             yfill True
             for key, value in sorted_achievements.items():
@@ -289,7 +289,7 @@ screen developerOptions():
         yoffset 100
         xoffset 100
         background None
-        grid 3 6:
+        grid 3 5:
             xspacing 50
             yspacing 10
             textbutton "Delete Persistent" action Show("confirm", message="Are you sure you want to delete persistent data?", yes_action=Function(delete_persistent), no_action=Hide("confirm"))
@@ -327,8 +327,5 @@ screen developerOptions():
                     right_bar jacarta
                     thumb american_violet
                     value VariableValue("game_time", 4)
-            textbutton "Add" action Function(add_number)
-            text "Persistent Number: [persistent.devNum]"
-            null
             null
 ##############################################################################################################

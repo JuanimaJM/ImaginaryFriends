@@ -18,14 +18,14 @@ python early:
     night_end = datetime.time(5, 59)
 
     def identify_text_color(key):
-        if achievement_list[key]["granted"]:
+        if persistent.achievement_list[key]["granted"]:
             return black
         else:
             return gray
     
     def identify_achievement_description(key):
-        if achievement_list[key]["granted"]:
-            return achievement_list[key]["description"]
+        if persistent.achievement_list[key]["granted"]:
+            return persistent.achievement_list[key]["description"]
         else:
             return "???"
     
@@ -75,13 +75,13 @@ python early:
             return icon_achievement_black
     
     def has_next_page():
-        return (second_page < len(diary_pages))
+        return (second_page < len(persistent.diary_pages))
     
     def has_back_page():
-        return (first_page >= 3) and (len(diary_pages) >= 3)
+        return (first_page >= 3) and (len(persistent.diary_pages) >= 3)
     
     def identify_second_page():
-        if first_page < len(diary_pages):
+        if first_page < len(persistent.diary_pages):
             return True
         else:
             return False
@@ -104,7 +104,7 @@ python early:
         return math.ceil(len(list) / columns)
 
     def notify_achievement(key):
-        title = achievement_list[key]["title"]
+        title = persistent.achievement_list[key]["title"]
         renpy.display_notify(f"You achieve the \"{title}\"")
 ##############################################################################################################
 
@@ -115,19 +115,19 @@ python early:
         globals()[variable_name] = value
 
     def grant_achievement(key):
-        if not achievement_list[key]["granted"]:
-            achievement_list[key]["granted"] = True
+        if not persistent.achievement_list[key]["granted"]:
+            persistent.achievement_list[key]["granted"] = True
             refresh_achievements()
             notify_achievement(key)
     
     def refresh_achievements():
         sorted_achievements.clear()
-        sorted_achievements.update({k: v for k, v in sorted(achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))})
+        sorted_achievements.update({k: v for k, v in sorted(persistent.achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))})
 
     def refresh_diary():
-        for value in diary_content.values():
-            if (value["found"]) and not (value["content"] in diary_pages):
-                diary_pages.append(value["content"])
+        for value in persistent.diary_content.values():
+            if (value["found"]) and not (value["content"] in persistent.diary_pages):
+                persistent.diary_pages.append(value["content"])
     
     def update_friends_stats(character, value):
         value = max(0, min(value, 100))  # Enforce limits of 0 and 100
@@ -138,7 +138,7 @@ python early:
         friends_stats[character]["meet"] = True
     
     def write_diary(key):
-        diary_content[key]["found"] = True
+        persistent.diary_content[key]["found"] = True
         refresh_diary()
     
     def random_name():
@@ -156,21 +156,18 @@ python early:
         persistent._clear(True)
         renpy.reload_script()
     
-    def add_number():
-        persistent.devNum += 1
-    
     def modify_achievements(granted):
-        for achievement in achievement_list.values():
+        for achievement in persistent.achievement_list.values():
             achievement["granted"] = granted
 
     def grant_all_achievements():
         modify_achievements(True)
 
     def randomly_grant_achievement():
-        keys_with_false = [key for key, value in achievement_list.items() if not value["granted"]]
+        keys_with_false = [key for key, value in persistent.achievement_list.items() if not value["granted"]]
         if keys_with_false:
             random_key = random.choice(keys_with_false)
-            achievement_list[random_key]["granted"] = True
+            persistent.achievement_list[random_key]["granted"] = True
             refresh_achievements()
             notify_achievement(random_key)
 
@@ -178,7 +175,7 @@ python early:
         modify_achievements(False)
 
     def modify_diary_pages(found):
-        for value in diary_content.values():
+        for value in persistent.diary_content.values():
             value["found"] = found
             refresh_diary()
 
@@ -186,15 +183,15 @@ python early:
         modify_diary_pages(True)
 
     def randomly_write_diary():
-        keys_with_false = [key for key, value in diary_content.items() if not value["found"]]
+        keys_with_false = [key for key, value in persistent.diary_content.items() if not value["found"]]
         if keys_with_false:
             random_key = random.choice(keys_with_false)
-            diary_content[random_key]["found"] = True
+            persistent.diary_content[random_key]["found"] = True
         refresh_diary()
 
     def remove_all_diary_pages():
         modify_diary_pages(False)
-        diary_pages.clear()
+        persistent.diary_pages.clear()
         store.first_page = 1
         store.second_page = 2
 

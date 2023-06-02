@@ -1,3 +1,7 @@
+label splashscreen:
+    $ renpy.movie_cutscene("videos/spring_studios_splash.webm")
+    return
+
 image animated_bg_main_menu_night:
     "images/game_backgrounds/bg_main_menu_night/bg_main_menu_night (1).png"
     pause 0.08

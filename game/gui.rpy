@@ -441,7 +441,7 @@ init python:
         ## Change the size and spacing of various things.
         gui.slider_size = 54
 
-        gui.choice_button_width = 1860
+        gui.choice_button_width = 1500
         gui.choice_button_text_size = 45
 
         gui.navigation_spacing = 30
@@ -493,7 +493,7 @@ init python:
         ## Change the size and spacing of various things.
         gui.slider_size = 54
 
-        gui.choice_button_width = 1860
+        gui.choice_button_width = 1500
         gui.choice_button_text_size = 45
 
         gui.navigation_spacing = 30

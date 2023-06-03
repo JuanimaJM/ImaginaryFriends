@@ -58,19 +58,19 @@ python early:
             return "animated_bg_main_menu_night"
     
     def timely_text_color():
-        if game_time >= 3:
+        if game_time > 3:
             return white
         else:
-            return sugar_plum
+            return dark_gunmetal
     
     def timely_icon_diary():
-        if game_time >= 3:
+        if game_time > 3:
             return icon_diary_white
         else:
             return icon_diary_black
     
     def timely_icon_achievement():
-        if game_time >= 3:
+        if game_time > 3:
             return icon_achievement_white
         else:
             return icon_achievement_black
@@ -203,9 +203,11 @@ python early:
 # Color Spectrum
 python early:
     class ColorSpectrum:
-        def get_color_spectrum(number):
-            number = max(0, min(number, 100))  # Enforce limits of 0 and 100
-            if number >= 51:
+        def __init__(self, number):
+            self.number = max(0, min(number, 100))  # Enforce limits of 0 and 100
+        
+        def get_color_spectrum(self):
+            if self.number >= 51:
                 start_color = pastel_yellow
                 end_color = pastel_green
                 start_percentage = 51
@@ -215,24 +217,24 @@ python early:
                 end_color = pastel_yellow
                 start_percentage = 1
                 end_percentage = 50
-            percentage = (number - start_percentage) / (end_percentage - start_percentage)
-            color = ColorSpectrum._blend_colors(start_color, end_color, percentage)
+            percentage = (self.number - start_percentage) / (end_percentage - start_percentage)
+            color = self._blend_colors(start_color, end_color, percentage)
             return color
         
-        def _blend_colors(start_color, end_color, percentage):
-            r1, g1, b1 = ColorSpectrum._hex_to_rgb(start_color)
-            r2, g2, b2 = ColorSpectrum._hex_to_rgb(end_color)
+        def _blend_colors(self, start_color, end_color, percentage):
+            r1, g1, b1 = self._hex_to_rgb(start_color)
+            r2, g2, b2 = self._hex_to_rgb(end_color)
             r = int(r1 + (r2 - r1) * percentage)
             g = int(g1 + (g2 - g1) * percentage)
             b = int(b1 + (b2 - b1) * percentage)
-            blended_color = ColorSpectrum._rgb_to_hex((r, g, b))
+            blended_color = self._rgb_to_hex((r, g, b))
             return blended_color
         
-        def _hex_to_rgb(hex_color):
+        def _hex_to_rgb(self, hex_color):
             hex_color = hex_color.lstrip("#")
             return tuple(int(hex_color[i:i + 2], 16) for i in (0, 2, 4))
         
-        def _rgb_to_hex(rgb_color):
+        def _rgb_to_hex(self, rgb_color):
             r, g, b = rgb_color
             return f"#{r:02x}{g:02x}{b:02x}"
 """

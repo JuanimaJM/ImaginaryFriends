@@ -50,7 +50,8 @@ python early:
         elif game_time == 2:
             return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
         elif game_time == 3:
-            return "images/game_backgrounds/bg_main_menu_sunset.jpg"
+            # return "images/game_backgrounds/bg_main_menu_sunset.jpg"
+            return "animated_bg_main_menu_sunset"
         elif game_time == 4:
             # return "images/game_backgrounds/bg_main_menu_night.png")
             # return Movie(play="videos/bg_main_menu.webm")

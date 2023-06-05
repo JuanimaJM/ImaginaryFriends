@@ -78,8 +78,8 @@ define crayon_black_line = "gui/bar/crayon_black_line.png"
 
 # Particles
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
-define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=7)
-define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=11)
+define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=9)
+define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=15)
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the name of the character.

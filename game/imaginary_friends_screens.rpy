@@ -44,7 +44,8 @@ screen diary():
         key "ctrl_alt_shift_K_d" action Function(remove_all_diary_pages)
 
     tag menu
-    add gui.game_menu_background
+    # add gui.game_menu_background
+    add timely_bg_game_menu()
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -115,7 +116,8 @@ screen achievements():
         key "ctrl_alt_shift_K_d" action Function(remove_all_achievements)
 
     tag menu
-    add gui.game_menu_background
+    # add gui.game_menu_background
+    add timely_bg_game_menu()
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -326,6 +328,6 @@ screen developerOptions():
                     left_bar sugar_plum
                     right_bar jacarta
                     thumb american_violet
-                    value VariableValue("game_time", 4)
+                    value VariableValue("game_time", 7)
             null
 ##############################################################################################################

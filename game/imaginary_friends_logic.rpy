@@ -6,16 +6,22 @@ python early:
     now = datetime.datetime.now().time()
 
     # Set the start and end times for each period
+    dawn_start = datetime.time(5, 30)
+    dawn_end = datetime.time(5, 59)
     sunrise_start = datetime.time(6, 0)
-    sunrise_end = datetime.time(6, 59)
-    morning_start = datetime.time(7, 0)
+    sunrise_end = datetime.time(7, 59)
+    morning_start = datetime.time(8, 0)
     morning_end = datetime.time(11, 59)
-    afternoon_start = datetime.time(12, 0)
-    afternoon_end = datetime.time(15, 59)
-    sunset_start = datetime.time(16, 0)
+    noon_start = datetime.time(12, 0)
+    noon_end = datetime.time(14, 59)
+    afternoon_start = datetime.time(15, 0)
+    afternoon_end = datetime.time(16, 59)
+    sunset_start = datetime.time(17, 0)
     sunset_end = datetime.time(17, 59)
-    night_start = datetime.time(18, 0)
-    night_end = datetime.time(5, 59)
+    dusk_start = datetime.time(18, 0)
+    dusk_end = datetime.time(18, 30)
+    night_start = datetime.time(18, 31)
+    night_end = datetime.time(5, 29)
 
     def identify_text_color(key):
         if persistent.achievement_list[key]["granted"]:
@@ -31,46 +37,78 @@ python early:
     
     def check_time():
         now = datetime.datetime.now().time()
-        if sunrise_start <= now <= sunrise_end:
+        if dawn_start <= now <= dawn_end:
             store.game_time = 0
-        elif morning_start <= now <= morning_end:
+        elif sunrise_start <= now <= sunrise_end:
             store.game_time = 1
-        elif afternoon_start <= now <= afternoon_end:
+        elif morning_start <= now <= morning_end:
             store.game_time = 2
-        elif sunset_start <= now <= sunset_end:
+        elif noon_start <= now <= noon_end:
             store.game_time = 3
-        else:
+        elif afternoon_start <= now <= afternoon_end:
             store.game_time = 4
+        elif sunset_start <= now <= sunset_end:
+            store.game_time = 5
+        elif dusk_start <= now <= dusk_end:
+            store.game_time = 6
+        else:
+            store.game_time = 7
 
-    def timely_bg():
+    def timely_bg_main_menu():
         if game_time == 0:
             return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
         elif game_time == 1:
-            return "images/game_backgrounds/bg_main_menu_morning.jpg"
+            return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
         elif game_time == 2:
-            return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
+            return "images/game_backgrounds/bg_main_menu_morning.jpg"
         elif game_time == 3:
-            # return "images/game_backgrounds/bg_main_menu_sunset.jpg"
-            return "animated_bg_main_menu_sunset"
+            return "images/game_backgrounds/bg_main_menu_noon.jpg"
         elif game_time == 4:
-            # return "images/game_backgrounds/bg_main_menu_night.png")
+            return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
+        elif game_time == 5:
+            return "images/game_backgrounds/bg_main_menu_sunset.jpg"
+        elif game_time == 6:
+            # return "images/game_backgrounds/bg_main_menu_sunset.jpg"
+            # return "animated_bg_main_menu_sunset"
+            return "images/game_backgrounds/bg_main_menu_dusk.jpg"
+        elif game_time == 7:
+            # return "images/game_backgrounds/bg_main_menu_night.png"
             # return Movie(play="videos/bg_main_menu.webm")
-            return "animated_bg_main_menu_night"
+            # return "animated_bg_main_menu_night"
+            return "images/game_backgrounds/bg_main_menu_night.jpg"
+    
+    def timely_bg_game_menu():
+        if game_time == 0:
+            return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
+        elif game_time == 1:
+            return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
+        elif game_time == 2:
+            return "images/game_backgrounds/bg_game_menu_morning.jpg"
+        elif game_time == 3:
+            return "images/game_backgrounds/bg_game_menu_noon.jpg"
+        elif game_time == 4:
+            return "images/game_backgrounds/bg_game_menu_afternoon.jpg"
+        elif game_time == 5:
+            return "images/game_backgrounds/bg_game_menu_sunset.jpg"
+        elif game_time == 6:
+            return "images/game_backgrounds/bg_game_menu_dusk.jpg"
+        elif game_time == 7:
+            return "images/game_backgrounds/bg_game_menu_night.jpg"
     
     def timely_text_color():
-        if game_time > 3:
+        if game_time >= 6:
             return white
         else:
             return dark_gunmetal
     
     def timely_icon_diary():
-        if game_time > 3:
+        if game_time >= 6:
             return icon_diary_white
         else:
             return icon_diary_black
     
     def timely_icon_achievement():
-        if game_time > 3:
+        if game_time >= 6:
             return icon_achievement_white
         else:
             return icon_achievement_black

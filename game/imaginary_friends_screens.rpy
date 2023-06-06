@@ -63,12 +63,13 @@ screen diary():
 
 screen book():
     hbox:
-        xsize 1600
-        ysize 800
+        xsize 1640
+        ysize 820
         xalign 0.5
         yalign 0.7
         frame:
-            xsize 800
+            xpos 10
+            xsize 820
             yfill True
             background bg_left_page
             if len(persistent.diary_pages) > 0:
@@ -78,7 +79,7 @@ screen book():
             text "[first_page]":
                 color black
                 xalign 0.5
-                yalign 1.0
+                yalign 0.98
             if has_back_page():
                 imagebutton:
                     yalign 0
@@ -87,7 +88,8 @@ screen book():
                     idle button_prev_page
                     action Function(back_page)
         frame:
-            xsize 800
+            xpos -10
+            xsize 820
             yfill True
             background bg_right_page
             if identify_second_page():
@@ -97,7 +99,7 @@ screen book():
             text "[second_page]":
                 color black
                 xalign 0.5
-                yalign 1.0
+                yalign 0.98
             if has_next_page():
                 imagebutton:
                     xalign 1.0

@@ -235,7 +235,7 @@ python early:
         store.second_page = 2
 
     def set_random_name():
-        store.player_name = random_name()
+        store.default_name = random_name()
 ##############################################################################################################
 
 # Color Spectrum

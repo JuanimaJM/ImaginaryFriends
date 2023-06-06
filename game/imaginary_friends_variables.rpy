@@ -83,7 +83,8 @@ define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.p
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the name of the character.
-default player_name = random_name()
+default default_name = random_name()
+default player_name = ""
 define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"

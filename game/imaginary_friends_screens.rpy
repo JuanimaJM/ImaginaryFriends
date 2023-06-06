@@ -1,5 +1,6 @@
 # Utility Screens
 screen ask_name(who=None, question=""):
+    on "show" action SetVariable("default_name", random_name())
     style_prefix "input"      
 
     window:
@@ -14,7 +15,7 @@ screen ask_name(who=None, question=""):
             ypos gui.dialogue_ypos + 60
             xmaximum gui.dialogue_width
             idle button_randomizer
-            action Function(set_random_name)
+            action SetVariable("default_name", random_name())
 
         vbox:
             xanchor gui.dialogue_text_xalign
@@ -24,9 +25,9 @@ screen ask_name(who=None, question=""):
 
             text question style "input_prompt"
             input id "input":
-                length 12 
+                length 12
                 allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-                value VariableInputValue("player_name", returnable=True)
+                value VariableInputValue("default_name", returnable=True)
 
 screen script_keymap():
     key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, "sanity", sanity + 1)

@@ -1,33 +1,36 @@
 # Utility Screens
 screen ask_name(who=None, question=""):
     on "show" action SetVariable("default_name", random_name())
-    style_prefix "input"      
 
-    window:
+    frame:
+        xalign 0.5
+        yalign 0.5
+        xysize (1000, 250)
+
         if who is not None:
-            frame:
-                style "namebox"
-                text who id "who" style "namebox_label"
+            text who:
+                xpos 40
+                ypos 10
+                properties gui.text_properties("name", accent=True)
         
-        imagebutton:
-            xalign gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos - 75
-            ypos gui.dialogue_ypos + 60
-            xmaximum gui.dialogue_width
-            idle button_randomizer
-            action SetVariable("default_name", random_name())
-
         vbox:
-            xanchor gui.dialogue_text_xalign
-            xpos gui.dialogue_xpos
-            xsize gui.dialogue_width
-            ypos gui.dialogue_ypos
+            ypos 70
+            text question:
+                xalign 0.5
+                color black
 
-            text question style "input_prompt"
-            input id "input":
-                length 12
-                allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
-                value VariableInputValue("default_name", returnable=True)
+            frame:
+                background None
+                imagebutton:
+                    xpos 40
+                    idle button_randomizer
+                    action SetVariable("default_name", random_name())
+
+                input id "input":
+                    xalign 0.5
+                    length 12
+                    allow "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz"
+                    value VariableInputValue("default_name", returnable=True)
 
 screen script_keymap():
     key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, "sanity", sanity + 1)

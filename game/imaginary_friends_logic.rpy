@@ -56,7 +56,7 @@ python early:
 
     def timely_bg_main_menu():
         if game_time == 0:
-            return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
+            return "images/game_backgrounds/bg_main_menu_dawn.jpg"
         elif game_time == 1:
             return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
         elif game_time == 2:
@@ -79,7 +79,7 @@ python early:
     
     def timely_bg_game_menu():
         if game_time == 0:
-            return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
+            return "images/game_backgrounds/bg_game_menu_dawn.jpg"
         elif game_time == 1:
             return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
         elif game_time == 2:

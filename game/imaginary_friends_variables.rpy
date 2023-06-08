@@ -92,18 +92,63 @@ define name_list = (
 define Child = Character("[player_name]", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)
+
+# Other Characters
+define Mother = Character("Mother")
+define Father = Character("Father")
 define Cloud = Character("Cloud")
+define Jayem = Character("Jayem")
+define Jennie = Character("Jennie")
+define Ali = Character("Ali")
+define Kimmy = Character("Kimmy")
+
+# The Seven Imaginary Friends
+define Aithne = Character("Aithne")
+define Barktholomeow = Character("Barktholomeow")
+define Bertrand = Character("Bertrand")
+define Blayr = Character("Blayr")
+define Carwyn = Character("Carwyn")
+define Iris = Character("Iris")
+define Mikaela = Character("Mikaela")
 ##############################################################################################################
 
 # Stats
 default sanity = 100
 default happiness = 100
 default friends_stats = {
-    Phantom.name: {
+    "Phantom": {
         "stats": 0,
         "meet": False
     },
-    Someone.name: {
+    "Someone": {
+        "stats": 0,
+        "meet": False
+    },
+    "Aithne": {
+        "stats": 0,
+        "meet": False
+    },
+    "Barktholomeow": {
+        "stats": 0,
+        "meet": False
+    },
+    "Bertrand": {
+        "stats": 0,
+        "meet": False
+    },
+    "Blayr": {
+        "stats": 0,
+        "meet": False
+    },
+    "Carwyn": {
+        "stats": 0,
+        "meet": False
+    },
+    "Iris": {
+        "stats": 0,
+        "meet": False
+    },
+    "Mikaela": {
         "stats": 0,
         "meet": False
     }

@@ -9,14 +9,14 @@ label start:
     jump asking_name
 
 label asking_name:
-    call screen ask_name(Cloud.name, "What is your name?")
+    call screen ask_name("What is your name?")
     $ player_name = _return
     if not player_name == "":
         return
     Cloud "You haven't given me your name yet."
     Cloud "Please tell me your name."
     "Cloud smiled warmly at me."
-    call screen ask_name(question="Tell Cloud your name.")
+    call screen ask_name("Tell Cloud your name.")
     $ player_name = _return
     if not player_name == "":
         return
@@ -24,7 +24,7 @@ label asking_name:
     Cloud "You must have one. Even a nickname."
     Cloud "What is your name?"
     "Cloud asked me once again, still having a smile on his face."
-    call screen ask_name(question="Please tell Cloud your name.")
+    call screen ask_name("Please tell Cloud your name.")
     $ player_name = _return
     if not player_name == "":
         return
@@ -37,7 +37,7 @@ label asking_name:
     "Cloud sighed."
     Cloud "I'll give you once last chance."
     Cloud "Just tell me your name kid, please."
-    call screen ask_name(question="Just tell Cloud your name. You'll regret it if you don't.")
+    call screen ask_name("Just tell Cloud your name. You'll regret it if you don't.")
     $ player_name = _return
     if not player_name == "":
         return

@@ -1,20 +1,13 @@
 # Utility Screens
-screen ask_name(who=None, question=""):
+screen ask_name(question=""):
     on "show" action SetVariable("default_name", random_name())
 
     frame:
         xalign 0.5
-        yalign 0.5
-        xysize (1000, 250)
-
-        if who is not None:
-            text who:
-                xpos 40
-                ypos 10
-                properties gui.text_properties("name", accent=True)
+        yalign 0.2
+        xysize (1000, 200)
         
         vbox:
-            ypos 70
             text question:
                 xalign 0.5
                 color black

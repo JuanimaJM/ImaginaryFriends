@@ -415,6 +415,7 @@ screen main_menu():
             style "main_menu_vbox"
 
             text "[config.version]":
+                color timely_text_color()
                 style "main_menu_version"
 
 style main_menu_frame is empty

@@ -33,6 +33,7 @@ define alice_blue = "#F0F8FF"
 define pastel_green = "#77dd77"
 define pastel_yellow = "#fdfd96"
 define pastel_red = "#ff6961"
+define vivid_cerulean = "#0099ff"
 
 # Fonts
 define font_title = "gui/fonts/Griffy-Regular.ttf"

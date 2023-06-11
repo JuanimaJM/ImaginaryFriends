@@ -33,6 +33,60 @@ screen script_keymap():
     key "ctrl_alt_shift_K_n" action Function(set_random_name)
 ##############################################################################################################
 
+# Script Scenes
+#
+#
+#
+# Map for EntranceHall
+screen entranceHall():
+    add "images/scenes/entrancehall.png"
+
+    imagebutton:
+        xpos 429
+        ypos 316
+        idle "images/scenes/entrancehall/door_kitchen.png"
+        hover im.Color("images/scenes/entrancehall/door_kitchen.png", vivid_cerulean)
+        action Call("kitchen")
+
+    imagebutton:
+        xpos 657
+        ypos 477
+        idle "images/scenes/entrancehall/door_dining.png"
+        hover im.Color("images/scenes/entrancehall/door_dining.png", vivid_cerulean)
+        action Call("dining")
+
+    imagebutton:
+        xpos 777
+        ypos 564
+        idle "images/scenes/entrancehall/door_bathroom1.png"
+        hover im.Color("images/scenes/entrancehall/door_bathroom1.png", vivid_cerulean)
+        action Call("bathroom1")
+
+    imagebutton:
+        xpos 845
+        ypos 583
+        idle "images/scenes/entrancehall/door_livingroom.png"
+        hover im.Color("images/scenes/entrancehall/door_livingroom.png", vivid_cerulean)
+        action Call("livingroom")
+
+    imagebutton:
+        xpos 1421
+        ypos 315
+        idle "images/scenes/entrancehall/door_basement.png"
+        hover im.Color("images/scenes/entrancehall/door_basement.png", vivid_cerulean)
+        action Call("basement")
+
+    imagebutton:
+        xpos 1164
+        ypos 50
+        idle "images/scenes/entrancehall/door_laundry.png"
+        hover im.Color("images/scenes/entrancehall/door_laundry.png", vivid_cerulean)
+        action Call("laundry")
+
+screen hallWay():
+    text "HallWay"
+##############################################################################################################
+
 # Screen for Diary
 screen diary():
     if config.developer:

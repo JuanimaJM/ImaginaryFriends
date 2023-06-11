@@ -5,8 +5,37 @@ label start:
     if config.developer:
         show screen script_keymap
     stop music fadeout 1.0
+    jump testing
+
+label kitchen:
     scene kitchen
-    jump asking_name
+    "Kitchen"
+    return
+
+label dining:
+    scene dining_table
+    "Dining"
+    return
+
+label bathroom1:
+    scene bathroom
+    "Batchroom1"
+    return
+
+label livingroom:
+    scene living_room
+    "Living Room"
+    return
+
+label basement:
+    scene basement
+    "Basement"
+    return
+
+label laundry:
+    scene laundry
+    "Laundry"
+    return
 
 label asking_name:
     call screen ask_name("What is your name?")
@@ -62,9 +91,6 @@ label testing:
     "1"
     "2"
     "3"
-    "Before we start, I would like you to input something"
-    $ player_name = renpy.input("What is your name?", length=12, allow="ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz")
-    "Oohh. So your name is [player_name]"
     "I will show some choices for testing"
     call testing_menu
     jump end
@@ -123,6 +149,8 @@ label routes_choices:
             call asking_name
         "Random Test":
             call random_test
+        "Entrance Hall Map":
+            call screen entranceHall
     jump show_test_choices
 
 label random_test:

@@ -410,7 +410,7 @@ screen main_menu():
             xpos 360
             ypos 890
             idle timely_img_apple()
-            action Show("profile")    
+            action ShowMenu("character_tab")    
 
     if gui.show_name:
 

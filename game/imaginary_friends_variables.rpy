@@ -117,9 +117,6 @@ define Mikaela = Character("Mikaela")
 
 # Character Profile
 default persistent.profiles_unlocked = False
-default character_tab_selected = True
-default info_tab_selected = False
-default lore_tab_selected = False
 ##############################################################################################################
 
 # Stats

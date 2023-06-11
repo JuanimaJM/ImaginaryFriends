@@ -141,6 +141,12 @@ python early:
         else:
             return icon_achievement_black
     
+    def timely_img_apple():
+        if game_time == 7:
+            return im.Blur(img_black_apple, 0.5)
+        else:
+            return img_black_apple
+    
     def has_next_page():
         return (second_page < len(persistent.diary_pages))
     

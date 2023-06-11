@@ -52,6 +52,8 @@ define button_randomizer = "gui/icons/button_randomizer.png"
 define icon_cancel = "gui/icons/ic_cancel.png"
 define icon_menu = "gui/icons/ic_menu.png"
 define icon_developer = "gui/icons/ic_dev_menu.png"
+define icon_white_bookmark = "gui/icons/white_bookmark.png"
+define icon_purple_bookmark = "gui/icons/purple_bookmark.png"
 define bar_white = "gui/bar/bar_white.png"
 define bar_black = "gui/bar/bar_black.png"
 define bg_left_page = "gui/frame_backgrounds/left_page.png"
@@ -75,6 +77,7 @@ define paper_hover_horizontal_bar = "gui/bar/paper_hover_horizontal_bar.png"
 define paper_idle_vertical_scrollbar = "gui/bar/paper_idle_vertical_scrollbar.png"
 define paper_hover_vertical_scrollbar = "gui/bar/paper_hover_vertical_scrollbar.png"
 define crayon_black_line = "gui/bar/crayon_black_line.png"
+define img_black_apple = "images/extra/black_apple.png"
 
 # Particles
 define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
@@ -110,6 +113,13 @@ define Blayr = Character("Blayr")
 define Carwyn = Character("Carwyn")
 define Iris = Character("Iris")
 define Mikaela = Character("Mikaela")
+##############################################################################################################
+
+# Character Profile
+default persistent.profiles_unlocked = False
+default character_tab_selected = True
+default info_tab_selected = False
+default lore_tab_selected = False
 ##############################################################################################################
 
 # Stats

@@ -404,6 +404,13 @@ screen main_menu():
         imagebutton:
             idle timely_icon_achievement()
             action Show("achievements")
+        
+    if persistent.profiles_unlocked:
+        imagebutton:
+            xpos 360
+            ypos 890
+            idle timely_img_apple()
+            action Show("profile")    
 
     if gui.show_name:
 

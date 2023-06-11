@@ -104,7 +104,6 @@ screen book():
                     yoffset 10
                     idle button_next_page
                     action Function(next_page)
-
 ##############################################################################################################
 
 # Screen for Achievements
@@ -265,7 +264,96 @@ screen statsUI():
                                 xsize 500
                                 left_bar im.Color(bar_white, ColorSpectrum(value["stats"]).get_color_spectrum())
                                 right_bar bar_black
-#####################################################################S#########################################
+##############################################################################################################
+
+# Screen for Character Profile
+screen profile():
+    tag menu
+    add timely_bg_game_menu()
+    imagebutton:
+        xalign 0.0
+        yalign 0.0
+        xoffset 30
+        yoffset 30
+        idle button_back_arrow
+        action Return()
+    text _("Character Profile"):
+        yalign 0.0
+        xalign 0.5
+        font font_title
+        size gui.title_text_size
+    use profile_book
+
+screen profile_book():
+    fixed:
+        xfill True
+        ysize 820
+        xoffset 40
+        xalign 0.5
+        yalign 0.7
+        vbox:
+            xpos 1400
+            yoffset 100
+            xfit True
+            yfit True
+            spacing 20
+            style_prefix "bookmark"
+            textbutton "Characters" action ShowMenu("character_tab")
+            textbutton "Info" action ShowMenu("info_tab")
+            textbutton "Lore" action ShowMenu("lore_tab")
+        frame:
+            xsize 820
+            yfill True
+            background bg_left_page
+
+screen character_tab():
+    tag menu
+    use profile
+    fixed:
+        xfill True
+        ysize 820
+        xoffset 40
+        xalign 0.5
+        yalign 0.7
+        frame:
+            xpos 800
+            xsize 820
+            yfill True
+            background bg_right_page
+            text "Character"
+
+screen info_tab():
+    tag menu
+    use profile
+    fixed:
+        xfill True
+        ysize 820
+        xoffset 40
+        xalign 0.5
+        yalign 0.7
+        frame:
+            xpos 800
+            xsize 820
+            yfill True
+            background bg_right_page
+            text "Info"
+
+screen lore_tab():
+    tag menu
+    use profile
+    fixed:
+        xfill True
+        ysize 820
+        xoffset 40
+        xalign 0.5
+        yalign 0.7
+        frame:
+            xpos 800
+            xsize 820
+            yfill True
+            background bg_right_page
+            text "Lore"
+##############################################################################################################
 
 # Screen for Developer Options
 screen developer():
@@ -304,6 +392,7 @@ screen developerOptions():
             textbutton "Open Diary" action ShowMenu("diary")
             textbutton "Open Achievements" action ShowMenu("achievements")
             textbutton "Set Random Name" action Function(set_random_name)
+            textbutton "Unlock Character Profile" action SetVariable("persistent.profiles_unlocked", True)
             vbox:
                 text "Sanity: ([sanity])"
                 bar:
@@ -328,5 +417,4 @@ screen developerOptions():
                     right_bar jacarta
                     thumb american_violet
                     value VariableValue("game_time", 7)
-            null
 ##############################################################################################################

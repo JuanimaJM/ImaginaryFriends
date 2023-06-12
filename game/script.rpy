@@ -7,6 +7,10 @@ label start:
     stop music fadeout 1.0
     jump testing
 
+label entrancehall:
+    call screen entranceHall
+    return
+
 label kitchen:
     scene kitchen
     "Kitchen"
@@ -35,6 +39,40 @@ label basement:
 label laundry:
     scene laundry
     "Laundry"
+    return
+
+label hallway:
+    call screen hallWay
+    return
+
+label storage:
+    scene storage_room
+    "Storage Room"
+    return
+
+label bathroom2:
+    scene bathtub
+    "Bathroom 2"
+    return
+
+label studyroom:
+    scene library
+    "Study Room"
+    return
+
+label guestroom:
+    scene bed
+    "Guest Room"
+    return
+
+label childroom:
+    scene bedroom day
+    "Your Room"
+    return
+
+label masterroom:
+    scene master_bedroom
+    "Your Parent's Room"
     return
 
 label asking_name:
@@ -150,7 +188,7 @@ label routes_choices:
         "Random Test":
             call random_test
         "Entrance Hall Map":
-            call screen entranceHall
+            call entrancehall
     jump show_test_choices
 
 label random_test:

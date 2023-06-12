@@ -115,18 +115,86 @@ screen entranceHall():
         tooltip "Hall Way"
         idle "images/scenes/entrancehall/door_hallway.png"
         hover image_map_hover("images/scenes/entrancehall/door_hallway.png")
-        action Show("hallWay")
+        action Call("hallway")
 
 # Map for HallWay
 screen hallWay():
     add "images/scenes/hallway.png"
+    on "show" action Show("indicator")
+
+    $ tooltip = GetTooltip()
+
+    if tooltip:
+        nearrect:
+            focus "tooltip"
+            prefer_top True
+            text tooltip:
+                size 35
+                outlines [(1, black)]
+                xalign 0.5
+                yalign 0.5
+
     textbutton "Go Downstairs":
         yalign 0.9
         xalign 0.5
         text_size 80
         text_idle_color dark_gunmetal
         text_hover_color sugar_plum
-        action Hide("hallWay")
+        action Call("entrancehall")
+    
+    imagebutton:
+        xpos 394
+        ypos 0
+        focus_mask True
+        tooltip "Storage Room"
+        idle "images/scenes/hallway/door_storage.png"
+        hover image_map_hover("images/scenes/hallway/door_storage.png")
+        action Call("storage")
+    
+    imagebutton:
+        xpos 642
+        ypos 113
+        focus_mask True
+        tooltip "Bathroom 2"
+        idle "images/scenes/hallway/door_bathroom2.png"
+        hover image_map_hover("images/scenes/hallway/door_bathroom2.png")
+        action Call("bathroom2")
+    
+    imagebutton:
+        xpos 740
+        ypos 175
+        focus_mask True
+        tooltip "Study Room"
+        idle "images/scenes/hallway/door_studyroom.png"
+        hover image_map_hover("images/scenes/hallway/door_studyroom.png")
+        action Call("studyroom")
+    
+    imagebutton:
+        xpos 1490
+        ypos 0
+        focus_mask True
+        tooltip "Guest Room"
+        idle "images/scenes/hallway/door_guestroom.png"
+        hover image_map_hover("images/scenes/hallway/door_guestroom.png")
+        action Call("guestroom")
+    
+    imagebutton:
+        xpos 1304
+        ypos 114
+        focus_mask True
+        tooltip "Your Room"
+        idle "images/scenes/hallway/door_childroom.png"
+        hover image_map_hover("images/scenes/hallway/door_childroom.png")
+        action Call("childroom")
+    
+    imagebutton:
+        xpos 1211
+        ypos 175
+        focus_mask True
+        tooltip "Master's Bedroom"
+        idle "images/scenes/hallway/door_masterroom.png"
+        hover image_map_hover("images/scenes/hallway/door_masterroom.png")
+        action Call("masterroom")
 
 # Text Indicator
 screen indicator():

@@ -107,10 +107,28 @@ screen entranceHall():
         idle "images/scenes/entrancehall/door_laundry.png"
         hover image_map_hover("images/scenes/entrancehall/door_laundry.png")
         action Call("laundry")
+    
+    imagebutton:
+        xpos 1023
+        ypos 230
+        focus_mask True
+        tooltip "Hall Way"
+        idle "images/scenes/entrancehall/door_hallway.png"
+        hover image_map_hover("images/scenes/entrancehall/door_hallway.png")
+        action Show("hallWay")
 
+# Map for HallWay
 screen hallWay():
-    text "HallWay"
+    add "images/scenes/hallway.png"
+    textbutton "Go Downstairs":
+        yalign 0.9
+        xalign 0.5
+        text_size 80
+        text_idle_color dark_gunmetal
+        text_hover_color sugar_plum
+        action Hide("hallWay")
 
+# Text Indicator
 screen indicator():
     text "Tap and Hold to Hover a Room":
         outlines [(2, black)]

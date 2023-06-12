@@ -40,51 +40,84 @@ screen script_keymap():
 # Map for EntranceHall
 screen entranceHall():
     add "images/scenes/entrancehall.png"
+    on "show" action Show("indicator")
+
+    $ tooltip = GetTooltip()
+
+    if tooltip:
+        nearrect:
+            focus "tooltip"
+            prefer_top True
+            text tooltip:
+                size 35
+                outlines [(1, black)]
+                xalign 0.5
+                yalign 0.5
 
     imagebutton:
         xpos 429
         ypos 316
+        focus_mask True
+        tooltip "Kitchen"
         idle "images/scenes/entrancehall/door_kitchen.png"
-        hover im.Color("images/scenes/entrancehall/door_kitchen.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_kitchen.png")
         action Call("kitchen")
 
     imagebutton:
         xpos 657
         ypos 477
+        focus_mask True
+        tooltip "Dining"
         idle "images/scenes/entrancehall/door_dining.png"
-        hover im.Color("images/scenes/entrancehall/door_dining.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_dining.png")
         action Call("dining")
 
     imagebutton:
         xpos 777
         ypos 564
+        focus_mask True
+        tooltip "Bathroom 1"
         idle "images/scenes/entrancehall/door_bathroom1.png"
-        hover im.Color("images/scenes/entrancehall/door_bathroom1.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_bathroom1.png")
         action Call("bathroom1")
 
     imagebutton:
         xpos 845
         ypos 583
+        focus_mask True
+        tooltip "Living Room"
         idle "images/scenes/entrancehall/door_livingroom.png"
-        hover im.Color("images/scenes/entrancehall/door_livingroom.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_livingroom.png")
         action Call("livingroom")
 
     imagebutton:
         xpos 1421
         ypos 315
+        focus_mask True
+        tooltip "Basement"
         idle "images/scenes/entrancehall/door_basement.png"
-        hover im.Color("images/scenes/entrancehall/door_basement.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_basement.png")
         action Call("basement")
 
     imagebutton:
         xpos 1164
         ypos 50
+        focus_mask True
+        tooltip "Laundry"
         idle "images/scenes/entrancehall/door_laundry.png"
-        hover im.Color("images/scenes/entrancehall/door_laundry.png", vivid_cerulean)
+        hover image_map_hover("images/scenes/entrancehall/door_laundry.png")
         action Call("laundry")
 
 screen hallWay():
     text "HallWay"
+
+screen indicator():
+    text "Tap and Hold to Hover a Room":
+        outlines [(2, black)]
+        xalign 0.5
+        yalign 0.5
+        size 50
+    timer 3 action Hide("indicator")
 ##############################################################################################################
 
 # Screen for Diary

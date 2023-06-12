@@ -179,6 +179,9 @@ python early:
     def notify_achievement(key):
         title = persistent.achievement_list[key]["title"]
         renpy.display_notify(f"You achieve the \"{title}\"")
+    
+    def image_map_hover(image):
+        return im.Color(image, vivid_cerulean)
 ##############################################################################################################
 
 # Game Functions

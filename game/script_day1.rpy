@@ -78,34 +78,34 @@ label day1:
     "I heard someone talk and laugh."
     Child "Huh? Who’s there?"
     "I look around me but don’t see anyone."
-    # *Smiling Talking Face* 
-    show cloud smiling
+    # [Position: Center] *Smiling Talking Face* 
+    show cloud smiling at center
     "???" "Looking for me~?"
     # *Closed-Eye Smiling Face*
     "A very tall man appeared in front of me."
     "He wore a colorful suit. He looks like-"
     Child "A clown?"
-    # *Surprised Talking Face*
+    #[Position: Center]  *Surprised Talking Face*
     "???" "How did you know?"
     # *Surprised Face*
     Child "I-it’s pretty obvious because of your look and face."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     "???" "How clever~"
     # *Closed-Eye Smiling Face*
     "He smiled warmly at me."
     "This is the first time someone ever smiled at me."
     "I can’t help but feel happy."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     "???" "Don’t you have any questions for me?"
     # *Closed-Eye Smiling Face*
     Child "Questions?"
-    # *Surprised Talking Face* 
+    # [Position: Center] *Surprised Talking Face* 
     "???" "That’s weird."
     "???" "You’re not curious?"
     "???" "But you’re a child."
     # *Surprised Face*
     Child "W-what do you mean?"
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     "???" "Hmmm~ Never mind."
     "???" "Anyways~ "
     "???" "I am indeed a clown, and I am the owner of this fun and amazing place~"
@@ -116,7 +116,7 @@ label day1:
     "The man introduced himself with a smile."
     "So, his name is Cloud."
     Child "C-cloud."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "That’s right! That’s me~"
     Cloud "So? Tell me, what’s your name?"
     # *Closed-Eye Smiling Face*
@@ -124,17 +124,17 @@ label day1:
     call cloud_asking_name
     $ Child.name = player_name
 
-    # *Overly Excited Face* 
+    # [Position: Center] *Overly Excited Face* 
     Cloud "Oh! So that’s your name."
-    # *Smiling Talking Face*
+    # [Position: Center] *Smiling Talking Face*
     Cloud "Nice to meet you [Child.name]"
     # *Closed-Eye Smiling Face*
     Child "N-nice to meet you too."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "Do you want to be my friend? "
     # *Closed-Eye Smiling Face*
     Child "O-oh! F-friend? Me?"
-    # *Surprised Talking Face* 
+    # [Position: Center] *Surprised Talking Face* 
     Cloud "Why are you so surprised? "
     # *Surprised Face*
     Child "I-I’ve never had a friend."
@@ -142,7 +142,7 @@ label day1:
     "At the thought of my mother, I can’t help but frown."
     "S-she never really like me."
     "Especially my father."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "Then~"
     Cloud "I’m glad to be your very first friend. "
     # *Closed-Eye Smiling Face*
@@ -153,7 +153,7 @@ label day1:
     "But I’m really happy."
     # *Happiness = +10; Sanity = +10; Message: Your stats have change. *
     $ update_player_stats(10, 10)
-    # *Smiling Talking Face*
+    # [Position: Center] *Smiling Talking Face*
     Cloud "Hmmm~ But surely, I won’t be your only friend, right? "
     # *Closed-Eye Smiling Face*
     "Cloud asked me. He seems eager to hear my reply."
@@ -161,13 +161,13 @@ label day1:
     Child "And i-if it’s possible, I want to have more friends."
     Child "B-but it’s not like I don’t want to be your friend, I really want to-"
     "Cloud suddenly laughed loudly."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "You’re really funny."
     Cloud "Why are you so nervous? "
     Cloud "You won’t be getting any friends if you’re like that. "
     # *Closed-Eye Smiling Face*
     Child "I won’t?"
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "Yes. You won’t."
     Cloud "If you want to be friends with someone, you should greet them with a smile. "
     Cloud "If you act all nervous and shy, they might feel uncomfortable and will leave you."
@@ -175,7 +175,7 @@ label day1:
     Cloud "Do you want me to sing to you my “I want to be your friend” song? "
     # *Closed-Eye Smiling Face*
     Child "“I want to be your friend” song?"
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "A song I made. "
     Cloud "I sing it when I want to be friends with someone. "
     Cloud "I should have sung it first earlier when I talked to you. "
@@ -189,7 +189,8 @@ label day1:
             call day1_menu2_choice2
     
     Child "What if they don’t want to be my friend?"
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
+    show cloud smiling_talking at center
     Cloud "Nonsense! All you need to do is smile~"
     Cloud "Give them your brightest and most sincere smile."
     Cloud "And nothing can go wrong~"
@@ -197,7 +198,7 @@ label day1:
     # *Closed-Eye Smiling Face*
     Child "Okay. I’ll do my best."
     Child "Thank you Cloud."
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "You’re welcome."
     Cloud "I hope you’ll be able to have many friends."
     # *Sinister Talking Face* 
@@ -205,7 +206,7 @@ label day1:
     Cloud "Not too happy though. "
     # *Sinister Smile Face*
     Child "W-what do you mean? "
-    # *Sinister Talking Face* 
+    # [Position: Center] *Sinister Talking Face* 
     Cloud "It’s time to wake up."
     # *Effects as if opening eyes*
     hide cloud
@@ -227,26 +228,27 @@ label day1:
     "I was inside a car. "
     "T-that’s right. I remember now."
     "I’m at our new house."
-    # *Angry Shouting Face* 
+    # [Position: Center] *Angry Shouting Face* 
+    show mother angry_shouting at center
     Mother "{size=+4}Ha! So, you were awake?{/size}{size=+8}You were ignoring me!?{/size}"
     # *Angry Face*
     Child "A-ah!"
     "Mother suddenly appeared."
     Child "N-no, I just woke up m-mother."
     "I said, my body slightly trembling."
-    # *Annoyed Talking Face* 
+    # [Position: Center] *Annoyed Talking Face* 
     Mother "You even dare lie to me! "
     # *Annoyed Face*
     Child "N-no, I wouldn’t dare."
     "Mother sighed."
-    # *Annoyed Talking Face* 
+    # [Position: Center] *Annoyed Talking Face* 
     Mother "Just hurry up! Help with the luggage."
     Mother "Your father isn’t here again, and the furniture movers will be running late."
     Mother "It’s so annoying! "
     Mother "You better stop being lazy, I’ll meet you inside the house. "
     # *Annoyed Face*
     Child "Y-yes."
-    # *Annoyed Talking Face* 
+    # [Position: Center] *Annoyed Talking Face* 
     Mother "Hmph! "
     "Mother left."
     "I can’t help but sigh."
@@ -264,25 +266,25 @@ label day1:
     "I need to hurry and meet mother inside the house."
     # *Background: Hallway 1; No Hover*
     scene entrancehall
-    # *Annoyed Talking Face* 
+    # [Position: Center] *Annoyed Talking Face* 
     Mother "Finally! You’re here."
     # *Annoyed Face*
     Child "I’m sorry for being late."
-    # *Mocking Talking Face* 
+    # [Position: Center] *Mocking Talking Face* 
     Mother "Ha! At least you know your place. "
     # *Serious Talking Face* 
     Mother "You better listen carefully."
     Mother "I’ll be going out for a while, I’ll be back at night. "
     # *Serious Face*
     Child "Where are you going?"
-    # *Serious Talking Face* 
+    # [Position: Center] *Serious Talking Face* 
     Mother "It’s not something you should be concerned about."
     Mother "Now stop asking and just listen while I’m in a good mood."
     Mother "See that luggage over there? "
     # *Serious Face*
     "I looked to where my mother is pointing."
     Child "Yes."
-    # *Serious Talking Face* 
+    # [Position: Center] *Serious Talking Face* 
     Mother "Good. "
     Mother "That luggage is yours. It has your belongings of course."
     Mother "Just put it in your room."
@@ -291,7 +293,7 @@ label day1:
     Mother "Do you understand? "
     # *Serious Face*
     Child "Yes."
-    # *Mocking Talking Face* 
+    # [Position: Center] *Mocking Talking Face* 
     Mother "Ha! You’re pretty obedient today."
     Mother "I wonder how long it will last. "
     # *Serious Talking Face* 
@@ -302,13 +304,242 @@ label day1:
     Child "I need to go upstairs."
     # *Background: Hallway 1; May Hover*
 
-    call screen entranceHall
+    call screen entranceHall("hallway")
     call day1_rooms_option1
 
-    "Meheehh"
+    "I’m now on the second floor."
+    "Mother said my room was the middle room on the right."
+    "As I was about to go to my room."
+    "I felt someone was staring at me."
+    "I-"
+    "Why do I feel scared?"
+    "Should I turn around to see who is staring at me?"
+    "I-I think I should."
+    "As I turned around, I saw a hooded figure."
+    # [Position: Center] *Jayem (Isa lang pic nya)*
+    show jayem at center
+    "???" "…"
+    # *Gain “Mysterious Phantom” Achievement*
+    $ grant_achievement("Achv7")
+    Child "H-hello."
+    # [Position: Center] *Jayem* 
+    "???" "…"
+    "The hooded figure was silent."
+    "They just stood there."
+    "Maybe I should be friendly like what Cloud said."
+    Child "Hi. My name is [Child.name]. "
+    Child "What’s your name?"
+    # [Position: Center] *Jayem* 
+    "???" "… "
+    "???" "…Jayem…"
+    "They answered."
+    "I can’t hide my smile, maybe Cloud was right. "
+    "I just need to be friendly."
+    Child "S-so…Jayem right?"
+    Child "D-do you want to be my friend?"
+    # [Position: Center] *Jayem* 
+    Jayem "…Yes…"
+    Child "T-thank you!"
+    # *Happiness = +5; Sanity = +5; Message: Your stats have change. *
+    $ update_player_stats(sanity=5, happiness=5)
+    "I have another friend, I feel really happy."
+    # *Jayem Leaves or Hidden*
+    hide jayem
+    Child "S-so Jayem-"
+    "When I looked in front of me, Jayem was nowhere to be seen."
+    "They left already…"
+    Child "Were they bored of me?"
+    "???" "Don’t worry~ It’s not your fault~"
+    "???" "Yeah. Jayem’s just not sociable."
+    "I suddenly heard two unknown voices."
+    "When I turned around, I saw two women."
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face*
+    show jennie close_eye_smiling_talking at left
+    "???" "Hello~ "
+    # *Jennie Closed-Eye Smiling Face* 
+    # *Gain “Meet The White Cat” Achievement*
+    $ grant_achievement("Achv5")
+    # [Position: Right] *Ali "Smiling Talking Face*
+    show ali smiling_talking at right
+    "???" "Hey. "
+    # *Ali Smiling Face*
+    # *Gain “Meet The Black Dog” Achievement*
+    $ grant_achievement("Achv6")
+    "The first one had white ears as if she is a cat."
+    "While the other one had black ears as if she is a dog."
+    Child "H-hello."
+    # [Position: Left] *Jennie Smiling Talking Face* 
+    "???" "Ali, look! Isn’t it adorable~?"
+    # *Jennie "Smiling Face*
+    "The white cat woman suddenly hugged me."
+    # [Position: Left] *Jennie Closed-Eye Smiling Talking Face* 
+    "???" "You’re so adorable~"
+    # *Jennie "Closed-Eye Smiling Face*
+    # [Position: Right] *Ali "Serious Talking Face* 
+    Ali "Jennie stop that, you’re scaring the child. "
+    # *Ali "Serious Face*
+    "So, Ali is the black dog and Jennie is the white cat."
+    "I then realized that Jennie is still hugging me."
+    "I-I’ve never been hugged like this before."
+    "I keep on experiencing new things today."
+    # [Position: Right] *Ali "Serious Talking Face* 
+    Ali "And don’t call the child “it”. "
+    # *Ali "Serious Face*
+    # [Position: Left] *Jennie "Serious Talking Face* 
+    Jennie "Hmph! “It” is better than calling it “the child”. "
+    Jennie "You’re so old Ali~ "
+    # *Jennie "Serious Face*
+    # [Position: Right] *Ali "Annoyed Surprised Talking Face* 
+    Ali "You! What did you say!?"
+    Ali "You dare call me old!? "
+    # *Ali "Annoyed Surprised Face*
+    Child "E-excuse me?"
+    "The two of them stopped arguing."
+    Child "I- Actually, I have a name. It’s [Child.name]."
+    Child "So you don’t have to call me “it” or “the child”."
+    Child "You don’t have to fight."
+    "The two of them then laughed."
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "Not just adorable, but you’re very considerate as well. "
+    # *Jennie "Closed-Eye Smiling Face*
+    # [Position: Right] *Ali "Smiling Talking Face* 
+    Ali "Don’t worry [Child.name]. "
+    Ali "It’s just a friendly fight. We’re not really mad at each other. "
+    # *Ali "Smiling Face*
+    Child "S-so friends fight?"
+    # [Position: Left] *Jennie "Smiling Talking Face* 
+    Jennie "They do, but only since we have a disagreement. "
+    Jennie "Being friends doesn’t mean you’ll never argue."
+    Jennie "There are times when you’ll have a hard time understanding them. "
+    # *Jennie "Smiling Face*
+    # [Position: Right] *Ali "Smiling Talking Face* 
+    Ali "Or getting along with them. "
+    Ali "So, fights like this are common. "
+    # *Ali "Smiling Face*
+    # [Position: Left] *Jennie "Smiling Talking Face* 
+    Jennie "What matters is that we still care for each other."
+    # *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "No fight can ever defeat true friendship. "
+    # *Jennie "Closed-Eye Smiling Face*
+    Child "No fight can ever defeat true friendship…"
+    "There are still a lot of things that I don’t know about."
+    "I then notice my luggage."
+    "Oh no! I almost forgot about it."
+    Child "I-I’m sorry Jennie and Ali but I still have to do something."
+    # [Position: Right] *Ali "Smiling Talking Face* 
+    Ali "We can come with you if you want. "
+    # *Ali "Smiling Face*
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "We can also help you. "
+    # *Jennie "Closed-Eye Smiling Face*
+    Child "No thank you. I can do it on my own."
+    # [Position: Left] *Jennie "Pouting Talking Face* 
+    Jennie "Don’t you want the company? Aren’t we friends now? "
+    # *Jennie "Pouting Face*
+    "Jennie looked at me pleadingly."
+    Child "O-oh…I…"
+    # [Position: Right] *Ali "Serious Talking Face* 
+    Ali "Don’t tell me all that interaction meant nothing? "
+    # *Ali "Serious Face*
+    Child "N-no, it’s not like that."
+    Child "I just didn’t want to assume that we were friends."
+    # [Position: Right] *Ali "Smiling Talking Face* 
+    Ali "You know [Child.name]. "
+    Ali "You don’t have to wait to be asked if you want to be friends."
+    Ali "Sometimes, you’ll just know when you are friends with someone. "
+    Ali "Even if the word “friend” was never mentioned."
+    Ali "You’ll know it’s friendship because you can feel it. "
+    # *Ali "Smiling Face*
+    Child "I-I don’t know what to say."
+    # [Position: Left] *Jennie "Smiling Talking Face* 
+    Jennie "Why not start with, “I’d love your company, Jennie and Ali”. "
+    # *Jennie "Smiling Face*
+    # [Position: Right] *Ali "Serious Talking Face* 
+    Ali "Jennie… "
+    # *Ali "Serious Face*
+    "Jennie laughed while Ali sighed."
+    "Watching them, I don’t know what came to me, but I started to laugh."
+    "I don’t know when I last laughed like this."
+    "I’ll know it’s friendship because I can feel it."
+    "This must be friendship."
+    # *Happiness = +10; Sanity = +10; Message: Your stats have change. *
+    $ update_player_stats(sanity=10, happiness=10)
+    Child "You’re right Jennie. "
+    Child "If it’s okay with you two, I’d love your company."
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "Yehey! "
+    # *Jennie "Closed-Eye Smiling Face*
+    # [Position: Right] *Ali Smiling Talking Face* 
+    Ali "So where are you headed? "
+    # *Ali "Smiling Face*
+    Child "To my room. I need to put my luggage there."
+    # [Position: Right] *Ali "Serious Talking Face* 
+    Ali "That’s all? "
+    # *Ali "Serious Face*
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "Oh! I have an idea! "
+    # *Jennie "Smiling Talking Face* 
+    Jennie "Let’s have an adventure~! "
+    # *Jennie "Smiling Face*
+    Child "An adventure?"
+    # [Position: Right] *Ali "Smiling Talking Face*
+    Ali "Now that’s exciting."
+    Ali "Let’s explore this place. "
+    # *Ali "Smiling Face*
+    Child "I guess that would be fun."
+    # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "Then what are we waiting for~? Let’s go to your room, [Child.name]."
+    # *Jennie and Ali Leaves or Hidden*  
+    # *Background: Child’s Bedroom Morning; No Hover*
+    hide jennie
+    hide ali
+    scene bedroom day
+    Child "Wow…"
+    Child "So this is my room."
+    "It’s really big."
+    "Is this really mine?"
+    # [Position: Left] *Ali "Serious Talking Face* 
+    show ali serious_talking at left
+    Ali "There. "
+    # *Ali "Serious Face*
+    "Ali carried my luggage and placed it near the bed."
+    # [Position: Left] *Ali "Smiling Talking Face* 
+    Ali "Let’s go now. "
+    # *Ali "Smiling Face*
+    # [Position: Right] *Jennie "Smiling Talking Face*
+    show jennie smiling_talking at right
+    Jennie "Let’s explore the second floor first. "
+    # *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "And who knows, you might make some new friends [Child.name]~ "
+    # *Jennie "Closed-Eye Smiling Face*
+    Child "New friends?"
+    Child "Oh. Are there more of you here?"
+    # [Position: Left] *Ali "Serious Talking Face* 
+    Ali "Many more. But I’m not close with them. "
+    # *Ali "Serious Face*
+    # [Position: Right] *Jennie "Serious Talking Face* 
+    Jennie "They don’t even know us, and we don’t know all of them. "
+    # *Jennie "Serious Face*
+    "Does this mean I can have more friends?"
+    "I can’t help but smile at the thought of it."
+    Child "Let’s go!"
+    Child "I can’t wait to meet them."
+    # [Position: Right] *Jennie "Closed-Eye Smiling Talking Face* 
+    Jennie "That’s the spirit! "
+    # *Jennie "Closed-Eye Smiling Face*
+    # *Jennie and Ali Leaves or Hidden*
+    # *Background: Child’s Bedroom Morning; May Hover*
+    hide jennie
+    hide ali
+    scene screen black
+
+    call screen creditsMessage("Thank You For Playing The Game.")
+    call screen creditsMessage("The rest of the story is coming soon.")
+    call screen creditsMessage("We hope that you could wait for up.")
+    call screen creditsMessage("See you in the next update.")
+    call screen creditsMessage("Bye...")
 
     return
-
 
 label day1_menu1_choice1:
     "I should try yelling. "
@@ -350,15 +581,15 @@ label day1_menu1_choice3:
     return
 
 label day1_menu2_choice1:
-    # *Sad Talking Face* 
+    # [Position: Center] *Sad Talking Face* 
     Cloud "No?"
     Cloud "Are you sure you don’t want to hear it?"
     # *Sad Face*
     Child "Yes, I don’t want to hear it. I’m sorry."
-    # *Disappointed Talking Face* 
+    # [Position: Center] *Disappointed Talking Face* 
     Cloud "Don’t say sorry."
     Cloud "But it’s quite disappointing. "
-    # *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face* 
     Cloud "But I guess singing a song isn’t the only way to befriend someone. "
     Cloud "Just be friendly. "
     # *Closed-Eye Smiling Face*
@@ -366,11 +597,12 @@ label day1_menu2_choice1:
 
 label day1_menu2_choice2:
     Child "Can I hear it?"
-    # *Overly Excited Face* 
+    # [Position: Center] *Overly Excited Face* 
     Cloud "Of course~ "
     # *Overly Excited Talking Face*
     "Cloud smiled and said happily. He looks overjoy."
-    # *Smiling Talking Face* 
+    # [Position: Left] *Smiling Talking Face* 
+    show cloud smiling at left
     Cloud "{i}Be Friends, Be Friends, can we be friends?{/i}"
     Cloud "{i}Who sings and dance all day, all night,{/i}"
     Cloud "{i}We talk, we smile, we laugh, we cry,{/i}"
@@ -409,7 +641,6 @@ label day1_rooms_option1:
 
     call screen entranceHall("hallway")
     jump day1_rooms_option1
-
 
 label cloud_asking_name:
     call screen ask_name("What is your name?")

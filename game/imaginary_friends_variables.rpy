@@ -341,18 +341,18 @@ define persistent.achievement_list = {
         "granted": False
     },
     "Achv5": {
-        "title": "The Cat Idol",
+        "title": "Meet the White Cat",
         "description": "Meet the Cat Idol.",
         "granted": False
     },
     "Achv6": {
-        "title": "The Dog Idol",
+        "title": "Meet the Black Dog",
         "description": "Meet the Dog Idol.",
         "granted": False
     },
     "Achv7": {
-        "title": "The Blue Alien",
-        "description": "Meet the Blue Alien.",
+        "title": "Mysterious Phantom",
+        "description": "Meet the Phantom.",
         "granted": False
     },
     "Achv8": {

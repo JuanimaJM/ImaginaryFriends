@@ -38,7 +38,7 @@ screen script_keymap():
 #
 #
 # Map for EntranceHall
-screen entranceHall():
+screen entranceHall(hallway_label="hallway_map"):
     add "images/scenes/entrancehall.png"
     on "show" action Show("indicator")
 
@@ -67,7 +67,7 @@ screen entranceHall():
         xpos 657
         ypos 477
         focus_mask True
-        tooltip "Dining"
+        tooltip "Dining Room"
         idle "images/scenes/entrancehall/door_dining.png"
         hover image_map_hover("images/scenes/entrancehall/door_dining.png")
         action Call("dining")
@@ -103,7 +103,7 @@ screen entranceHall():
         xpos 1164
         ypos 50
         focus_mask True
-        tooltip "Laundry"
+        tooltip "Laundry Room"
         idle "images/scenes/entrancehall/door_laundry.png"
         hover image_map_hover("images/scenes/entrancehall/door_laundry.png")
         action Call("laundry")
@@ -115,7 +115,7 @@ screen entranceHall():
         tooltip "Hall Way"
         idle "images/scenes/entrancehall/door_hallway.png"
         hover image_map_hover("images/scenes/entrancehall/door_hallway.png")
-        action Call("hallway")
+        action Call(hallway_label)
 
 # Map for HallWay
 screen hallWay():
@@ -375,38 +375,78 @@ screen statsUI():
         vbox:
             xfill True
             yoffset 10
-            vbox:
+            frame:
                 xfill True
-                spacing 10
-                text _("STATS"):
-                    xalign 0.5
-                    font font_stats
-                    color black
-                    size (gui.name_text_size + 10)
-                if not player_name == "":
-                    text "Name: [player_name]":
-                        color black
-                        font font_stats
-                text _("Sanity:"):
-                    color black
-                    font font_stats
-                bar:
-                    xalign 0.3
-                    range 100
-                    value sanity
-                    xsize 500
-                    left_bar im.Color(bar_white, ColorSpectrum(sanity).get_color_spectrum())
-                    right_bar bar_black
-                text _("Happiness:"):
-                    color black
-                    font font_stats
-                bar:
-                    xalign 0.3
-                    range 100
-                    value happiness
-                    xsize 500
-                    left_bar im.Color(bar_white, ColorSpectrum(happiness).get_color_spectrum())
-                    right_bar bar_black
+                ysize 400
+                top_margin 50
+                bottom_padding 50
+                background None
+                viewport:
+                    yinitial 0.0
+                    scrollbars "vertical"
+                    vbox:
+                        ysize 400
+                        xfill True
+                        spacing 10
+                        text _("STATS"):
+                            xalign 0.5
+                            font font_stats
+                            color black
+                            size (gui.name_text_size + 10)
+                        if not player_name == "":
+                            text "Name: [player_name]":
+                                color black
+                                font font_stats
+                        text _("Sanity:"):
+                            color black
+                            font font_stats
+                        bar:
+                            xalign 0.3
+                            range 100
+                            value sanity
+                            xsize 500
+                            left_bar im.Color(bar_white, ColorSpectrum(sanity).get_color_spectrum())
+                            right_bar bar_black
+                        text _("Happiness:"):
+                            color black
+                            font font_stats
+                        bar:
+                            xalign 0.3
+                            range 100
+                            value happiness
+                            xsize 500
+                            left_bar im.Color(bar_white, ColorSpectrum(happiness).get_color_spectrum())
+                            right_bar bar_black
+                        text _("Energy:"):
+                            color black
+                            font font_stats
+                        bar:
+                            xalign 0.3
+                            range 100
+                            value energy
+                            xsize 500
+                            left_bar im.Color(bar_white, ColorSpectrum(energy).get_color_spectrum())
+                            right_bar bar_black
+                        text _("Hunger:"):
+                            color black
+                            font font_stats
+                        bar:
+                            xalign 0.3
+                            range 100
+                            value hunger
+                            xsize 500
+                            left_bar im.Color(bar_white, ColorSpectrum(hunger).get_color_spectrum())
+                            right_bar bar_black
+                        text _("Thirst:"):
+                            color black
+                            font font_stats
+                        bar:
+                            xalign 0.3
+                            range 100
+                            value thirst
+                            xsize 500
+                            left_bar im.Color(bar_white, ColorSpectrum(thirst).get_color_spectrum())
+                            right_bar bar_black
             frame:
                 xfill True
                 top_margin 50

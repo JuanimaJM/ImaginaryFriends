@@ -274,6 +274,9 @@ define characters_info = {
 # Stats
 default sanity = 20
 default happiness = 20
+default energy = 50
+default hunger = 30
+default thirst = 30
 default friends_stats = {
     "Phantom": {
         "stats": 0,

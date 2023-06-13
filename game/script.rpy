@@ -13,54 +13,71 @@ label entrancehall:
 
 label kitchen:
     scene kitchen
+    $ room = "kitchen"
     return
 
 label dining:
     scene dining_table
+    $ room = "dining room"
     return
 
 label bathroom1:
     scene bathroom
+    $ room = "bathroom1"
     return
 
 label livingroom:
     scene living_room
+    $ room = "living room"
     return
 
 label basement:
     scene basement
+    $ room = "basement"
     return
 
 label laundry:
     scene laundry
+    $ room = "laundry room"
     return
 
 label hallway:
+    scene hallway
+    $ room = "hallway"
+    return
+
+label hallway_map:
     call screen hallWay
     return
 
 label storage:
     scene storage_room
+    $ room = "storage room"
     return
 
 label bathroom2:
     scene bathtub
+    $ room = "bathroom2"
     return
 
 label studyroom:
     scene library
+    $ room = "study room"
     return
 
 label guestroom:
     scene bed
+    $ room = "guest room"
     return
 
 label childroom:
     scene bedroom day
+    $ room = "your room"
     return
 
 label masterroom:
     scene master_bedroom
+    $ room = "master room"
     return
 
 label testing:
@@ -94,14 +111,14 @@ label testing_menu:
         "Randomly decrease the value sanity and happiness" if  1 < sanity <= 100 and 1 < happiness <= 100:
             $ random_sanity = random.randint(1, sanity - 1)
             $ random_happiness = random.randint(1, happiness - 1)
-            $ update_player_stats(-random_sanity, -random_happiness)
+            $ update_player_stats(sanity=-random_sanity, happiness=-random_happiness)
             $ random_sanity = abs(random_sanity)
             $ random_happiness = abs(random_happiness)
             "Check your stats window. I decrease your sanity by [random_sanity] and happiness by [random_happiness]"
         "Randomly increase the value sanity and happiness" if  1 <= sanity <= 99 and 1 <= happiness <= 99:
             $ random_sanity = random.randint(1, 100 - sanity)
             $ random_happiness = random.randint(1, 100 - happiness)
-            $ update_player_stats(random_sanity, random_happiness)
+            $ update_player_stats(sanity=random_sanity, happiness=random_happiness)
             $ random_sanity = abs(random_sanity)
             $ random_happiness = abs(random_happiness)
             "Check your stats window. I increase your sanity by [random_sanity] and happiness by [random_happiness]"

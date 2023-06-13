@@ -301,8 +301,12 @@ label day1:
     "I took the luggage. It was kind of heavy."
     Child "I need to go upstairs."
     # *Background: Hallway 1; May Hover*
+
     call screen entranceHall
-    "[room]"
+    call day1_rooms_option1
+
+    "Meheehh"
+
     return
 
 
@@ -384,8 +388,28 @@ label day1_menu2_choice2:
     Cloud "{i}We’re Friends, We’re Friends, now we are friends.{/i}"
     Cloud "Easy right? "
     # *Closed-Eye Smiling Face*
-
     return
+
+label day1_rooms_option1:
+    if room == "laundry room":
+        # *Energy = -1; Hunger = +1; Thirst = +1; Message: Your stats have change. *
+        $ update_player_stats(energy=-1, hunger=1, thirst=1)
+        "Mother said my room was on the second floor. "
+        "It’s the middle room on the right. "
+        "This is not my room."
+    elif room == "hallway":
+        # *Energy = -1; Hunger = +1; Thirst = +1; Message: Your stats have change. *
+        $ update_player_stats(energy=-1, hunger=1, thirst=1)
+        return
+    else:
+        # *Energy = -1; Hunger = +1; Thirst = +1; Message: Your stats have change. *
+        $ update_player_stats(energy=-1, hunger=1, thirst=1)
+        "Mother said my room was on the second floor. "
+        "I need to go upstairs."
+
+    call screen entranceHall("hallway")
+    jump day1_rooms_option1
+
 
 label cloud_asking_name:
     call screen ask_name("What is your name?")

@@ -10,6 +10,7 @@ label day1:
     Child "H-Hello?"
     "I said cautiously but I was met with silence."
     "W-what should I do?"
+
     menu:
         "Try yelling":
             call day1_menu1_choice1
@@ -17,6 +18,7 @@ label day1:
             call day1_menu1_choice2
         "Stand Still":
             call day1_menu1_choice3
+    
     "As time pass by, the action I chose led me nowhere."
     "I’ve decided to just walk straight ahead."
     # Sound: Heavy breathing of a child
@@ -149,6 +151,44 @@ label day1:
     "I said quietly."
     "I felt shy."
     "But I’m really happy."
+    # *Happiness = +10; Sanity = +10; Message: Your stats have change. *
+    $ update_player_stats(10, 10)
+    # *Smiling Talking Face*
+    Cloud "Hmmm~ But surely, I won’t be your only friend, right? "
+    # *Closed-Eye Smiling Face*
+    "Cloud asked me. He seems eager to hear my reply."
+    Child "I’m really grateful. Thank you for being my friend."
+    Child "And i-if it’s possible, I want to have more friends."
+    Child "B-but it’s not like I don’t want to be your friend, I really want to-"
+    "Cloud suddenly laughed loudly."
+    # *Smiling Talking Face* 
+    Cloud "You’re really funny."
+    Cloud "Why are you so nervous? "
+    Cloud "You won’t be getting any friends if you’re like that. "
+    # *Closed-Eye Smiling Face*
+    Child "I won’t?"
+    # *Smiling Talking Face* 
+    Cloud "Yes. You won’t."
+    Cloud "If you want to be friends with someone, you should greet them with a smile. "
+    Cloud "If you act all nervous and shy, they might feel uncomfortable and will leave you."
+    Cloud "But~ Since you’re my friend. "
+    Cloud "Do you want me to sing to you my “I want to be your friend” song? "
+    # *Closed-Eye Smiling Face*
+    Child "“I want to be your friend” song?"
+    # *Smiling Talking Face* 
+    Cloud "A song I made. "
+    Cloud "I sing it when I want to be friends with someone. "
+    Cloud "I should have sung it first earlier when I talked to you. "
+    Cloud "So~ Do you want to hear it? "
+    # *Closed-Eye Smiling Face*
+
+    menu:
+        "No":
+            call day1_menu2_choice1
+        "Yes":
+            call day1_menu2_choice2
+    
+
     return
 
 
@@ -189,6 +229,24 @@ label day1_menu1_choice3:
     "I better stand still."
     "That’s the safest thing to do."
     "I hope."
+    return
+
+label day1_menu2_choice1:
+    # *Sad Talking Face* 
+    Cloud "No?"
+    Cloud "Are you sure you don’t want to hear it?"
+    # *Sad Face*
+    Child "Yes, I don’t want to hear it. I’m sorry."
+    # *Disappointed Talking Face* 
+    Cloud "Don’t say sorry."
+    Cloud "But it’s quite disappointing. "
+    # *Smiling Talking Face* 
+    Cloud "But I guess singing a song isn’t the only way to befriend someone. "
+    Cloud "Just be friendly. "
+    # *Closed-Eye Smiling Face*
+    return
+
+label day1_menu2_choice2:
     return
 
 label cloud_asking_name:

@@ -26,10 +26,10 @@ screen ask_name(question=""):
                     value VariableInputValue("default_name", returnable=True)
 
 screen script_keymap():
-    key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, sanity=sanity + 1)
-    key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, sanity=sanity - 1)
-    key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, happiness=happiness + 1)
-    key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, happiness=happiness - 1)
+    key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, sanity=1)
+    key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, sanity=-1)
+    key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, happiness=1)
+    key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, happiness=-1)
     key "ctrl_alt_shift_K_n" action Function(set_random_name)
 ##############################################################################################################
 

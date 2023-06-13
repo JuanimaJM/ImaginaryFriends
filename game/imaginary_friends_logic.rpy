@@ -187,8 +187,8 @@ python early:
 # Game Functions
 python early:
     def update_player_stats(sanity=0, happiness=0):
-        sanity += sanity
-        happiness += happiness
+        store.sanity += sanity
+        store.happiness += happiness
         renpy.display_notify("Your stats have changed.")
 
     def grant_achievement(key):

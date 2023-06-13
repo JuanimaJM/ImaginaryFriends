@@ -13,32 +13,26 @@ label entrancehall:
 
 label kitchen:
     scene kitchen
-    "Kitchen"
     return
 
 label dining:
     scene dining_table
-    "Dining"
     return
 
 label bathroom1:
     scene bathroom
-    "Batchroom1"
     return
 
 label livingroom:
     scene living_room
-    "Living Room"
     return
 
 label basement:
     scene basement
-    "Basement"
     return
 
 label laundry:
     scene laundry
-    "Laundry"
     return
 
 label hallway:
@@ -47,32 +41,26 @@ label hallway:
 
 label storage:
     scene storage_room
-    "Storage Room"
     return
 
 label bathroom2:
     scene bathtub
-    "Bathroom 2"
     return
 
 label studyroom:
     scene library
-    "Study Room"
     return
 
 label guestroom:
     scene bed
-    "Guest Room"
     return
 
 label childroom:
     scene bedroom day
-    "Your Room"
     return
 
 label masterroom:
     scene master_bedroom
-    "Your Parent's Room"
     return
 
 label testing:

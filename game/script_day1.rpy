@@ -188,7 +188,121 @@ label day1:
         "Yes":
             call day1_menu2_choice2
     
-
+    Child "What if they don’t want to be my friend?"
+    # *Smiling Talking Face* 
+    Cloud "Nonsense! All you need to do is smile~"
+    Cloud "Give them your brightest and most sincere smile."
+    Cloud "And nothing can go wrong~"
+    Cloud "Be confident, that’s my little advice to you my little friend. "
+    # *Closed-Eye Smiling Face*
+    Child "Okay. I’ll do my best."
+    Child "Thank you Cloud."
+    # *Smiling Talking Face* 
+    Cloud "You’re welcome."
+    Cloud "I hope you’ll be able to have many friends."
+    # *Sinister Talking Face* 
+    Cloud "I want you to be happy."
+    Cloud "Not too happy though. "
+    # *Sinister Smile Face*
+    Child "W-what do you mean? "
+    # *Sinister Talking Face* 
+    Cloud "It’s time to wake up."
+    # *Effects as if opening eyes*
+    hide cloud
+    scene black
+    Child "Huh?"
+    "I feel like I had a weird dream."
+    "I can’t remember it though."
+    "???" "{size=+8}[Child.name]!!{/size}"
+    "I heard someone yelling my name."
+    "When I realized who it was, my body started trembling."
+    "I was terrified."
+    # *Happiness = -5; Sanity = -5; Message: Your stats have change. *
+    $ update_player_stats(-5, -5)
+    Mother "This brat! Are you still sleeping!?"
+    "Mother’s yelling stopped."
+    "She’s really mad. She’s mad at me again."
+    Child "B-but where am I?"
+    # *Enjoy view muna ahahah bago mag next dialog*
+    "I was inside a car. "
+    "T-that’s right. I remember now."
+    "I’m at our new house."
+    # *Angry Shouting Face* 
+    Mother "{size=+4}Ha! So, you were awake?{/size}{size=+8}You were ignoring me!?{/size}"
+    # *Angry Face*
+    Child "A-ah!"
+    "Mother suddenly appeared."
+    Child "N-no, I just woke up m-mother."
+    "I said, my body slightly trembling."
+    # *Annoyed Talking Face* 
+    Mother "You even dare lie to me! "
+    # *Annoyed Face*
+    Child "N-no, I wouldn’t dare."
+    "Mother sighed."
+    # *Annoyed Talking Face* 
+    Mother "Just hurry up! Help with the luggage."
+    Mother "Your father isn’t here again, and the furniture movers will be running late."
+    Mother "It’s so annoying! "
+    Mother "You better stop being lazy, I’ll meet you inside the house. "
+    # *Annoyed Face*
+    Child "Y-yes."
+    # *Annoyed Talking Face* 
+    Mother "Hmph! "
+    "Mother left."
+    "I can’t help but sigh."
+    "I better hurry up. I don’t want to further ruin mother’s mood."
+    # *Background: Blue Sky*
+    scene sky
+    "As I stepped out the car, I can’t help but look at the sky."
+    "There were so many clouds."
+    Child "Clouds…"
+    Child "Ah!"
+    "I remember my dream. I remember Cloud, my very first friend."
+    Mother "{size=+8}[Child.name]! What’s taking you so long!?{/size}"
+    "Mother yelled again. Angrier and more impatient than before."
+    Child "I-I’m on my way!"
+    "I need to hurry and meet mother inside the house."
+    # *Background: Hallway 1; No Hover*
+    scene entrancehall
+    # *Annoyed Talking Face* 
+    Mother "Finally! You’re here."
+    # *Annoyed Face*
+    Child "I’m sorry for being late."
+    # *Mocking Talking Face* 
+    Mother "Ha! At least you know your place. "
+    # *Serious Talking Face* 
+    Mother "You better listen carefully."
+    Mother "I’ll be going out for a while, I’ll be back at night. "
+    # *Serious Face*
+    Child "Where are you going?"
+    # *Serious Talking Face* 
+    Mother "It’s not something you should be concerned about."
+    Mother "Now stop asking and just listen while I’m in a good mood."
+    Mother "See that luggage over there? "
+    # *Serious Face*
+    "I looked to where my mother is pointing."
+    Child "Yes."
+    # *Serious Talking Face* 
+    Mother "Good. "
+    Mother "That luggage is yours. It has your belongings of course."
+    Mother "Just put it in your room."
+    Mother "On the second floor. In the middle room on the right."
+    Mother "Don’t wander off."
+    Mother "Do you understand? "
+    # *Serious Face*
+    Child "Yes."
+    # *Mocking Talking Face* 
+    Mother "Ha! You’re pretty obedient today."
+    Mother "I wonder how long it will last. "
+    # *Serious Talking Face* 
+    Mother "I’ll be leaving now, just don’t cause any troubles when the furniture movers come. "
+    "Mother left, leaving me alone in this big house."
+    "I better follow her orders."
+    "I took the luggage. It was kind of heavy."
+    Child "I need to go upstairs."
+    # *Background: Hallway 1; May Hover*
+    call screen entranceHall
+    "[room]"
     return
 
 
@@ -247,6 +361,30 @@ label day1_menu2_choice1:
     return
 
 label day1_menu2_choice2:
+    Child "Can I hear it?"
+    # *Overly Excited Face* 
+    Cloud "Of course~ "
+    # *Overly Excited Talking Face*
+    "Cloud smiled and said happily. He looks overjoy."
+    # *Smiling Talking Face* 
+    Cloud "{i}Be Friends, Be Friends, can we be friends?{/i}"
+    Cloud "{i}Who sings and dance all day, all night,{/i}"
+    Cloud "{i}We talk, we smile, we laugh, we cry,{/i}"
+    Cloud "{i}We share all feelings known and not,{/i}"
+    Cloud "{i}We’re here for each and every one,{/i}"
+    Cloud "{i}Make sure no one is left behind.{/i}"
+    Cloud "{i}So, here’s my hand I reach to you,{/i}"
+    Cloud "{i}Reach out to it and let’s be friends.{/i}"
+    # *Closed-Eye Smiling Face*
+    "Cloud reached out his hand."
+    "I think he wants me to hold his hand."
+    "I held Cloud’s hand, and he started singing again."
+    # *Smiling Talking Face* 
+    Cloud "{i}You’ve held my hand so now we’re friends,{/i}"
+    Cloud "{i}We’re Friends, We’re Friends, now we are friends.{/i}"
+    Cloud "Easy right? "
+    # *Closed-Eye Smiling Face*
+
     return
 
 label cloud_asking_name:

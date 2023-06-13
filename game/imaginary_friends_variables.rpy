@@ -93,7 +93,7 @@ define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"
 )
-define Child = Character("[player_name]", color=sugar_plum)
+define Child = Character("You", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)
 
@@ -118,11 +118,162 @@ define Mikaela = Character("Mikaela")
 
 # Character Profile
 default persistent.profiles_unlocked = False
+default selected_character = list(characters_info.keys())[0]
+define characters_info = {
+    "Mother": {
+        "Name": "Nameless Mother",
+        "Alias": "The Mother",
+        "Gender": "Female",
+        "Age": "32",
+        "Height": "160 cm",
+        "Species": "Human",
+        "Occupation": "Housewife",
+        "Personality": "Ill-tempered, Frank, and Insensitive"
+    },
+    "Father": {
+        "Name": "Nameless Father",
+        "Alias": "The Father",
+        "Gender": "Male",
+        "Age": "32",
+        "Height": "185 cm",
+        "Species": "Human",
+        "Occupation": "Sales Manager",
+        "Personality": "Quiet, Apathetic, and Indifferent"
+    },
+    "Jennie": {
+        "Name": "Jennie",
+        "Alias": "The Cat Idol",
+        "Gender": "Female",
+        "Age": "21",
+        "Height": "161 cm",
+        "Species": "Cat",
+        "Occupation": "Idol",
+        "Personality": "Cutesy and Cheerful"
+    },
+    "Ali": {
+        "Name": "Ali",
+        "Alias": "The Dog Idol",
+        "Gender": "Female",
+        "Age": "22",
+        "Height": "165 cm",
+        "Species": "Dog",
+        "Occupation": "Idol",
+        "Personality": "Cool and Impatient"
+    },
+    "Kimmy": {
+        "Name": "Kimmy",
+        "Alias": "The Blue Alien",
+        "Gender": "Genderless",
+        "Age": "Unknown",
+        "Height": "174 cm",
+        "Species": "Alien",
+        "Language": "???",
+        "Occupation": "Alien",
+        "Personality": "Mysterious"
+    },
+    "Jayem": {
+        "Name": "Jayem",
+        "Alias": "The Psychopomp",
+        "Gender": "Genderless",
+        "Age": "Unknown",
+        "Height": "Unknown",
+        "Species": "Unknown",
+        "Occupation": "Unknown",
+        "Personality": "Calm and Mysterious"
+    },
+    "Cloud": {
+        "Name": "Cloud",
+        "Alias": "The Clown",
+        "Gender": "Male",
+        "Age": "Unknown",
+        "Height": "188 cm",
+        "Species": "Demon",
+        "Occupation": "Dream Demon",
+        "Personality": "Friendly, Enthusiastic, and Mysterious"
+    },
+    "Iris": {
+        "Name": "Iris",
+        "Alias": "The Mother Goat",
+        "Sin": "Lust",
+        "Gender": "Female",
+        "Age": "29",
+        "Height": "165 cm",
+        "Species": "Goat",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Cold but affectionate to children"
+    },
+    "Barktholomeow": {
+        "Name": "Barktholomeow",
+        "Alias": "The Thieving Fox",
+        "Sin": "Greed",
+        "Gender": "Male",
+        "Age": "27",
+        "Height": "198 cm",
+        "Species": "Fox",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Greedy, Mischievous, and Cunning"
+    },
+    "Aithne": {
+        "Name": "Aithne",
+        "Alias": "The Hot-headed Lioness",
+        "Sin": "Wrath",
+        "Gender": "Female",
+        "Age": "20",
+        "Height": "165 cm",
+        "Species": "Lioness",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Short-Tempered, Frank, Ambitious, and Passionate"
+    },
+    "Bertrand": {
+        "Name": "Bertrand",
+        "Alias": "Count Peacock of Yorkshire",
+        "Sin": "Pride",
+        "Gender": "Male",
+        "Age": "42",
+        "Height": "195 cm",
+        "Species": "Peacock",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Prideful, Arrogant, Intellectual, and Stern"
+    },
+    "Carwyn": {
+        "Name": "Carwyn",
+        "Alias": "Rag Doll Snake Groom",
+        "Sin": "Envy",
+        "Gender": "Male",
+        "Age": "20",
+        "Height": "185 cm",
+        "Species": "Snake",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Envious, Ambitious, Greedy, Faithful, and Loving Groom"
+    },
+    "Mikaela": {
+        "Name": "Mikaela",
+        "Alias": "Rag Doll Bear Bride",
+        "Sin": "Sloth",
+        "Gender": "Female",
+        "Age": "20",
+        "Height": "160 cm",
+        "Species": "Bear",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Lazy, Apathetic, Faithful, and Loving Bride"
+    },
+    "Blayr": {
+        "Name": "Blayr",
+        "Alias": "The Alcoholic Pig",
+        "Sin": "Gluttony",
+        "Gender": "Male",
+        "Age": "19",
+        "Height": "180 cm",
+        "Species": "Pig",
+        "Occupation": "Imaginary Friend",
+        "Personality": "Alcoholic, Ambitious, Arrogant, Rebellious, and Hardworking"
+    }
+}
 ##############################################################################################################
 
 # Stats
-default sanity = 100
-default happiness = 100
+default sanity = 20
+default happiness = 20
 default friends_stats = {
     "Phantom": {
         "stats": 0,

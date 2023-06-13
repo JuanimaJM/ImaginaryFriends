@@ -186,9 +186,10 @@ python early:
 
 # Game Functions
 python early:
-    def update_player_stats(variable_name, value):
-        value = max(0, min(value, 100))  # Enforce limits of 0 and 100
-        globals()[variable_name] = value
+    def update_player_stats(sanity=0, happiness=0):
+        sanity += sanity
+        happiness += happiness
+        renpy.display_notify("Your stats have changed.")
 
     def grant_achievement(key):
         if not persistent.achievement_list[key]["granted"]:

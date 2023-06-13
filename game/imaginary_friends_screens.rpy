@@ -26,10 +26,10 @@ screen ask_name(question=""):
                     value VariableInputValue("default_name", returnable=True)
 
 screen script_keymap():
-    key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, "sanity", sanity + 1)
-    key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, "sanity", sanity - 1)
-    key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, "happiness", happiness + 1)
-    key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, "happiness", happiness - 1)
+    key "repeat_ctrl_alt_shift_K_RIGHT" action Function(update_player_stats, sanity=sanity + 1)
+    key "repeat_ctrl_alt_shift_K_LEFT" action Function(update_player_stats, sanity=sanity - 1)
+    key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, happiness=happiness + 1)
+    key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, happiness=happiness - 1)
     key "ctrl_alt_shift_K_n" action Function(set_random_name)
 ##############################################################################################################
 
@@ -478,6 +478,11 @@ screen profile_book():
             xsize 820
             yfill True
             background bg_left_page
+            text "[selected_character]":
+                color black
+                xalign 0.5
+                yoffset 30
+                size 80
 
 screen character_tab():
     tag menu
@@ -493,7 +498,23 @@ screen character_tab():
             xsize 820
             yfill True
             background bg_right_page
-            text "Character"
+            padding (30, 10)
+            $ columns = 3
+            $ rows = calculate_rows(3, characters_info)
+            $ characters = list(characters_info.keys())
+            grid columns rows :
+                xfill True
+                yfill True
+                for row in range(rows):
+                    for col in range(columns):
+                        $ index = row * columns + col
+                        if index < len(characters):
+                            textbutton f"{characters[index]}" action SetVariable("selected_character", characters[index]):
+                                text_idle_color black
+                                text_selected_color sugar_plum
+                                text_size 30
+                        else:
+                            null
 
 screen info_tab():
     tag menu
@@ -509,7 +530,11 @@ screen info_tab():
             xsize 820
             yfill True
             background bg_right_page
-            text "Info"
+            padding (50, 20, 10, 20)
+            vbox:
+                spacing 10
+                for key, value in characters_info[selected_character].items():
+                    text "[key]: [value]" color black
 
 screen lore_tab():
     tag menu
@@ -525,7 +550,11 @@ screen lore_tab():
             xsize 820
             yfill True
             background bg_right_page
-            text "Lore"
+            text "Coming Soon":
+                color black
+                xalign 0.5
+                yalign 0.5
+                size 100
 ##############################################################################################################
 
 # Screen for Developer Options

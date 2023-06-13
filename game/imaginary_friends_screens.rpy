@@ -523,6 +523,11 @@ screen profile_book():
                 xalign 0.5
                 yoffset 30
                 size 80
+            text "???":
+                color black
+                xalign 0.5
+                yalign 0.5
+                size 100
 
 screen character_tab():
     tag menu

@@ -93,7 +93,6 @@ define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"
 )
-define disclaimer = Character(None)
 define Child = Character("You", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)

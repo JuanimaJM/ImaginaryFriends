@@ -1,4 +1,5 @@
 label day1:
+    play music music_game_start loop fadein 2.0 volume 0.3
     # Effects as if opening eyes
     Child "Huh?"
     Child "That’s weird."
@@ -19,6 +20,7 @@ label day1:
         "Stand Still":
             call day1_menu1_choice3
     
+    play music music_lonely loop fadein 2.0 volume 0.3
     "As time pass by, the action I chose led me nowhere."
     "I’ve decided to just walk straight ahead."
     # Sound: Heavy breathing of a child
@@ -66,6 +68,7 @@ label day1:
     "And as I go nearer and nearer to the dim light, it became brighter and brighter."
     # Background: Circus/Fun House/Carnival#
     scene circus
+    play music music_circus loop fadein 2.0 volume 0.3
     pause
     # Enjoy view muna ahahah bago mag next dialog# 
     "And there, I saw a huge colorful tent."
@@ -212,6 +215,7 @@ label day1:
     # *Effects as if opening eyes*
     hide cloud
     scene car
+    play music music_car loop fadein 2.0 volume 0.3
     Child "Huh?"
     "I feel like I had a weird dream."
     "I can’t remember it though."
@@ -258,6 +262,7 @@ label day1:
     "I better hurry up. I don’t want to further ruin mother’s mood."
     # *Background: Blue Sky*
     scene sky
+    play music music_sky loop fadein 2.0 volume 0.3
     "As I stepped out the car, I can’t help but look at the sky."
     "There were so many clouds."
     Child "Clouds…"
@@ -321,6 +326,7 @@ label day1:
     "As I turned around, I saw a hooded figure."
     # [Position: Center] *Jayem (Isa lang pic nya)*
     show jayem at center
+    play music music_phantom loop fadein 2.0 volume 0.3
     "???" "…"
     # *Gain “Mysterious Phantom” Achievement*
     $ grant_achievement("Achv2")

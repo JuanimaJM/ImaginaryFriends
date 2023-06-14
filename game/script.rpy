@@ -4,7 +4,7 @@
 label start:
     if config.developer:
         show screen script_keymap
-    stop music fadeout 1.0
+    stop music
     jump day1
 
 label entrancehall:

@@ -41,7 +41,6 @@ define font_regular = "gui/fonts/SongMyung-Regular.ttf"
 define font_stats = "gui/fonts/erasdust.ttf"
 
 # Assets
-define img_badge = "images/achievement/badge.png"
 define icon_diary_white = "gui/icons/ic_diary_white.png"
 define icon_diary_black = "gui/icons/ic_diary_black.png"
 define icon_achievement_white = "gui/icons/ic_achievement_white.png"
@@ -78,12 +77,13 @@ define paper_hover_horizontal_bar = "gui/bar/paper_hover_horizontal_bar.png"
 define paper_idle_vertical_scrollbar = "gui/bar/paper_idle_vertical_scrollbar.png"
 define paper_hover_vertical_scrollbar = "gui/bar/paper_hover_vertical_scrollbar.png"
 define crayon_black_line = "gui/bar/crayon_black_line.png"
+define img_black_leaf = "images/extra/leaf.png"
 define img_black_apple = "images/extra/black_apple.png"
 
 # Particles
-define leaf_particles1 = SnowBlossom(im.FactorScale("images/extra/leaf.png", 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
-define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=9)
-define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip("images/extra/leaf.png", vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=15)
+define leaf_particles1 = SnowBlossom(im.FactorScale(img_black_leaf, 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=3)
+define leaf_particles2 = SnowBlossom(im.FactorScale(im.Flip(img_black_leaf, horizontal=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=9)
+define leaf_particles3 = SnowBlossom(im.FactorScale(im.Flip(img_black_leaf, vertical=True), 0.3), count=5, horizontal=False, xspeed=(100, 150), yspeed=100, start=15)
 ##############################################################################################################
 
 # Declare characters used by this game. The color argument colorizes the name of the character.
@@ -450,28 +450,52 @@ default diary_unlocked = False
 default first_page = 1
 default second_page = 2
 define persistent.diary_content = {
-    "Apple": {
-        "content": "images/diary/apple_diary.png",
-        "found": False
-    },
     "Cat": {
-        "content": "images/diary/cat_diary.png",
+        "content": "images/diary/diary_cat.png",
         "found": False
     },
-    "Teddy": {
-        "content": "images/diary/teddy_diary.png",
+    "Bear": {
+        "content": "images/diary/diary_bear.png",
         "found": False
     },
-    "Ghost": {
-        "content": "images/diary/ghost_diary.png",
+    "Phantom": {
+        "content": "images/diary/diary_phantom.png",
         "found": False
     },
     "Tree": {
-        "content": "images/diary/tree_diary.png",
+        "content": "images/diary/diary_tree.png",
         "found": False
     },
-    "Family": {
-        "content": "images/diary/family_diary.png",
+    "Dog": {
+        "content": "images/diary/diary_dog.png",
+        "found": False
+    },
+    "Snake": {
+        "content": "images/diary/diary_snake.png",
+        "found": False
+    },
+    "Lion": {
+        "content": "images/diary/diary_lion.png",
+        "found": False
+    },
+    "Fox": {
+        "content": "images/diary/diary_fox.png",
+        "found": False
+    },
+    "Peacock": {
+        "content": "images/diary/diary_peacock.png",
+        "found": False
+    },
+    "Pig": {
+        "content": "images/diary/diary_pig.png",
+        "found": False
+    },
+    "Goat": {
+        "content": "images/diary/diary_goat.png",
+        "found": False
+    },
+    "Cloud": {
+        "content": "images/diary/diary_cloud.png",
         "found": False
     }
 }

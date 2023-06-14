@@ -315,6 +315,7 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
+        bottom_padding 30
         $ columns = 3
         $ rows = calculate_rows(3, sorted_achievements)
         $ achievement_keys = list(sorted_achievements.keys())
@@ -323,7 +324,6 @@ screen achievements():
             scrollbars "vertical"
             grid columns rows :
                 xfill True
-                ysize 800
                 for row in range(rows):
                     for col in range(columns):
                         $ index = row * columns + col
@@ -370,8 +370,8 @@ screen badge(img):
         yalign 0.5
         background None
         image img:
-            xsize 480
-            ysize 400
+            xsize 800
+            ysize 800
 ##############################################################################################################
 
 # Screen for Stats

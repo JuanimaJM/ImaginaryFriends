@@ -155,7 +155,7 @@ label random_test:
     "Ahmmm before that, what is your name?"
     "Meet Phantom [Child]"
     $ meet_friend(Phantom.name)
-    $ write_diary("Ghost")
+    $ write_diary("Phantom")
     show phantom 920
     Phantom "920x920"
     $ update_friends_stats(Phantom.name, 10)
@@ -175,7 +175,6 @@ label random_test:
     $ grant_achievement("Achv8")
     "A{size=+5}A{/size}{size=+10}A{/size}{size=+15}A{/size}{size=+25}A{/size}"
     Child "eyyy"
-    $ write_diary("Apple")
     "B"
     Child "bhii"
     "C"

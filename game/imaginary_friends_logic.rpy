@@ -199,10 +199,11 @@ python early:
             persistent.achievement_list[key]["granted"] = True
             refresh_achievements()
             notify_achievement(key)
+            if all(achievement.get("granted", False) for achievement in persistent.achievement_list.values()):
+                grant_achievement("Achv20")
     
     def refresh_achievements():
-        sorted_achievements.clear()
-        sorted_achievements.update({k: v for k, v in sorted(persistent.achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))})
+        store.sorted_achievements = ({k: v for k, v in sorted(persistent.achievement_list.items(), key=lambda x: (not x[1]["granted"], x[0]))})
 
     def refresh_diary():
         for value in persistent.diary_content.values():

@@ -321,49 +321,124 @@ default friends_stats = {
 default achievement_unlocked = False
 define persistent.achievement_list = {
     "Achv1": {
-        "title": "Normal Ending",
-        "description": "Get a normal ending.",
-        "granted": False
+        "title": "The Friendly Clown",
+        "description": "Meet the clown.",
+        "granted": False,
+        "image": "images/achievement/the_friendly_clown.png"
     },
     "Achv2": {
-        "title": "Best Ending",
-        "description": "Help all of your friends.",
-        "granted": False
+        "title": "The Mysterious Phantom",
+        "description": "Meet the hooded figure.",
+        "granted": False,
+        "image": "images/achievement/the_mysterious_phantom.png"
     },
     "Achv3": {
-        "title": "I'm the Menu",
-        "description": "Get eaten.",
-        "granted": False
+        "title": "The Blue Alien",
+        "description": "Meet the alien.",
+        "granted": False,
+        "image": "images/achievement/the_blue_alien.png"
     },
     "Achv4": {
-        "title": "Moonlight Lovers",
-        "description": "Unite the couple.",
-        "granted": False
+        "title": "The White Cat",
+        "description": "Meet the white cat idol.",
+        "granted": False,
+        "image": "images/achievement/the_white_cat.png"
     },
     "Achv5": {
-        "title": "Meet the White Cat",
-        "description": "Meet the Cat Idol.",
-        "granted": False
+        "title": "The Black Dog",
+        "description": "Meet the black dog idol.",
+        "granted": False,
+        "image": "images/achievement/the_black_dog.png"
     },
     "Achv6": {
-        "title": "Meet the Black Dog",
-        "description": "Meet the Dog Idol.",
-        "granted": False
+        "title": "The Pink Goat",
+        "description": "Meet the goat.",
+        "granted": False,
+        "image": "images/achievement/the_pink_goat.png"
     },
     "Achv7": {
-        "title": "Mysterious Phantom",
-        "description": "Meet the Phantom.",
-        "granted": False
+        "title": "The Golden Fox",
+        "description": "Meet the fox.",
+        "granted": False,
+        "image": "images/achievement/the_golden_fox.png"
     },
     "Achv8": {
-        "title": "Secret Ending",
-        "description": "Get the secret ending.",
-        "granted": False
+        "title": "The Red Lioness",
+        "description": "Meet the lioness.",
+        "granted": False,
+        "image": "images/achievement/the_red_lioness.png"
     },
     "Achv9": {
-        "title": "Are you Stupid? Ending",
-        "description": "Don't tell your name.",
-        "granted": False
+        "title": "The Violet Peacock",
+        "description": "Meet the peacock.",
+        "granted": False,
+        "image": "images/achievement/the_violet_peacock.png"
+    },
+    "Achv10": {
+        "title": "The Green Snake",
+        "description": "Meet the snake.",
+        "granted": False,
+        "image": "images/achievement/the_green_snake.png"
+    },
+    "Achv11": {
+        "title": "The Blue Bear",
+        "description": "Meet the bear.",
+        "granted": False,
+        "image": "images/achievement/the_blue_bear.png"
+    },
+    "Achv12": {
+        "title": "The Orange Pig",
+        "description": "Meet the pig.",
+        "granted": False,
+        "image": "images/achievement/the_orange_pig.png"
+    },
+    "Achv13": {
+        "title": "Little Songbird",
+        "description": "Sing a song to a friend.",
+        "granted": False,
+        "image": "images/achievement/little_songbird.png"
+    },
+    "Achv14": {
+        "title": "Peaceful Death",
+        "description": "Gain the I’m Still Weak Ending.",
+        "granted": False,
+        "image": "images/achievement/peaceful_death.png"
+    },
+    "Achv15": {
+        "title": "Gingerbread House",
+        "description": "Gain the Hansel and Gretel Ending.",
+        "granted": False,
+        "image": "images/achievement/gingerbread_house.png"
+    },
+    "Achv16": {
+        "title": "Lonely Once Again",
+        "description": "Gain the Failed Attempt Ending.",
+        "granted": False,
+        "image": "images/achievement/lonely_once_again.png"
+    },
+    "Achv17": {
+        "title": "Happily Ever After",
+        "description": "Gain the Happy Ending.",
+        "granted": False,
+        "image": "images/achievement/happily_ever_after.png"
+    },
+    "Achv18": {
+        "title": "The Fallen Apple",
+        "description": "Unlock the Character Profile.",
+        "granted": False,
+        "image": "images/achievement/the_fallen_apple.png"
+    },
+    "Achv19": {
+        "title": "Dear Diary",
+        "description": "Write on your diary for the first time.",
+        "granted": False,
+        "image": "images/achievement/dear_diary.png"
+    },
+    "Achv20": {
+        "title": "Badge Hoarder",
+        "description": "Gain all achievements.",
+        "granted": False,
+        "image": "images/achievement/badge_hoarder.png"
     }
 }
 

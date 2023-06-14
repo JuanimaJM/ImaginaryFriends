@@ -110,6 +110,7 @@ label day1:
     "???" "Anyways~ "
     "???" "I am indeed a clown, and I am the owner of this fun and amazing place~"
     "???" "I am Cloud."
+    $ grant_achievement("Achv1")
     Cloud "Cloud the Clown."
     Cloud "How about you?"
     # *Closed-Eye Smiling Face*
@@ -210,7 +211,7 @@ label day1:
     Cloud "It’s time to wake up."
     # *Effects as if opening eyes*
     hide cloud
-    scene black
+    scene car
     Child "Huh?"
     "I feel like I had a weird dream."
     "I can’t remember it though."
@@ -225,6 +226,8 @@ label day1:
     "She’s really mad. She’s mad at me again."
     Child "B-but where am I?"
     # *Enjoy view muna ahahah bago mag next dialog*
+    scene car
+    pause
     "I was inside a car. "
     "T-that’s right. I remember now."
     "I’m at our new house."
@@ -320,7 +323,7 @@ label day1:
     show jayem at center
     "???" "…"
     # *Gain “Mysterious Phantom” Achievement*
-    $ grant_achievement("Achv7")
+    $ grant_achievement("Achv2")
     Child "H-hello."
     # [Position: Center] *Jayem* 
     "???" "…"
@@ -358,13 +361,13 @@ label day1:
     "???" "Hello~ "
     # *Jennie Closed-Eye Smiling Face* 
     # *Gain “Meet The White Cat” Achievement*
-    $ grant_achievement("Achv5")
+    $ grant_achievement("Achv4")
     # [Position: Right] *Ali "Smiling Talking Face*
     show ali smiling_talking at right
     "???" "Hey. "
     # *Ali Smiling Face*
     # *Gain “Meet The Black Dog” Achievement*
-    $ grant_achievement("Achv6")
+    $ grant_achievement("Achv5")
     "The first one had white ears as if she is a cat."
     "While the other one had black ears as if she is a dog."
     Child "H-hello."
@@ -531,11 +534,11 @@ label day1:
     # *Background: Child’s Bedroom Morning; May Hover*
     hide jennie
     hide ali
-    scene screen black
+    scene screen black with dissolve
 
     call screen creditsMessage("Thank You For Playing The Game.")
     call screen creditsMessage("The rest of the story is coming soon.")
-    call screen creditsMessage("We hope that you could wait for up.")
+    call screen creditsMessage("We hope that you could wait for it.")
     call screen creditsMessage("See you in the next update.")
     call screen creditsMessage("Bye...")
 
@@ -679,7 +682,7 @@ label cloud_asking_name:
     Cloud "Fine! I'll name you myself!"
     "Cloud shouted."
     Cloud "From now on, your name is Stupid."
-    $ grant_achievement("Achv9")
+    $ grant_achievement("Achv1")
     $ player_name = "Stupid"
     $ Child.name = player_name
     Cloud "Hi Stupid!"

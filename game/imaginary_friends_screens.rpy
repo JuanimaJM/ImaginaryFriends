@@ -315,38 +315,51 @@ screen achievements():
         ysize 800
         xalign 0.5
         yalign 0.6
-        grid 3 calculate_rows(3, persistent.achievement_list):
-            xfill True
-            yfill True
-            for key, value in sorted_achievements.items():
-                grid 2 1:
-                    xfill True
-                    yfill True
-                    frame:
-                        xfill True
-                        yfill True
-                        background None
-                        if value["granted"]:
-                            imagebutton:
-                                xalign 0.5
-                                yalign 0.5
-                                idle im.FactorScale(img_badge, 0.4)
-                                action Show("badge", img=img_badge)
+        $ columns = 3
+        $ rows = calculate_rows(3, sorted_achievements)
+        $ achievement_keys = list(sorted_achievements.keys())
+        viewport:
+            yinitial 0.0
+            scrollbars "vertical"
+            grid columns rows :
+                xfill True
+                ysize 800
+                for row in range(rows):
+                    for col in range(columns):
+                        $ index = row * columns + col
+                        if index < len(achievement_keys):
+                            $ key = achievement_keys[index]
+                            $ title = sorted_achievements[key]["title"]
+                            $ granted = sorted_achievements[key]["granted"]
+                            $ badge_image = sorted_achievements[key]["image"]
+                            grid 2 1:
+                                xfill True
+                                frame:
+                                    xfill True
+                                    background None
+                                    if granted:
+                                        imagebutton:
+                                            xalign 0.5
+                                            yalign 0.5
+                                            idle im.FactorScale(badge_image, 0.4)
+                                            action Show("badge", img=badge_image)
+                                    else:
+                                        image im.FactorScale(im.Grayscale(badge_image), 0.4):
+                                            xalign 0.5
+                                            yalign 0.5
+                                vbox:
+                                    xfill True
+                                    spacing 10
+                                    xalign 0.3
+                                    yalign 0.5
+                                    text _([title]):
+                                        size gui.text_size
+                                        color identify_text_color(key)
+                                    text _(identify_achievement_description(key)):
+                                        size gui.notify_text_size
+                                        color identify_text_color(key)
                         else:
-                            image im.FactorScale(im.Grayscale(img_badge), 0.4):
-                                xalign 0.5
-                                yalign 0.5
-                    vbox:
-                        xfill True
-                        spacing 10
-                        xalign 0.3
-                        yalign 0.5
-                        text _(value["title"]):
-                            size gui.text_size
-                            color identify_text_color(key)
-                        text _(identify_achievement_description(key)):
-                            size gui.notify_text_size
-                            color identify_text_color(key)
+                            null
 
 screen badge(img):      
     add semi_transparent

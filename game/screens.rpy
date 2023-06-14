@@ -450,7 +450,7 @@ style main_menu_title:
     properties gui.text_properties("title")
     xalign 0.85
     yalign 0.25
-    font font_title
+    font font_curvy
 
 style main_menu_version:
     properties gui.text_properties("version")
@@ -590,7 +590,7 @@ style game_menu_label_text:
     size gui.title_text_size
     color gui.idle_color
     yalign 0.5
-    font font_title
+    font font_curvy
 
 style return_button:
     xpos gui.navigation_xpos

@@ -36,9 +36,9 @@ define pastel_red = "#ff6961"
 define vivid_cerulean = "#0099ff"
 
 # Fonts
-define font_title = "gui/fonts/Griffy-Regular.ttf"
+define font_curvy = "gui/fonts/Griffy-Regular.ttf"
 define font_regular = "gui/fonts/SongMyung-Regular.ttf"
-define font_stats = "gui/fonts/erasdust.ttf"
+define font_hand_written = "gui/fonts/erasdust.ttf"
 
 # Assets
 define icon_diary_white = "gui/icons/ic_diary_white.png"
@@ -93,6 +93,7 @@ define name_list = (
     "Alex", "Andy", "Charly", "Dylan", "Finli", "Frankie", "Jade", "Jayden", "Jacky", "Jaymee", "Jesse", "Jordan", "Ky", "Kendall", "Kyran",
     "Lane", "Micky", "Quin", "Rayne", "Reese", "Riley", "Robin", "Sky", "Tony", "Tris"
 )
+define disclaimer = Character(None)
 define Child = Character("You", color=sugar_plum)
 define Phantom = Character("Phantom", color=american_purple)
 define Someone = Character("Someone", color=dark_gunmetal)

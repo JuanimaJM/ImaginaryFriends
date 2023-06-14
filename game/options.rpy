@@ -29,6 +29,7 @@ define config.version = "1.0"
 ## triple-quotes, and leave a blank line between paragraphs.
 
 define gui.about = _p("""
+    {size=+50}Spring Studios{/size} \n
     \n
     {size=+15}Story:{/size}  \n
     Justine Mae Juanima  \n

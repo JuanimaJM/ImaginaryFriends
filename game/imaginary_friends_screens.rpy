@@ -235,7 +235,7 @@ screen diary():
     text _("Diary"):
         yalign 0.0
         xalign 0.5
-        font font_title
+        font font_curvy
         size gui.title_text_size
     use book
 
@@ -308,7 +308,7 @@ screen achievements():
     text _("Achievements"):
         yalign 0.0
         xalign 0.5
-        font font_title
+        font font_curvy
         size gui.title_text_size
     frame:
         xsize 1600
@@ -412,16 +412,16 @@ screen statsUI():
                         spacing 10
                         text _("STATS"):
                             xalign 0.5
-                            font font_stats
+                            font font_hand_written
                             color black
                             size (gui.name_text_size + 10)
                         if not player_name == "":
                             text "Name: [player_name]":
                                 color black
-                                font font_stats
+                                font font_hand_written
                         text _("Sanity:"):
                             color black
-                            font font_stats
+                            font font_hand_written
                         bar:
                             xalign 0.3
                             range 100
@@ -431,7 +431,7 @@ screen statsUI():
                             right_bar bar_black
                         text _("Happiness:"):
                             color black
-                            font font_stats
+                            font font_hand_written
                         bar:
                             xalign 0.3
                             range 100
@@ -441,7 +441,7 @@ screen statsUI():
                             right_bar bar_black
                         text _("Energy:"):
                             color black
-                            font font_stats
+                            font font_hand_written
                         bar:
                             xalign 0.3
                             range 100
@@ -451,7 +451,7 @@ screen statsUI():
                             right_bar bar_black
                         text _("Hunger:"):
                             color black
-                            font font_stats
+                            font font_hand_written
                         bar:
                             xalign 0.3
                             range 100
@@ -461,7 +461,7 @@ screen statsUI():
                             right_bar bar_black
                         text _("Thirst:"):
                             color black
-                            font font_stats
+                            font font_hand_written
                         bar:
                             xalign 0.3
                             range 100
@@ -485,13 +485,13 @@ screen statsUI():
                         spacing 10
                         text _("IMAGINARY FRIENDS"):
                             xalign 0.5
-                            font font_stats
+                            font font_hand_written
                             color black
                             size gui.name_text_size
                         for key, value in friends_stats.items():
                             text identify_character(key):
                                 color black
-                                font font_stats
+                                font font_hand_written
                             bar:
                                 xalign 0.2
                                 range 100
@@ -515,7 +515,7 @@ screen profile():
     text _("Character Profile"):
         yalign 0.0
         xalign 0.5
-        font font_title
+        font font_curvy
         size gui.title_text_size
     use profile_book
 

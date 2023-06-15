@@ -128,7 +128,8 @@ define characters_info = {
         "Height": "160 cm",
         "Species": "Human",
         "Occupation": "Housewife",
-        "Personality": "Ill-tempered, Frank, and Insensitive"
+        "Personality": "Ill-tempered, Frank, and Insensitive",
+        "Image": "images/characters/mother serious_face.png"
     },
     "Father": {
         "Name": "Nameless Father",
@@ -138,7 +139,8 @@ define characters_info = {
         "Height": "185 cm",
         "Species": "Human",
         "Occupation": "Sales Manager",
-        "Personality": "Quiet, Apathetic, and Indifferent"
+        "Personality": "Quiet, Apathetic, and Indifferent",
+        "Image": "images/characters/father.png"
     },
     "Jennie": {
         "Name": "Jennie",
@@ -148,7 +150,8 @@ define characters_info = {
         "Height": "161 cm",
         "Species": "Cat",
         "Occupation": "Idol",
-        "Personality": "Cutesy and Cheerful"
+        "Personality": "Cutesy and Cheerful",
+        "Image": "images/characters/jennie closed_eye_smiling_face.png"
     },
     "Ali": {
         "Name": "Ali",
@@ -158,7 +161,8 @@ define characters_info = {
         "Height": "165 cm",
         "Species": "Dog",
         "Occupation": "Idol",
-        "Personality": "Cool and Impatient"
+        "Personality": "Cool and Impatient",
+        "Image": "images/characters/ali serious_face.png"
     },
     "Kimmy": {
         "Name": "Kimmy",
@@ -169,7 +173,8 @@ define characters_info = {
         "Species": "Alien",
         "Language": "???",
         "Occupation": "Alien",
-        "Personality": "Mysterious"
+        "Personality": "Mysterious",
+        "Image": "images/characters/kimmy.png"
     },
     "Jayem": {
         "Name": "Jayem",
@@ -179,7 +184,8 @@ define characters_info = {
         "Height": "Unknown",
         "Species": "Unknown",
         "Occupation": "Unknown",
-        "Personality": "Calm and Mysterious"
+        "Personality": "Calm and Mysterious",
+        "Image": "images/characters/jayem.png"
     },
     "Cloud": {
         "Name": "Cloud",
@@ -189,7 +195,8 @@ define characters_info = {
         "Height": "188 cm",
         "Species": "Demon",
         "Occupation": "Dream Demon",
-        "Personality": "Friendly, Enthusiastic, and Mysterious"
+        "Personality": "Friendly, Enthusiastic, and Mysterious",
+        "Image": "images/characters/cloud closed_eye_smiling_face.png"
     },
     "Iris": {
         "Name": "Iris",
@@ -200,7 +207,8 @@ define characters_info = {
         "Height": "165 cm",
         "Species": "Goat",
         "Occupation": "Imaginary Friend",
-        "Personality": "Cold but affectionate to children"
+        "Personality": "Cold but affectionate to children",
+        "Image": "???"
     },
     "Barktholomeow": {
         "Name": "Barktholomeow",
@@ -211,7 +219,8 @@ define characters_info = {
         "Height": "198 cm",
         "Species": "Fox",
         "Occupation": "Imaginary Friend",
-        "Personality": "Greedy, Mischievous, and Cunning"
+        "Personality": "Greedy, Mischievous, and Cunning",
+        "Image": "images/characters/barktholomeow.png"
     },
     "Aithne": {
         "Name": "Aithne",
@@ -222,7 +231,8 @@ define characters_info = {
         "Height": "165 cm",
         "Species": "Lioness",
         "Occupation": "Imaginary Friend",
-        "Personality": "Short-Tempered, Frank, Ambitious, and Passionate"
+        "Personality": "Short-Tempered, Frank, Ambitious, and Passionate",
+        "Image": "???"
     },
     "Bertrand": {
         "Name": "Bertrand",
@@ -233,7 +243,8 @@ define characters_info = {
         "Height": "195 cm",
         "Species": "Peacock",
         "Occupation": "Imaginary Friend",
-        "Personality": "Prideful, Arrogant, Intellectual, and Stern"
+        "Personality": "Prideful, Arrogant, Intellectual, and Stern",
+        "Image": "???"
     },
     "Carwyn": {
         "Name": "Carwyn",
@@ -244,7 +255,8 @@ define characters_info = {
         "Height": "185 cm",
         "Species": "Snake",
         "Occupation": "Imaginary Friend",
-        "Personality": "Envious, Ambitious, Greedy, Faithful, and Loving Groom"
+        "Personality": "Envious, Ambitious, Greedy, Faithful, and Loving Groom",
+        "Image": "images/characters/carwyn.png"
     },
     "Mikaela": {
         "Name": "Mikaela",
@@ -255,7 +267,8 @@ define characters_info = {
         "Height": "160 cm",
         "Species": "Bear",
         "Occupation": "Imaginary Friend",
-        "Personality": "Lazy, Apathetic, Faithful, and Loving Bride"
+        "Personality": "Lazy, Apathetic, Faithful, and Loving Bride",
+        "Image": "images/characters/mikaela.png"
     },
     "Blayr": {
         "Name": "Blayr",
@@ -266,7 +279,8 @@ define characters_info = {
         "Height": "180 cm",
         "Species": "Pig",
         "Occupation": "Imaginary Friend",
-        "Personality": "Alcoholic, Ambitious, Arrogant, Rebellious, and Hardworking"
+        "Personality": "Alcoholic, Ambitious, Arrogant, Rebellious, and Hardworking",
+        "Image": "???"
     }
 }
 ##############################################################################################################
@@ -450,6 +464,10 @@ default diary_unlocked = False
 default first_page = 1
 default second_page = 2
 define persistent.diary_content = {
+    "Tree": {
+        "content": "images/diary/diary_tree.png",
+        "found": False
+    },
     "Cat": {
         "content": "images/diary/diary_cat.png",
         "found": False
@@ -460,10 +478,6 @@ define persistent.diary_content = {
     },
     "Phantom": {
         "content": "images/diary/diary_phantom.png",
-        "found": False
-    },
-    "Tree": {
-        "content": "images/diary/diary_tree.png",
         "found": False
     },
     "Dog": {

@@ -82,15 +82,18 @@ label day1:
     Child "Huh? Who’s there?"
     "I look around me but don’t see anyone."
     # [Position: Center] *Smiling Talking Face* 
-    show cloud smiling at center
+    show cloud smiling_talking_face at center
     "???" "Looking for me~?"
     # *Closed-Eye Smiling Face*
+    show cloud closed_eye_smiling_face
     "A very tall man appeared in front of me."
     "He wore a colorful suit. He looks like-"
     Child "A clown?"
     #[Position: Center]  *Surprised Talking Face*
+    show cloud surprised_talking_face
     "???" "How did you know?"
     # *Surprised Face*
+    show cloud disappointed_face
     Child "I-it’s pretty obvious because of your look and face."
     # [Position: Center] *Smiling Talking Face* 
     "???" "How clever~"
@@ -114,6 +117,7 @@ label day1:
     "???" "I am indeed a clown, and I am the owner of this fun and amazing place~"
     "???" "I am Cloud."
     $ grant_achievement("Achv1")
+    $ write_diary("Cloud")
     Cloud "Cloud the Clown."
     Cloud "How about you?"
     # *Closed-Eye Smiling Face*
@@ -194,7 +198,7 @@ label day1:
     
     Child "What if they don’t want to be my friend?"
     # [Position: Center] *Smiling Talking Face* 
-    show cloud smiling_talking at center
+    show cloud smiling_talking_face at center
     Cloud "Nonsense! All you need to do is smile~"
     Cloud "Give them your brightest and most sincere smile."
     Cloud "And nothing can go wrong~"
@@ -236,7 +240,7 @@ label day1:
     "T-that’s right. I remember now."
     "I’m at our new house."
     # [Position: Center] *Angry Shouting Face* 
-    show mother angry_shouting at center
+    show mother angry_talking_face at center
     Mother "{size=+4}Ha! So, you were awake?{/size}{size=+8}You were ignoring me!?{/size}"
     # *Angry Face*
     Child "A-ah!"
@@ -325,11 +329,13 @@ label day1:
     "I-I think I should."
     "As I turned around, I saw a hooded figure."
     # [Position: Center] *Jayem (Isa lang pic nya)*
+    scene screen black
     show jayem at center
     play music music_phantom loop fadein 2.0 volume 0.3
     "???" "…"
     # *Gain “Mysterious Phantom” Achievement*
     $ grant_achievement("Achv2")
+    $ write_diary("Phantom")
     Child "H-hello."
     # [Position: Center] *Jayem* 
     "???" "…"
@@ -353,27 +359,31 @@ label day1:
     $ update_player_stats(sanity=5, happiness=5)
     "I have another friend, I feel really happy."
     # *Jayem Leaves or Hidden*
+    scene hallway
     hide jayem
     Child "S-so Jayem-"
     "When I looked in front of me, Jayem was nowhere to be seen."
     "They left already…"
     Child "Were they bored of me?"
+    play music music_sky loop fadein 2.0 volume 0.3
     "???" "Don’t worry~ It’s not your fault~"
     "???" "Yeah. Jayem’s just not sociable."
     "I suddenly heard two unknown voices."
     "When I turned around, I saw two women."
     # [Position: Left] *Jennie "Closed-Eye Smiling Talking Face*
-    show jennie close_eye_smiling_talking at left
+    show jennie closed_eye_smiling_talking_face at left
     "???" "Hello~ "
     # *Jennie Closed-Eye Smiling Face* 
     # *Gain “Meet The White Cat” Achievement*
     $ grant_achievement("Achv4")
+    $ write_diary("Cat")
     # [Position: Right] *Ali "Smiling Talking Face*
-    show ali smiling_talking at right
+    show ali smiling_talking_face at right
     "???" "Hey. "
     # *Ali Smiling Face*
     # *Gain “Meet The Black Dog” Achievement*
     $ grant_achievement("Achv5")
+    $ write_diary("Dog")
     "The first one had white ears as if she is a cat."
     "While the other one had black ears as if she is a dog."
     Child "H-hello."
@@ -508,7 +518,7 @@ label day1:
     "It’s really big."
     "Is this really mine?"
     # [Position: Left] *Ali "Serious Talking Face* 
-    show ali serious_talking at left
+    show ali serious_talking_face at left
     Ali "There. "
     # *Ali "Serious Face*
     "Ali carried my luggage and placed it near the bed."
@@ -516,7 +526,7 @@ label day1:
     Ali "Let’s go now. "
     # *Ali "Smiling Face*
     # [Position: Right] *Jennie "Smiling Talking Face*
-    show jennie smiling_talking at right
+    show jennie closed_eye_smiling_talking_face at right
     Jennie "Let’s explore the second floor first. "
     # *Jennie "Closed-Eye Smiling Talking Face* 
     Jennie "And who knows, you might make some new friends [Child.name]~ "
@@ -611,7 +621,7 @@ label day1_menu2_choice2:
     # *Overly Excited Talking Face*
     "Cloud smiled and said happily. He looks overjoy."
     # [Position: Left] *Smiling Talking Face* 
-    show cloud smiling at left
+    show cloud smiling_talking_face at left
     Cloud "{i}Be Friends, Be Friends, can we be friends?{/i}"
     Cloud "{i}Who sings and dance all day, all night,{/i}"
     Cloud "{i}We talk, we smile, we laugh, we cry,{/i}"
@@ -688,7 +698,7 @@ label cloud_asking_name:
     Cloud "Fine! I'll name you myself!"
     "Cloud shouted."
     Cloud "From now on, your name is Stupid."
-    $ grant_achievement("Achv1")
+    # $ grant_achievement("Achv1")
     $ player_name = "Stupid"
     $ Child.name = player_name
     Cloud "Hi Stupid!"

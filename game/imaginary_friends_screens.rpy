@@ -540,16 +540,23 @@ screen profile_book():
             xsize 820
             yfill True
             background bg_left_page
-            text "[selected_character]":
-                color black
-                xalign 0.5
-                yoffset 30
-                size 80
-            text "???":
-                color black
-                xalign 0.5
-                yalign 0.5
-                size 100
+            # text "[selected_character]":
+            #     color black
+            #     xalign 0.5
+            #     yoffset 30
+            #     size 80
+            $ image_path = characters_info[selected_character]["Image"]
+            if not image_path == "???":
+                image image_path:
+                    xalign 0.5
+                    yalign 0.5
+                    xysize (700, 700)
+            else: 
+                text "[image_path]":
+                    color black
+                    xalign 0.5
+                    yalign 0.5
+                    size 100
 
 screen character_tab():
     tag menu
@@ -601,7 +608,8 @@ screen info_tab():
             vbox:
                 spacing 10
                 for key, value in characters_info[selected_character].items():
-                    text "[key]: [value]" color black
+                    if key is not "Image":
+                        text "[key]: [value]" color black
 
 screen lore_tab():
     tag menu

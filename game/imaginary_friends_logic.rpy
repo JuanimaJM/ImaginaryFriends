@@ -34,94 +34,114 @@ python early:
             return persistent.achievement_list[key]["description"]
         else:
             return "???"
-    
+
     def check_time():
         now = datetime.datetime.now().time()
         if dawn_start <= now <= dawn_end:
-            store.game_time = 0
+            game_time = 0
         elif sunrise_start <= now <= sunrise_end:
-            store.game_time = 1
+            game_time = 1
         elif morning_start <= now <= morning_end:
-            store.game_time = 2
+            game_time = 2
         elif noon_start <= now <= noon_end:
-            store.game_time = 3
+            game_time = 3
         elif afternoon_start <= now <= afternoon_end:
-            store.game_time = 4
+            game_time = 4
         elif sunset_start <= now <= sunset_end:
-            store.game_time = 5
+            game_time = 5
         elif dusk_start <= now <= dusk_end:
-            store.game_time = 6
+            game_time = 6
         else:
-            store.game_time = 7
+            game_time = 7
 
-    def timely_bg_main_menu():
+    def timely_bg_main_menu_animated():
         if game_time == 0:
-            # return "images/game_backgrounds/bg_main_menu_dawn.jpg"
             # return "animated_bg_main_menu_dawn"
             return Movie(play="videos/bg_main_menu_dawn.webm")
         elif game_time == 1:
-            # return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
             # return "animated_bg_main_menu_sunrise"
             return Movie(play="videos/bg_main_menu_sunrise.webm")
         elif game_time == 2:
-            # return "images/game_backgrounds/bg_main_menu_morning.jpg"
             # return "animated_bg_main_menu_morning"
             return Movie(play="videos/bg_main_menu_morning.webm")
         elif game_time == 3:
-            # return "images/game_backgrounds/bg_main_menu_noon.jpg"
             # return "animated_bg_main_menu_noon"
             return Movie(play="videos/bg_main_menu_noon.webm")
         elif game_time == 4:
-            # return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
             # return "animated_bg_main_menu_afternoon"
             return Movie(play="videos/bg_main_menu_afternoon.webm")
         elif game_time == 5:
-            # return "images/game_backgrounds/bg_main_menu_sunset.jpg"
             # return "animated_bg_main_menu_sunset"
             return Movie(play="videos/bg_main_menu_sunset.webm")
         elif game_time == 6:
-            # return "images/game_backgrounds/bg_main_menu_dusk.jpg"
             # return "animated_bg_main_menu_dusk"
             return Movie(play="videos/bg_main_menu_dusk.webm")
         elif game_time == 7:
-            # return "images/game_backgrounds/bg_main_menu_night.jpg"
             # return "animated_bg_main_menu_night"
             return Movie(play="videos/bg_main_menu_night.webm")
            
-    
-    def timely_bg_game_menu():
+    def timely_bg_main_menu_image():
         if game_time == 0:
-            # return "images/game_backgrounds/bg_game_menu_dawn.jpg"
+            return "images/game_backgrounds/bg_main_menu_dawn.jpg"
+        elif game_time == 1:
+            return "images/game_backgrounds/bg_main_menu_sunrise.jpg"
+        elif game_time == 2:
+            return "images/game_backgrounds/bg_main_menu_morning.jpg"
+        elif game_time == 3:
+            return "images/game_backgrounds/bg_main_menu_noon.jpg"
+        elif game_time == 4:
+            return "images/game_backgrounds/bg_main_menu_afternoon.jpg"
+        elif game_time == 5:
+            return "images/game_backgrounds/bg_main_menu_sunset.jpg"
+        elif game_time == 6:
+            return "images/game_backgrounds/bg_main_menu_dusk.jpg"
+        elif game_time == 7:
+            return "images/game_backgrounds/bg_main_menu_night.jpg"
+
+
+    def timely_bg_game_menu_animated():
+        if game_time == 0:
             # return "animated_bg_game_menu_dawn"
             return Movie(play="videos/bg_game_menu_dawn.webm")
         elif game_time == 1:
-            # return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
             # return "animated_bg_game_menu_sunrise"
             return Movie(play="videos/bg_game_menu_sunrise.webm")
         elif game_time == 2:
-            # return "images/game_backgrounds/bg_game_menu_morning.jpg"
             # return "animated_bg_game_menu_morning"
             return Movie(play="videos/bg_game_menu_morning.webm")
         elif game_time == 3:
-            # return "images/game_backgrounds/bg_game_menu_noon.jpg"
             # return "animated_bg_game_menu_noon"
             return Movie(play="videos/bg_game_menu_noon.webm")
         elif game_time == 4:
-            # return "images/game_backgrounds/bg_game_menu_afternoon.jpg"
             # return "animated_bg_game_menu_afternoon"
             return Movie(play="videos/bg_game_menu_afternoon.webm")
         elif game_time == 5:
-            # return "images/game_backgrounds/bg_game_menu_sunset.jpg"
             # return "animated_bg_game_menu_sunset"
             return Movie(play="videos/bg_game_menu_sunset.webm")
         elif game_time == 6:
-            # return "images/game_backgrounds/bg_game_menu_dusk.jpg"
             # return "animated_bg_game_menu_dusk"
             return Movie(play="videos/bg_game_menu_dusk.webm")
         elif game_time == 7:
-            # return "images/game_backgrounds/bg_game_menu_night.jpg"
             # return "animated_bg_game_menu_night"
             return Movie(play="videos/bg_game_menu_night.webm")
+
+    def timely_bg_game_menu_image():
+        if game_time == 0:
+            return "images/game_backgrounds/bg_game_menu_dawn.jpg"
+        elif game_time == 1:
+            return "images/game_backgrounds/bg_game_menu_sunrise.jpg"
+        elif game_time == 2:
+            return "images/game_backgrounds/bg_game_menu_morning.jpg"
+        elif game_time == 3:
+            return "images/game_backgrounds/bg_game_menu_noon.jpg"
+        elif game_time == 4:
+            return "images/game_backgrounds/bg_game_menu_afternoon.jpg"
+        elif game_time == 5:
+            return "images/game_backgrounds/bg_game_menu_sunset.jpg"
+        elif game_time == 6:
+            return "images/game_backgrounds/bg_game_menu_dusk.jpg"
+        elif game_time == 7:
+            return "images/game_backgrounds/bg_game_menu_night.jpg"
     
     def timely_text_color():
         if game_time >= 6:

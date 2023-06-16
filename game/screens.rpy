@@ -377,7 +377,8 @@ screen main_menu():
     tag menu
 
     # add gui.main_menu_background
-    add timely_bg_main_menu()
+    add timely_bg_main_menu_image()
+    add timely_bg_main_menu_animated()
     add leaf_particles1
     add leaf_particles2
     add leaf_particles3
@@ -474,7 +475,8 @@ screen game_menu(title, scroll=None, yinitial=0.0):
     #     add gui.game_menu_background
 
     # add gui.game_menu_background
-    add timely_bg_game_menu()
+    add timely_bg_game_menu_image()
+    add timely_bg_game_menu_animated()
 
     frame:
         style "game_menu_outer_frame"

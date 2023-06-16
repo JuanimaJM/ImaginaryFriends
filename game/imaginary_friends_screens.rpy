@@ -224,7 +224,8 @@ screen diary():
 
     tag menu
     # add gui.game_menu_background
-    add timely_bg_game_menu()
+    add timely_bg_game_menu_image()
+    add timely_bg_game_menu_animated()
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -297,7 +298,8 @@ screen achievements():
 
     tag menu
     # add gui.game_menu_background
-    add timely_bg_game_menu()
+    add timely_bg_game_menu_image()
+    add timely_bg_game_menu_animated()
     imagebutton:
         xalign 0.0
         yalign 0.0
@@ -504,7 +506,8 @@ screen statsUI():
 # Screen for Character Profile
 screen profile():
     tag menu
-    add timely_bg_game_menu()
+    add timely_bg_game_menu_image()
+    add timely_bg_game_menu_animated()
     imagebutton:
         xalign 0.0
         yalign 0.0

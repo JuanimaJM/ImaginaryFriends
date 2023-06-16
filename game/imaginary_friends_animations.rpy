@@ -1,5 +1,5 @@
 label splashscreen:
-    $ _dismiss_pause = False
+    # $ _dismiss_pause = False
     $ renpy.movie_cutscene("videos/spring_studios_splash.webm")
     show text "All characters, events, and other items in this game are fictional." with dissolve
     pause 5

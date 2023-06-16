@@ -608,7 +608,7 @@ screen info_tab():
             vbox:
                 spacing 10
                 for key, value in characters_info[selected_character].items():
-                    if key is not "Image":
+                    if not key == "Image":
                         text "[key]: [value]" color black
 
 screen lore_tab():

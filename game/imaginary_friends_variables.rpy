@@ -7,7 +7,7 @@ define config.rollback_enabled = True
 define config.developer = True
 define allowDev = True
 default showDevMenu = True
-default game_time = 4
+default game_time = 7
 ##############################################################################################################
 
 # Imaginary Friends GUI

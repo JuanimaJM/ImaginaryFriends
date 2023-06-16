@@ -124,19 +124,23 @@ label day1:
     "The man introduced himself with a smile."
     "So, his name is Cloud."
     Child "C-cloud."
-    # [Position: Center] *Smiling Talking Face* 
+    # [Position: Center] *Smiling Talking Face*
+    show cloud closed_eye_smiling_talking_face
     Cloud "That’s right! That’s me~"
     Cloud "So? Tell me, what’s your name?"
     # *Closed-Eye Smiling Face*
+    show cloud closed_eye_smiling_face
 
     call cloud_asking_name
     $ Child.name = player_name
 
-    # [Position: Center] *Overly Excited Face* 
+    # [Position: Center] *Overly Excited Face*
+    show cloud overly_excited_talking_face
     Cloud "Oh! So that’s your name."
     # [Position: Center] *Smiling Talking Face*
     Cloud "Nice to meet you [Child.name]"
     # *Closed-Eye Smiling Face*
+    show cloud overly_excited_face
     Child "N-nice to meet you too."
     # [Position: Center] *Smiling Talking Face* 
     Cloud "Do you want to be my friend? "
@@ -552,12 +556,20 @@ label day1:
     hide ali
     scene screen black with dissolve
 
-    call screen creditsMessage("Thank You For Playing The Game.")
-    call screen creditsMessage("The rest of the story is coming soon.")
-    call screen creditsMessage("We hope that you could wait for it.")
-    call screen creditsMessage("See you in the next update.")
-    call screen creditsMessage("Bye...")
+    jump disclaimer
+    return
 
+label disclaimer:
+    show text "Thank You For Playing The Game."
+    pause
+    show text "The rest of the story is coming soon."
+    pause
+    show text "We hope that you could wait for it."
+    pause
+    show text "See you in the next update."
+    pause
+    show text "Bye..."
+    pause
     return
 
 label day1_menu1_choice1:
@@ -667,8 +679,10 @@ label cloud_asking_name:
     $ Child.name = player_name
     if not player_name == "":
         return
+    show cloud smiling_talking_face
     Cloud "You haven't given me your name yet."
     Cloud "Please tell me your name."
+    show cloud closed_eye_smiling_face
     "Cloud smiled warmly at me."
     call screen ask_name("Tell Cloud your name.")
     $ player_name = _return

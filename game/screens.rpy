@@ -371,7 +371,7 @@ style navigation_button_text:
 ## https://www.renpy.org/doc/html/screen_special.html#main-menu
 screen main_menu():
     on "show" action Function(check_time)
-    on "replaced" action Function(check_time)
+    on "replace" action Function(check_time)
 
     ## This ensures that any other menu screen is replaced.
     tag menu
@@ -466,7 +466,6 @@ style main_menu_version:
 ## transcluded (placed) inside it.
 
 screen game_menu(title, scroll=None, yinitial=0.0):
-
     style_prefix "game_menu"
 
     # if main_menu:

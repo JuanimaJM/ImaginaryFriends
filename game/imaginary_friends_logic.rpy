@@ -38,21 +38,21 @@ python early:
     def check_time():
         now = datetime.datetime.now().time()
         if dawn_start <= now <= dawn_end:
-            game_time = 0
+            store.game_time = 0
         elif sunrise_start <= now <= sunrise_end:
-            game_time = 1
+            store.game_time = 1
         elif morning_start <= now <= morning_end:
-            game_time = 2
+            store.game_time = 2
         elif noon_start <= now <= noon_end:
-            game_time = 3
+            store.game_time = 3
         elif afternoon_start <= now <= afternoon_end:
-            game_time = 4
+            store.game_time = 4
         elif sunset_start <= now <= sunset_end:
-            game_time = 5
+            store.game_time = 5
         elif dusk_start <= now <= dusk_end:
-            game_time = 6
+            store.game_time = 6
         else:
-            game_time = 7
+            store.game_time = 7
 
     def timely_bg_main_menu_animated():
         if game_time == 0:

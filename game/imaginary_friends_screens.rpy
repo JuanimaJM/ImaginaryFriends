@@ -637,6 +637,9 @@ screen lore_tab():
 
 # Screen for Developer Options
 screen developer():
+    key "ctrl_alt_shift_K_UP" action Function(modify_game_time, 1)
+    key "ctrl_alt_shift_K_DOWN" action Function(modify_game_time, -1)
+
     zorder 210
     frame:
         yoffset 30

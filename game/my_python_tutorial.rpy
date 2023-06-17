@@ -118,3 +118,111 @@ init python:
     my_list = ['A', 'B', 'C']
 # Choose a random element based on the provided weights
     random_weighted = random.choices(my_list, weights=[0.2, 0.3, 0.5])
+
+
+# Scripts Tutorial
+define Anna = Character("Anna Lisa", color="#00ffff")
+define Alex = Character("Alex Gonzafa", color="#00ff00")
+
+label script_tutorial:
+    Anna "Hello, nice to meet you [Alex.name]" #outputs: Hello, nice to meet you Alex Gonzaga
+    Alex "Nice to meet you too, Anna"
+
+    "Once upon a time."
+    "There was a boy who loves to eat apples."
+
+    Anna "Uwu, ILY, LOLOLOL."
+    Alex "R u ok?"
+
+    scene name_of_scene their_attribute
+
+    scene backyard
+    pause #---> this will let the player to view the scene without the dialogue and wait for them to click the screen
+    
+    scene bedroom day
+    scene bedroom night
+
+    hide bedroom #---> this will hide the bedroom scene, don't need to add their attribute. however hiding a scene will show a transparent background(checkered)
+    # you need to show a new scene when a hiding the previous scene
+
+    # define the video first
+    image my_bg = Movie(play="filename.mp4")
+
+    # displaying the video as background/scene
+    show my_bg
+    hide my_bg #---> hides the scene
+
+
+    play music music_filename
+    play sound sound_filename
+
+
+    play music let_it_go
+    play music let_it_go loop # make the music loops unless new music is played or it stopped
+    play music let_it_go fadein 0.5 # sets fadein for .5seconds
+    play music let_it_go volume 5.0 # sets volume for times 5
+    play music let_it_go loop fadein 2.0 volume 3.0
+    stop music #---> stops all music
+    stop mudic fadeout 3.0
+
+    play sound doorbell
+    play sound doorbell loop
+    play sound doorbell fadein 1.0
+    play sound doorbell volume 10.0
+    play sound doorbell loop fadein 0.5 volume 0.5
+    stop sound
+    stop sound fadeout 0.5
+
+    "I will choose something"
+    menu:
+        "Option1":
+            "Script of option 1 goes here"
+        "Option2":
+            "Script of option 2 goes here"
+    "I already choose something"
+
+label main_route:
+    "1"
+    call my_choice # proceed to my_choice 
+    "..." # proceed here if the return is called in my_choice
+    "Oh Im here again"
+
+label my_choice:
+    "I choose something"
+    menu:
+        "Yes":
+            "Ok"
+            jump second_route # proceed to second route
+        "No":
+            "Grrrr"
+            return # go back to main route
+    "....." # can't be shown
+
+label second_route:
+    "2"
+    "3"
+    jump end_route # proceed to end route
+
+label end_route:
+    "ending"
+    return # ends the game
+
+label third_route:
+    "999"
+    "9999"
+    "99999"
+
+label start_of_loop:
+    "Starting the Loop"
+    call the_loop
+    "Ending the loop"
+    return # end the game
+
+label the_loop:
+    menu:
+        "Loop Again":
+            "Again.."
+            call the_loop
+        "End the loop":
+            return # return to start_of_loop
+        

@@ -31,15 +31,6 @@ screen script_keymap():
     key "repeat_ctrl_alt_shift_K_UP" action Function(update_player_stats, happiness=1)
     key "repeat_ctrl_alt_shift_K_DOWN" action Function(update_player_stats, happiness=-1)
     key "ctrl_alt_shift_K_n" action Function(set_random_name)
-
-screen creditsMessage(message):
-    add "images/scenes/screen black.png"
-    fixed:
-        text message:
-            xalign 0.5
-            yalign 0.5
-            size 100
-    dismiss action Return()
 ##############################################################################################################
 
 # Script Scenes
